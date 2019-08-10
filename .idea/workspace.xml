@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Chi_RW" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Attributes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/Attributes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="685" column="29" lean-forward="true" selection-start-line="685" selection-start-column="29" selection-end-line="685" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormatErrorKeeper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/FormatErrorKeeper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2415">
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Instance.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/Instance.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-894">
+              <caret line="355" column="57" lean-forward="true" selection-start-line="355" selection-start-column="57" selection-end-line="355" selection-end-column="57" />
+              <folding>
+                <element signature="e#1547#1591#0" expanded="true" />
+                <element signature="e#16583#17410#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fuzzy_Chi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Fuzzy_Chi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="88" column="56" lean-forward="false" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDataSet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/MyDataSet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="203" column="44" lean-forward="false" selection-start-line="203" selection-start-column="37" selection-end-line="203" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attribute.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/Attribute.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="461" column="9" lean-forward="true" selection-start-line="461" selection-start-column="9" selection-end-line="461" selection-end-column="9" />
+              <folding>
+                <element signature="e#2093#2098#0" expanded="false" />
+                <element signature="e#2506#2511#0" expanded="false" />
+                <element signature="e#2725#2730#0" expanded="false" />
+                <element signature="e#2862#2867#0" expanded="false" />
+                <element signature="e#2941#2946#0" expanded="false" />
+                <element signature="e#3020#3025#0" expanded="false" />
+                <element signature="e#3163#3168#0" expanded="false" />
+                <element signature="e#3282#3287#0" expanded="false" />
+                <element signature="e#3387#3392#0" expanded="false" />
+                <element signature="e#3528#3533#0" expanded="false" />
+                <element signature="e#3602#3607#0" expanded="false" />
+                <element signature="e#3927#3932#0" expanded="false" />
+                <element signature="e#4073#4078#0" expanded="false" />
+                <element signature="e#4162#4167#0" expanded="false" />
+                <element signature="e#4247#4252#0" expanded="false" />
+                <element signature="e#4329#4334#0" expanded="false" />
+                <element signature="e#5382#5387#0" expanded="false" />
+                <element signature="e#5704#5716#0" expanded="false" />
+                <element signature="e#6471#6490#0" expanded="false" />
+                <element signature="e#8575#8594#0" expanded="false" />
+                <element signature="e#8786#8803#0" expanded="false" />
+                <element signature="e#9461#9481#0" expanded="false" />
+                <element signature="e#9993#10018#0" expanded="false" />
+                <element signature="e#10479#10496#0" expanded="false" />
+                <element signature="e#12837#12858#0" expanded="false" />
+                <element signature="e#13745#13772#0" expanded="false" />
+                <element signature="e#14831#14836#0" expanded="false" />
+                <element signature="e#15028#15046#0" expanded="false" />
+                <element signature="e#15269#15295#0" expanded="false" />
+                <element signature="e#15617#15641#0" expanded="false" />
+                <element signature="e#15845#15870#0" expanded="false" />
+                <element signature="e#16170#16190#0" expanded="false" />
+                <element signature="e#16580#16604#0" expanded="false" />
+                <element signature="e#17016#17047#0" expanded="false" />
+                <element signature="e#17064#17065#0" expanded="false" />
+                <element signature="e#17295#17317#0" expanded="false" />
+                <element signature="e#18821#18834#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstanceAttributes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="457" column="8" lean-forward="false" selection-start-line="457" selection-start-column="8" selection-end-line="457" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstanceParser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/InstanceParser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="127" column="8" lean-forward="false" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstanceSet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Help_Classes/InstanceSet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="222" column="50" lean-forward="false" selection-start-line="222" selection-start-column="50" selection-end-line="222" selection-end-column="50" />
+              <folding>
+                <element signature="e#1943#2003#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>defStr</find>
+      <find>realValues[0]</find>
+      <find>directionAttr=</find>
+      <find>Length of self.__realValues</find>
+      <find>__realValues[2]</find>
+      <find>tempSet</find>
+      <find>Data line</find>
+      <find>test_myDataSet</find>
+      <find>__instanceSet is not None</find>
+      <find>getOutputNumAttributes</find>
+      <find>input_attr_length</find>
+      <find>curAtis</find>
+      <find>__realValues</find>
+      <find>self.__realValues</find>
+      <find>setThreeParameters</find>
+      <find>init</find>
+      <find>directionAttr==Attribute.INPUT</find>
+      <find>inAttCount</find>
+      <find>readSet</find>
+      <find>curCount</find>
+      <find>directionAttr==Attribute.OUTPUT</find>
+      <find>column_here</find>
+      <find>__nominalValues</find>
+      <find>self.__nominalValues ,add value</find>
+      <find>convertNominalValue begin</find>
+      <find>processReadValue begin</find>
+      <find>convertNominalValue</find>
+      <find>column</find>
+      <find>error</find>
+      <find>processReadValue</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>minNum</replace>
+      <replace>maxNum</replace>
+      <replace>#</replace>
+      <replace>'''</replace>
+      <replace>_dirAttribute</replace>
+      <replace>_type</replace>
+      <replace>__numInputAttributes</replace>
+      <replace>__numOutputAttributes</replace>
+      <replace>____numUndefinedAttributes</replace>
+      <replace>__numUndefinedAttributes</replace>
+      <replace>__anyMissingValue</replace>
+      <replace>__missingValues</replace>
+      <replace>self.__realValues</replace>
+      <replace>__realValues</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DataBase.py" />
+        <option value="$PROJECT_DIR$/main/Rule.py" />
+        <option value="$PROJECT_DIR$/main/FormatErrorKeeper.py" />
+        <option value="$PROJECT_DIR$/main/MyDatasSet.py" />
+        <option value="$PROJECT_DIR$/main/InstanceAttributes.py" />
+        <option value="$PROJECT_DIR$/main/parseParameters.py" />
+        <option value="$PROJECT_DIR$/main/Instance.py" />
+        <option value="$PROJECT_DIR$/main/ErrorInfo.py" />
+        <option value="$PROJECT_DIR$/main/InstanceParser.py" />
+        <option value="$PROJECT_DIR$/main/Attribute.py" />
+        <option value="$PROJECT_DIR$/main/Attributes.py" />
+        <option value="$PROJECT_DIR$/main/InstanceSet.py" />
+        <option value="$PROJECT_DIR$/main/Main.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/FormatErrorKeeper.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/ErrorInfo.py" />
+        <option value="$PROJECT_DIR$/main/ParseParameters.py" />
+        <option value="$PROJECT_DIR$/main/Fuzzy.py" />
+        <option value="$PROJECT_DIR$/main/DataBase.py" />
+        <option value="$PROJECT_DIR$/main/RuleBase.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" />
+        <option value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
+        <option value="$PROJECT_DIR$/main/MyDataSet.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/Attributes.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/Attribute.py" />
+        <option value="$PROJECT_DIR$/main/Help_Classes/Instance.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Chi_RW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chi_RW" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chi_RW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chi_RW" type="462c0819:PsiDirectoryNode" />
+              <item name="help" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chi_RW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chi_RW" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chi_RW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chi_RW" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Help_Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chi_RW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Chi_RW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\Help_Classes" />
+      <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\simpleTest" />
+      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="DataBase" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Chi_RW" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="-s" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Chi_RW" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Main.py" />
+      <option name="PARAMETERS" value="D:\pythonAlgorithms\PythonChi\Chi_RW\main\simpleTest\scripts\Fuzzy-FARCHD-C\iris\config1s0.txt" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.DataBase" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.DataBase" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="" />
+      <created>1529468596060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529468596060</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first time to push all">
+      <created>1537590100382</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537590100382</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first time to push all">
+      <created>1537590328418</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1537590328418</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first time to push all">
+      <created>1537591282181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537591282181</updated>
+    </task>
+    <task id="LOCAL-00004" summary="process finished with exit 0">
+      <created>1537591341864</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537591341864</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change parameter to lower case">
+      <created>1537594134254</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1537594134254</updated>
+    </task>
+    <task id="LOCAL-00006" summary="modified the input read files and read algorithm name">
+      <created>1538217059757</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1538217059757</updated>
+    </task>
+    <task id="LOCAL-00007" summary="correct debug errors.">
+      <created>1538257109010</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1538257109010</updated>
+    </task>
+    <task id="LOCAL-00008" summary="before cannot import name InstanceSet from InstanceSet error">
+      <created>1538258893188</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1538258893188</updated>
+    </task>
+    <task id="LOCAL-00009" summary="rewritten in python some classes">
+      <created>1538287093852</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1538287093852</updated>
+    </task>
+    <task id="LOCAL-00010" summary="before fix the error:Unexpected error:'ParseParameters' object has no attribute 'get'">
+      <created>1538341287491</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1538341287491</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ParseParameters' object has no attribute 'get' still">
+      <created>1538430460621</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1538430460624</updated>
+    </task>
+    <task id="LOCAL-00012" summary="need to fix Attribute.py for next step">
+      <created>1538495650018</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1538495650018</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Unexpected error in readSet of InstanceSet class :'NoneType' object is not subscriptable">
+      <created>1538520341396</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1538520341396</updated>
+    </task>
+    <task id="LOCAL-00014" summary="need to work at readClassificationSet() in MyDataSet.py">
+      <created>1538603343235</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1538603343235</updated>
+    </task>
+    <task id="LOCAL-00015" summary="need to work at readClassificationSet() in MyDataSet.py">
+      <created>1538866092925</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1538866092925</updated>
+    </task>
+    <task id="LOCAL-00016" summary="file name repeated for 2 times">
+      <created>1538867408735</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1538867408735</updated>
+    </task>
+    <task id="LOCAL-00017" summary="in initStatisticas has the class number already">
+      <created>1538929149193</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1538929149194</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixed the validation file missing problem">
+      <created>1538949793931</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1538949793931</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixed the validation file missing problem">
+      <created>1539143079477</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1539143079477</updated>
+    </task>
+    <task id="LOCAL-00020" summary="finished with exit code 1">
+      <created>1539295687259</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1539295687259</updated>
+    </task>
+    <task id="LOCAL-00021" summary="no error ,but result is wrong">
+      <created>1539379208223</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1539379208223</updated>
+    </task>
+    <task id="LOCAL-00022" summary="read parameters are all correct">
+      <created>1539449886685</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1539449886685</updated>
+    </task>
+    <task id="LOCAL-00023" summary="no error , but need to analysis the result.">
+      <created>1539550024729</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1539550024729</updated>
+    </task>
+    <task id="LOCAL-00024" summary="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range">
+      <created>1539550939794</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1539550939794</updated>
+    </task>
+    <task id="LOCAL-00025" summary="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range">
+      <created>1539642702251</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1539642702251</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15252976" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44709897" sideWeight="0.49181548" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38225257" sideWeight="0.38764882" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.530837" sideWeight="0.49758744" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5639881" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.49758744" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38225257" sideWeight="0.6123512" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969843" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20477815" sideWeight="0.48958334" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119155355" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first time to push all" />
+    <MESSAGE value="process finished with exit 0" />
+    <MESSAGE value="change parameter to lower case" />
+    <MESSAGE value="modified the input read files and read algorithm name" />
+    <MESSAGE value="correct debug errors." />
+    <MESSAGE value="before cannot import name InstanceSet from InstanceSet error" />
+    <MESSAGE value="rewritten in python some classes" />
+    <MESSAGE value="before fix the error:Unexpected error:'ParseParameters' object has no attribute 'get'" />
+    <MESSAGE value="ParseParameters' object has no attribute 'get' still" />
+    <MESSAGE value="need to fix Attribute.py for next step" />
+    <MESSAGE value="Unexpected error in readSet of InstanceSet class :'NoneType' object is not subscriptable" />
+    <MESSAGE value="need to work at readClassificationSet() in MyDataSet.py" />
+    <MESSAGE value="file name repeated for 2 times" />
+    <MESSAGE value="in initStatisticas has the class number already" />
+    <MESSAGE value="fixed the validation file missing problem" />
+    <MESSAGE value="finished with exit code 1" />
+    <MESSAGE value="no error ,but result is wrong" />
+    <MESSAGE value="read parameters are all correct" />
+    <MESSAGE value="no error , but need to analysis the result." />
+    <MESSAGE value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
+    <option name="LAST_COMMIT_MESSAGE" value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Instance.py</url>
+          <line>373</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="33" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>confFile</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/iris/iris-10-1tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/iris/iris-10-3tra.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/iris/iris-10-4tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/wine/wine-10-4tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/wine/wine-10-5tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/wine/wine-10-4tra.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/wine/wine-10-2tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/wine/wine-10-6tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/wine/wine-10-1tra.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/scripts/Fuzzy-FARCHD-C/iris/config2s0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/iris/iris-10-1tra.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/scripts/Fuzzy-FARCHD-C/iris/config1s0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/config0s0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="46" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/banana.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/iris/iris-10-2tra.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2695">
+          <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/RuleBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="92" column="41" lean-forward="false" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/datasets/iris/iris-10-2tst.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="2057" column="108" lean-forward="false" selection-start-line="2057" selection-start-column="108" selection-end-line="2057" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result0s0.tra">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result0s0.tst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result0s0e0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result0s0e1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result1s0.tra">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result1s0.tst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result1s0e0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result1s0e1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result2s0.tra">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result2s0.tst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result2s0e0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result9s0e1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result9s0e0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result9s0.tst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/result9s0.tra">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/rules.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simpleTest/results/Fuzzy-FARCHD-C.iris/time.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/ParseParameters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Fuzzy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="59" column="46" lean-forward="false" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/DataBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2507">
+          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/ErrorInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/FormatErrorKeeper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Fuzzy_Chi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="88" column="56" lean-forward="false" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/Attributes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="685" column="29" lean-forward="true" selection-start-line="685" selection-start-column="29" selection-end-line="685" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/MyDataSet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="203" column="44" lean-forward="false" selection-start-line="203" selection-start-column="37" selection-end-line="203" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="457" column="8" lean-forward="false" selection-start-line="457" selection-start-column="8" selection-end-line="457" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/InstanceParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="127" column="8" lean-forward="false" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/InstanceSet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="222" column="50" lean-forward="false" selection-start-line="222" selection-start-column="50" selection-end-line="222" selection-end-column="50" />
+          <folding>
+            <element signature="e#1943#2003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/Attribute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="461" column="9" lean-forward="true" selection-start-line="461" selection-start-column="9" selection-end-line="461" selection-end-column="9" />
+          <folding>
+            <element signature="e#2093#2098#0" expanded="false" />
+            <element signature="e#2506#2511#0" expanded="false" />
+            <element signature="e#2725#2730#0" expanded="false" />
+            <element signature="e#2862#2867#0" expanded="false" />
+            <element signature="e#2941#2946#0" expanded="false" />
+            <element signature="e#3020#3025#0" expanded="false" />
+            <element signature="e#3163#3168#0" expanded="false" />
+            <element signature="e#3282#3287#0" expanded="false" />
+            <element signature="e#3387#3392#0" expanded="false" />
+            <element signature="e#3528#3533#0" expanded="false" />
+            <element signature="e#3602#3607#0" expanded="false" />
+            <element signature="e#3927#3932#0" expanded="false" />
+            <element signature="e#4073#4078#0" expanded="false" />
+            <element signature="e#4162#4167#0" expanded="false" />
+            <element signature="e#4247#4252#0" expanded="false" />
+            <element signature="e#4329#4334#0" expanded="false" />
+            <element signature="e#5382#5387#0" expanded="false" />
+            <element signature="e#5704#5716#0" expanded="false" />
+            <element signature="e#6471#6490#0" expanded="false" />
+            <element signature="e#8575#8594#0" expanded="false" />
+            <element signature="e#8786#8803#0" expanded="false" />
+            <element signature="e#9461#9481#0" expanded="false" />
+            <element signature="e#9993#10018#0" expanded="false" />
+            <element signature="e#10479#10496#0" expanded="false" />
+            <element signature="e#12837#12858#0" expanded="false" />
+            <element signature="e#13745#13772#0" expanded="false" />
+            <element signature="e#14831#14836#0" expanded="false" />
+            <element signature="e#15028#15046#0" expanded="false" />
+            <element signature="e#15269#15295#0" expanded="false" />
+            <element signature="e#15617#15641#0" expanded="false" />
+            <element signature="e#15845#15870#0" expanded="false" />
+            <element signature="e#16170#16190#0" expanded="false" />
+            <element signature="e#16580#16604#0" expanded="false" />
+            <element signature="e#17016#17047#0" expanded="false" />
+            <element signature="e#17064#17065#0" expanded="false" />
+            <element signature="e#17295#17317#0" expanded="false" />
+            <element signature="e#18821#18834#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Help_Classes/Instance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-894">
+          <caret line="355" column="57" lean-forward="true" selection-start-line="355" selection-start-column="57" selection-end-line="355" selection-end-column="57" />
+          <folding>
+            <element signature="e#1547#1591#0" expanded="true" />
+            <element signature="e#16583#17410#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
