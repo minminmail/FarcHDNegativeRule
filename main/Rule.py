@@ -163,8 +163,8 @@ class Rule:
             classes_sum[train.getOutputAsIntegerWithPos(i)] = classes_sum[train.getOutputAsIntegerWithPos(i)] + comp
             total = total + comp
 
-        sum = (total - classes_sum[self.class_value]) / (train.getnClasses() - 1.0)
-        self.weight = (classes_sum[self.class_value] - sum) / total
+        sum_value = (total - classes_sum[self.class_value]) / (train.getnClasses() - 1.0)
+        self.weight = (classes_sum[self.class_value] - sum_value) / total
 
     # * Penalized Certainty Factor weight IV (by Ishibuchi)
     # * @param train myDataset training dataset
@@ -201,10 +201,10 @@ class Rule:
                 contador_value = contador_value + 1
 
         if contador_value == len(rule.antecedent):
-            if self.class_value != rule.clas:  # Comparison of the rule weights
+            if self.class_value != rule.class_value:  # Comparison of the rule weights
                 if self.weight < rule.weight:
                     # Rule Update
-                    self.class_value = rule.clas
+                    self.class_value = rule.class_value
                     self.weight = rule.weight
 
             return True

@@ -204,7 +204,7 @@ class InstanceSet:
                     new_data_lines.append(line)
             print("*********  There are : " + str(len(new_data_lines)) + " In new Data lines ********* ")
             for line in new_data_lines :
-                if(new_data_lines is not None):
+                if new_data_lines is not None:
                     print( "Data line: " + str(line))
                     newInstance = Instance()
                     print("tempSet that pass to setThreeParameters is: " + str(len(tempSet)))

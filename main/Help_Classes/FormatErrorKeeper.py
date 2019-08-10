@@ -1,4 +1,3 @@
-
 # /***********************************************************************
 #
 # 	This file is part of KEEL-software, the Data Mining tool for regression,
@@ -44,48 +43,46 @@
 #  * @version keel0.1
 #  */
 
-class FormatErrorKeeper :
+class FormatErrorKeeper:
+    #
+    # * A vector where all the errors are stored
+    # */
 
-
- #
- # * A vector where all the errors are stored
- # */
-
-    __errors=[]
+    __errors = []
 
     # '''
     #  * Creates a new instance of FormatErrorKeeper
     # '''
     def __init__(self):
-          self.__errors = []
-      #//end FormatErrorKeeper
+        self.__errors = []
 
+    # //end FormatErrorKeeper
 
     # '''
     #  * Adds one error
     #  * @param er is the Error to be added.
     # '''
-    def setError(self,err):
+    def setError(self, err):
         self.__errors.append(err)
-      #end setError
 
+    # end setError
 
+    # * Return the information about one error.
+    # * @param i is the error that is wanted to be returned.
+    # * @return an ErrorInfo object with the error information.
 
-     # * Return the information about one error.
-     # * @param i is the error that is wanted to be returned.
-     # * @return an ErrorInfo object with the error information.
-
-    def getError(self,i):
+    def getError(self, i):
         return self.__errors[i]
-      #end ErrorInfo
 
+    # end ErrorInfo
 
-     # * Returns the number of errors.
-     # * @return an int with the number of errors.
+    # * Returns the number of errors.
+    # * @return an int with the number of errors.
 
     def getNumErrors(self):
-          return len(self.__errors)
-      #end getNumErrors
+        return len(self.__errors)
+
+    # end getNumErrors
     #
     # '''
     #  * It does return all the errors
@@ -93,13 +90,11 @@ class FormatErrorKeeper :
     # '''
     def getAllErrors(self):
         return self.__errors
-      #end getAllErrors
+    # end getAllErrors
 
     # '''
     #  * Initializes the error vector
     # '''
 
-
-      #end init
-     #end Class FormatErrorKeeper
-
+    # end init
+    # end Class FormatErrorKeeper

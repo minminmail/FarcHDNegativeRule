@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="format files">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/ErrorInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/ErrorInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/FormatErrorKeeper.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/FormatErrorKeeper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/banana.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0.tra" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0.tst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -293,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539642702251</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="format files">
+      <created>1565459696153</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1565459696153</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -337,35 +360,36 @@
     <MESSAGE value="read parameters are all correct" />
     <MESSAGE value="no error , but need to analysis the result." />
     <MESSAGE value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
-    <option name="LAST_COMMIT_MESSAGE" value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
+    <MESSAGE value="format files" />
+    <option name="LAST_COMMIT_MESSAGE" value="format files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/Help_Classes/Instance.py</url>
-          <line>373</line>
+          <line>377</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/InstanceSet.py</url>
-          <line>181</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/InstanceSet.py</url>
-          <line>174</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
-          <line>307</line>
+          <line>297</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/InstanceSet.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="34" />
+          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
+          <line>198</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
+          <line>202</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

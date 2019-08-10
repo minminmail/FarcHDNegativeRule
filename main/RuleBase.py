@@ -143,7 +143,7 @@ class RuleBase:
                 cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + " AND "
             j = j + 1
             cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + ": " + str(
-                self.classes[rule.clas]) + " with Rule Weight: " + str(rule.weight) + "\n"
+                self.classes[rule.class_value]) + " with Rule Weight: " + str(rule.weight) + "\n"
         print("RuleBase cadena_string is:" + cadena_string)
         return cadena_string
 
@@ -179,7 +179,7 @@ class RuleBase:
             produc *= rule.weight
             if produc > max_value:
                 max_value = produc
-                class_value = rule.clas
+                class_value = rule.class_value
         return class_value
 
     # * Additive Combination FRM
@@ -193,7 +193,7 @@ class RuleBase:
             rule = self.ruleBase[i]
             produc = rule.compatibility(example)
             produc *= rule.weight
-            if rule.clas > (len(class_degrees) - 1):
+            if rule.class_value > (len(class_degrees) - 1):
                 aux = [0.0 for x in range(len(class_degrees))]
                 for j in range(0, len(aux)):
                     aux[j] = class_degrees[j]
@@ -202,7 +202,7 @@ class RuleBase:
                 for j in range(0, len(aux)):
                     class_degrees[j] = aux[j]
 
-            class_degrees[rule.clas] += produc
+            class_degrees[rule.class_value] += produc
 
         max_value = 0.0
         for l in range(0, len(class_degrees)):
