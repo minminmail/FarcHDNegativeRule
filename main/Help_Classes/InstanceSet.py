@@ -57,7 +57,8 @@ from Help_Classes.Attributes import Attributes
 from Help_Classes.InstanceAttributes import InstanceAttributes
 from Help_Classes.Instance import Instance
 from Help_Classes.ErrorInfo import ErrorInfo
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
+
 
 class InstanceSet:
 
@@ -99,10 +100,9 @@ class InstanceSet:
     # /////////////////////////////////////////////////////////////////////////////
 
     # It instances a new instance of InstanceSet
-    data_folder = Path("D:/pythonAlgorithms/PythonChi/Chi_RW/main/simpleTest/datasets/iris/")
+    data_folder = PureWindowsPath('C:/phd_algorithms/chi-scikit-negative-rules-tests/few_disjuncts_2')
     file_to_open= None
     data_lines=None
-
 
     def __init__(self):
         print("In __init__ method in InstanceSet.")

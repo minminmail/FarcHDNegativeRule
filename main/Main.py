@@ -43,7 +43,7 @@ from pathlib import Path
 
 class Main :
 
-    config_files_folder=Path("c:/pythonAlgorithms/PythonChi/Chi_RW/main/simpleTest/scripts/Chi-RW-C/iris")
+    config_files_folder=Path("C:\phd_algorithms\chi-scikit-negative-rules-tests\few_disjuncts_2")
     file_to_open = None
        # Default Constructor
 

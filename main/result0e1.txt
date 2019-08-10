@@ -1,0 +1,6 @@
+@Number of rules: 4
+
+1: feature1 IS L_0 AND feature2 IS L_1: 1 with Rule Weight: 0.40785471083683394
+2: feature1 IS L_0 AND feature2 IS L_0: 1 with Rule Weight: 0.5314227804905316
+3: feature1 IS L_1 AND feature2 IS L_1: 2 with Rule Weight: 0.24215480715170346
+4: feature1 IS L_1 AND feature2 IS L_0: 2 with Rule Weight: 0.15434764907782308
