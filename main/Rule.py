@@ -30,7 +30,6 @@
 import Fuzzy_Chi
 from Fuzzy import Fuzzy
 
-
 # * <p>This class contains the structure of a Fuzzy Rule</p>
 # *
 # * @author Written by Alberto Fern谩ndez (University of Granada) 29/10/2007

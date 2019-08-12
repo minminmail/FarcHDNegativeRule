@@ -124,8 +124,9 @@ class RuleBase:
 
                 print("Variable " + str(i))
                 exit(1)
-
-            ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)
+            print(" The max_value is : " + str(max_value))
+            print(" ,the j value is : " + str(j))
+            ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
         return ruleInstance
 
     # * It prints the rule base into an string
