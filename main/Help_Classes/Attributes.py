@@ -224,7 +224,7 @@ class Attributes:
                 stopPos = i
                 break
 
-        if (stopPos == size):
+        if stopPos == size:
             return None
         return attribute
 
@@ -235,7 +235,7 @@ class Attributes:
     #      * @return an array with all attributes
     #  */
     def getAttributes(self):
-        if (len(self.attributes) == 0):
+        if len(self.attributes) == 0:
             return None
 
         attr = [Attribute() for x in range(0, len(self.attributes))]
@@ -283,10 +283,10 @@ class Attributes:
         aux = "@inputs "
         ending = ","
         for i in range(0, len(self.inputAttr)):
-            if (i == len(self.inputAttr) - 1):
+            if i == len(self.inputAttr) - 1:
                 ending = ""
             attribute = self.inputAttr[i]
-            aux += (attribute).getName() + ending
+            aux += attribute.getName() + ending
         return aux
 
     # end getInputHeader
@@ -344,7 +344,7 @@ class Attributes:
         aux = "@outputs "
         ending = ","
         for i in range(0, len(self.outputAttr)):
-            if (i == len(self.outputAttr) - 1):
+            if i == len(self.outputAttr) - 1:
                 ending = " "
             aux = aux + self.outputAttr[i].getName() + ending
 
@@ -374,7 +374,7 @@ class Attributes:
     #  *
     #  */
     def getUndefinedAttribute(self, pos):
-        if (pos < 0 or pos >= len(self.undefinedAttr)):
+        if pos < 0 or pos >= len(self.undefinedAttr):
             return None
         return self.undefinedAttr[pos]
 
@@ -385,7 +385,7 @@ class Attributes:
     #      * @return all the undefined attributes
     #  */
     def getUndefinedAttributes(self):
-        if (len(self.undefinedAttr) == 0):
+        if len(self.undefinedAttr) == 0:
             return None
         attr = [Attribute() for x in range(0, len(self.undefinedAttr))]
         for i in range(0, attr.length):
@@ -418,11 +418,11 @@ class Attributes:
 
     def getAttributeByPos(self, pos):
         lengthAtt = len(self.attributes)
-        print("The size of attribute array is :" + str(lengthAtt))
-        print("The pos given is :" + str(pos))
-        if (pos < lengthAtt):
+        #print("The size of attribute array is :" + str(lengthAtt))
+        #print("The pos given is :" + str(pos))
+        if pos < lengthAtt:
             attStr = self.attributes[pos]
-            print("Return :" + str(attStr))
+            # print("Return :" + str(attStr))
             return attStr
         else:
             print(" Return None !!! pos is bigger than array length, will cause out of index error .")
@@ -480,7 +480,7 @@ class Attributes:
         restAt = []
         for i in range(0, len(self.attributes)):
             attName = self.attributes[i].getName()
-            if (attName not in vector):
+            if attName not in vector:
                 restAt.append(attName)
 
         return restAt
@@ -511,16 +511,16 @@ class Attributes:
 
             if attName in inAttNames:
                 print("attName in inAttNames")
-                if (not self.hasSameAttributeName(attName, self.inputAttr)):
+                if not self.hasSameAttributeName(attName, self.inputAttr):
                     print("add in input attribute list, attName is:" + attName)
                     att.setDirectionAttribute(Attribute.INPUT)
                     self.inputAttr.append(self.attributes[i])
-            elif (attName in outAttNames):
-                if (not self.hasSameAttributeName(attName, self.outputAttr)):
+            elif attName in outAttNames:
+                if not self.hasSameAttributeName(attName, self.outputAttr):
                     print("add in out attribute list, attName is:" + attName)
                     att.setDirectionAttribute(Attribute.OUTPUT)
                     self.outputAttr.append(self.attributes[i])
-            elif (not self.hasSameAttributeName(attName, self.undefinedAttr)):
+            elif not self.hasSameAttributeName(attName, self.undefinedAttr):
                 print("add in undefinedAttr attribute list, attName is:" + attName)
                 self.undefinedAttr.append(self.attributes[i])
 
@@ -600,7 +600,7 @@ class Attributes:
 
         for i in range(0, len(self.outputAttr)):
             name = self.outputAttr[i].getName()
-            if (name not in outputNames):
+            if name not in outputNames:
                 return False
 
         return True
@@ -639,11 +639,11 @@ class Attributes:
     #  */
     def removeAttribute(self, inputAtt, whichAtt):
         atToDel = None
-        if (inputAtt and (whichAtt >= len(self.inputAttr) or whichAtt < 0)):
+        if inputAtt and (whichAtt >= len(self.inputAttr) or whichAtt < 0):
             return False
-        if (not inputAtt and (whichAtt >= len(self.outputAttr) or whichAtt < 0)):
+        if not inputAtt and (whichAtt >= len(self.outputAttr) or whichAtt < 0):
             return False
-        if (inputAtt):
+        if inputAtt:
             # inputAttribute
             atToDel = self.inputAttr[whichAtt]
             atToDel.setDirectionAttribute(Attribute.DIR_NOT_DEF)
@@ -747,7 +747,7 @@ class Attributes:
     #  * It does finish the statistics
     #  */
     def finishStatistics(self):
-        if (len(self.outputAttr) != 1):
+        if len(self.outputAttr) != 1:
             return
 
         for i in range(0, len(self.inputAttr)):

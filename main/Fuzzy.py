@@ -62,9 +62,9 @@ class Fuzzy:
 
         if X < self.x1:
             # print("X <  self.x1")
-            return ((X - self.x0) * (self.y / (self.x1 - self.x0)))
+            return (X - self.x0) * (self.y / (self.x1 - self.x0))
 
-        if (X > self.x1):
+        if X > self.x1:
             # print("X > self.x1")
             return (self.x3 - X) * (self.y / (self.x3 - self.x1))
 

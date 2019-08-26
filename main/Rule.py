@@ -30,6 +30,7 @@
 import Fuzzy_Chi
 from Fuzzy import Fuzzy
 
+
 # * <p>This class contains the structure of a Fuzzy Rule</p>
 # *
 # * @author Written by Alberto Fern谩ndez (University of Granada) 29/10/2007
@@ -181,7 +182,7 @@ class Rule:
         # Computation of the sum by classes */
         for i in range(0, train_size):
             comp = self.compatibility(train.getExample(i))
-            print("comp = " + str(comp))
+            # print("comp = " + str(comp))
             classes_sum[train.getOutputAsIntegerWithPos(i)] = classes_sum[train.getOutputAsIntegerWithPos(i)] + comp
             total = total + comp
 

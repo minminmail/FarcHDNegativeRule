@@ -56,8 +56,8 @@ class MyDataSet:
     #    * @return double[] the attributes of the given example
     # '''
     def getExample(self, pos):
-        print(" In getExample, len(self.__X) = " + str(len(self.__X)) + ", pos = " + str(
-            pos) + "  ," + "self.__X[pos] ==" + str(self.__X[pos]))
+        #print(" In getExample, len(self.__X) = " + str(len(self.__X)) + ", pos = " + str(
+        #   pos) + "  ," + "self.__X[pos] ==" + str(self.__X[pos]))
         return self.__X[pos]
 
     # * Returns the output of the data-set as integer values
@@ -187,7 +187,7 @@ class MyDataSet:
             print("Inside readClassificationSet, datasetFile :" + str(datasetFile))
             print("train is :" + str(train))
             print("object instanceSet is :" + str(self.__instanceSet))
-            if (self.__instanceSet is None):
+            if self.__instanceSet is None:
                 print("self.__instanceSet is Null")
             else:
                 print("self.__instanceSet is not None, train = " + str(train))
@@ -201,7 +201,7 @@ class MyDataSet:
                 print("In readClassificationSet , self.__nVars is : " + str(self.__nVars))
 
                 # outputIntegerheck that there is only one output variable
-                if (Attributes.getOutputNumAttributes(Attributes) > 1):
+                if Attributes.getOutputNumAttributes(Attributes) > 1:
                     outAttrs = Attributes.getOutputAttributes(Attributes)
                     print("Output Attributes number is bigger than 1")
                     for outAtt in outAttrs:
@@ -213,7 +213,7 @@ class MyDataSet:
                     print("All outputs but the first one will be removed")
                     exit(1)
                 noOutputs = False
-                if (Attributes.getOutputNumAttributes(Attributes) < 1):
+                if Attributes.getOutputNumAttributes(Attributes) < 1:
                     print("This algorithm can not process datasets without outputs")
                     print("Zero-valued output generated")
                     noOutputs = True
@@ -254,14 +254,14 @@ class MyDataSet:
                     inst = self.__instanceSet.getInstance(i)
                     for j in range(0, nInputLength):
                         input_Numeric_Value = self.__instanceSet.getInputNumericValue(i, j)
-                        print("self.__X [i] = " + str(i) + ",[j] = " + str(j) + ",input_Numeric_Value:" + str(
-                            input_Numeric_Value))
+                        # print("self.__X [i] = " + str(i) + ",[j] = " + str(j) + ",input_Numeric_Value:" + str(
+                          #  input_Numeric_Value))
 
                         self.__X[i][j] = input_Numeric_Value  # inst.getInputRealValues(j);
-                        print("after get self.__X[i][j]")
+                        # print("after get self.__X[i][j]")
                         self.__missing[i][j] = inst.getInputMissingValuesWithPos(j)
-                        print("after self.__missing[i][j]")
-                        if (self.__missing[i][j]):
+                        # print("after self.__missing[i][j]")
+                        if self.__missing[i][j]:
                             self.__X[i][j] = self.emin[j] - 1
 
                     if noOutputs:
@@ -274,7 +274,7 @@ class MyDataSet:
                         print("self.__outputInteger[" + str(i) + "] = " + str(self.__outputInteger[i]))
                         self.__output[i] = self.__instanceSet.getOutputNominalValue(i, 0)
 
-                    if (self.__outputInteger[i] > self.__nClasses):
+                    if self.__outputInteger[i] > self.__nClasses:
                         self.__nClasses = self.__outputInteger[i]
 
                 self.__nClasses = self.__nClasses + 1
@@ -304,7 +304,7 @@ class MyDataSet:
             print("In readRegressionSet , self.__nVars is : " + str(self.__nVars))
 
             # outputIntegerheck that there is only one output variable
-            if (Attributes.getOutputNumAttributes(Attributes) > 1):
+            if Attributes.getOutputNumAttributes(Attributes) > 1:
                 print("Out put attribute: ")
                 outPutAttHeader = Attributes.getOutputAttributesHeader(Attributes)
                 print(outPutAttHeader)
@@ -313,7 +313,7 @@ class MyDataSet:
                 exit(1)
 
             noOutputs = False
-            if (Attributes.getOutputNumAttributes(Attributes) < 1):
+            if Attributes.getOutputNumAttributes(Attributes) < 1:
                 print("This algorithm can not process datasets without outputs")
                 print("Zero-valued output generated")
                 noOutputs = True
@@ -338,17 +338,17 @@ class MyDataSet:
                 for j in range(0, self.__nInputs):
                     self.__X[i][j] = self.__instanceSet.getInputNumericValue(i, j)  # inst.getInputRealValues(j);
                     self.__missing[i][j] = inst.getInputMissingValues(j)
-                    if (self.__missing[i][j]):
+                    if self.__missing[i][j]:
                         self.__X[i][j] = self.__emin[j] - 1
 
-                if (noOutputs):
+                if noOutputs:
                     self.__outputReal[i] = 0
                     self.__outputInteger[i] = 0
 
                 else:
                     self.__outputReal[i] = self.__instanceSet.getOutputNumericValue(i, 0)
                     self.__outputInteger[i] = int(self.__outputReal[i])
-        except OSError  as error:
+        except OSError as error:
             print("OS error: {0}".format(error))
         except Exception as otherException:
             print("DBG: Exception in readSet:", sys.exc_info()[0])
@@ -401,13 +401,13 @@ class MyDataSet:
     #    * @return boolean True if it has some real values, else false.
 
     def hasNumericalAttributes(self):
-        return (Attributes.hasIntegerAttributes(self) or Attributes.hasRealAttributes(self))
+        return Attributes.hasIntegerAttributes(self) or Attributes.hasRealAttributes(self)
 
     #    * It checks if the data-set has any missing value
     #    * @return boolean True if it has some missing values, else false.
 
     def hasMissingAttributes(self):
-        return (self.sizeWithoutMissing() < self.getnData())
+        return self.sizeWithoutMissing() < self.getnData()
 
     #    * It return the size of the data-set without having account the missing values
     #    * @return int the size of the data-set without having account the missing values
@@ -421,9 +421,9 @@ class MyDataSet:
                 if self.isMissing(i, j):
                     print("It is missing value is i = " + str(i) + ",j==" + str(j))
                     break
-            j = j + 1;
+            j = j + 1
             print("sizeWithoutMissing,  i = " + str(i) + ",j==" + str(j))
-            if (j == self.__nInputs):
+            if j == self.__nInputs:
                 tam = tam + 1
         print("tam=" + str(tam))
         return tam
@@ -453,35 +453,35 @@ class MyDataSet:
                 for j in range(0, dataNum):
                     if not self.isMissing(j, i):
                         self.__average[i] = self.__average[i] + self.__X[j][i]
-                if (dataNum != 0):
+                if dataNum != 0:
                     self.__average[i] = self.__average[i] / dataNum
             average_length = len(self.__average)
             self.__average[average_length - 1] = 0
             for j in range(0, len(self.__outputReal)):
                 self.__average[average_length - 1] = self.__average[average_length - 1] + self.__outputReal[j]
-            if (len(self.__outputReal) != 0):
+            if len(self.__outputReal) != 0:
                 self.__average[average_length - 1] = self.__average[average_length - 1] / len(self.__outputReal)
 
             for i in range(0, inputNum):
-                sum = 0.0
+                sum_value = 0.0
                 for j in range(0, dataNum):
                     if not self.isMissing(j, i):
                         print("self.isMissing(j, i)==False")
-                        sum = sum + (self.__X[j][i] - self.__average[i]) * (self.__X[j][i] - self.__average[i])
+                        sum_value = sum_value + (self.__X[j][i] - self.__average[i]) * (self.__X[j][i] - self.__average[i])
 
-                if (dataNum != 0):
+                if dataNum != 0:
                     print("dataNum != 0" + " , dataNum=" + str(dataNum))
-                    sum = sum / dataNum
-                self.__stdev[i] = math.sqrt(sum)
+                    sum_value = sum_value / dataNum
+                self.__stdev[i] = math.sqrt(sum_value)
 
-            sum = 0.0
+            sum_value = 0.0
             for j in range(0, len(self.__outputReal)):
-                sum += (self.__outputReal[j] - self.__average[average_length - 1]) * (
+                sum_value += (self.__outputReal[j] - self.__average[average_length - 1]) * (
                             self.__outputReal[j] - self.__average[average_length - 1])
-            if (len(self.__outputReal) != 0):
-                sum /= len(self.__outputReal)
-            self.__stdev[len(self.__stdev) - 1] = math.sqrt(sum)
-            print("sum is :" + str(sum) + "  self.__stdev :" + str(self.__stdev))
+            if len(self.__outputReal) != 0:
+                sum_value /= len(self.__outputReal)
+            self.__stdev[len(self.__stdev) - 1] = math.sqrt(sum_value)
+            print("sum is :" + str(sum_value) + "  self.__stdev :" + str(self.__stdev))
         except Exception as error:
             print("Exception in computeStatistics : " + str(error))
 
@@ -509,7 +509,7 @@ class MyDataSet:
 
         for i in range(0, dataNum):
             integerInLoop = self.__outputInteger[i]
-            print("outputInteger[" + str(i) + "]" + str(integerInLoop))
+            # print("outputInteger[" + str(i) + "]" + str(integerInLoop))
             self.__instancesCl[integerInLoop] = self.__instancesCl[integerInLoop] + 1
 
     #     *It returns the number of examples for a given class
@@ -573,7 +573,7 @@ class MyDataSet:
             print("self.getnInputs()" + str(self.getnInputs()) + " i = " + str(i))
             attHere = Attributes.getInputAttribute(Attributes, i)
             print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
-            if (attHere.getNumNominalValues() > 0):
+            if attHere.getNumNominalValues() > 0:
                 rangos[i][0] = 0.0
                 rangos[i][1] = attHere.getNumNominalValues() - 1
                 print(" attHere.getNumNominalValues() > 0,rangos[" + str(i) + "][0]==" + str(

@@ -136,10 +136,10 @@ class Instance:
             # Looking if the attribute is an input, an output or it's undefined
 
             curAt = Attributes.getAttributeByPos(Attributes, count)
-            print("inside setThreeParameters curAtis :" + str(curAt))
+            # print("inside setThreeParameters curAtis :" + str(curAt))
             directionAttr = curAt.getDirectionAttribute()
-            print("inside setThreeParameters directionAttr :" + str(directionAttr))
-            if (directionAttr == Attribute.INPUT):
+            # print("inside setThreeParameters directionAttr :" + str(directionAttr))
+            if directionAttr == Attribute.INPUT:
                 print("directionAttr==Attribute.INPUT")
                 inputOutput = Instance.ATT_INPUT
                 curCount = inAttCount
@@ -147,10 +147,10 @@ class Instance:
                 inAttCount = inAttCount + 1
                 print("inAttCount is : " + str(inAttCount))
 
-            elif (directionAttr == Attribute.OUTPUT):
+            elif directionAttr == Attribute.OUTPUT:
                 print("directionAttr==Attribute.OUTPUT")
                 inputOutput = Instance.ATT_OUTPUT
-                if (curAt.getType() == Attribute.NOMINAL):
+                if curAt.getType() == Attribute.NOMINAL:
                     print("curAt.getType() == Attribute.NOMINAL")
                     currentClass = curAt.convertNominalValue(att)
 
@@ -175,7 +175,7 @@ class Instance:
             # end of the while
 
         # Checking if the instance doesn't have the same number of attributes than defined.
-        if (count != Attributes.getNumAttributes(Attributes)):
+        if count != Attributes.getNumAttributes(Attributes):
             print("count != Attributes.getNumAttributes(Attributes)......")
             er = ErrorInfo(ErrorInfo.BadNumberOfValues, instanceNum, InstanceParser.lineCounter, 0, 0, self.isTrain, (
                     "Instance " + defStr + " has a different number of attributes than defined\n   > Number of attributes defined: " + Attributes.getNumAttributes() + "   > Number of attributes read:    " + count))
@@ -188,13 +188,13 @@ class Instance:
             length = int(len(atts))
             for i in range(0, length):
                 if not self.__missingValues[Instance.ATT_INPUT][i]:
-                    if ((atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes() == 1)):
+                    if (atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes() == 1):
                         atts[i].increaseClassFrequency(currentClass, self.__nominalValues[Instance.ATT_INPUT][i])
                     elif ((atts[i].getType() == Attribute.INTEGER or atts[i].getType() == Attribute.REAL) and
-                          self.__missingValues[Instance.ATT_INPUT][i] == False):
+                          not self.__missingValues[Instance.ATT_INPUT][i]):
                         atts[i].addInMeanValue(currentClass, self.__realValues[Instance.ATT_INPUT][i])
 
-        print("setThreeParameters begin...... ")
+        # print("setThreeParameters finished...... ")
 
     # end Instance
 
@@ -251,7 +251,7 @@ class Instance:
         self.anyMissingValue[0] = False
         self.anyMissingValue[1] = False
         self.anyMissingValue[2] = False
-        if (instanceAttrs == None):
+        if instanceAttrs is None:
             self.__numInputAttributes = Attributes.getInputNumAttributes()
             self.__numOutputAttributes = Attributes.getOutputNumAttributes()
             self.__numUndefinedAttributes = Attributes.getNumAttributes() - (
@@ -287,7 +287,7 @@ class Instance:
             self.__missingValues[2][i] = False
 
         # take the correct set of Attributes
-        if (instanceAttrs != None):
+        if instanceAttrs is not None:
             allat = instanceAttrs.getAttributes()
         else:
             allat = Attributes.getAttributes()
@@ -297,9 +297,9 @@ class Instance:
         for i in range(0, len(values)):
             curAt = allat[i]
             inOut = 2
-            if (curAt.getDirectionAttribute() == Attribute.INPUT):
+            if curAt.getDirectionAttribute() == Attribute.INPUT:
                 inOut = 0
-            elif (curAt.getDirectionAttribute() == Attribute.OUTPUT):
+            elif curAt.getDirectionAttribute() == Attribute.OUTPUT:
                 inOut = 1
 
             # is it missing?
@@ -339,17 +339,17 @@ class Instance:
                     self.__intNominalValues[inOut][outHere] = int(values[i])
                     self.__realValues[inOut][outHere] = values[i]
                     self.__nominalValues[inOut][outHere] = curAt.getNominalValue(int(values[i]))
-                    outHere += 1
+                    outHere = outHere + 1
                 else:
                     self.__intNominalValues[inOut][undef] = int(values[i])
                     self.__realValues[inOut][undef] = values[i]
                     self.__nominalValues[inOut][undef] = curAt.getNominalValue(int(values[i]))
-                    undef += 1
+                    undef = undef + 1
 
     #
     # '''
     # /**
-    #  * It processes the read value for an attribute
+    #  * It processes the read value for an attribute, for example, convert class name into class category number
     #  * @param curAtt is the current attribute (the value read is from this attribute)
     #  * @param def is the whole String
     #  * @param inOut is an integer that indicates if the attribute is an input or an output attribute
@@ -383,10 +383,10 @@ class Instance:
         elif (Attributes.getAttributeByPos(Attributes,
                                            count).getType() == Attribute.INTEGER or Attributes.getAttributeByPos(
             Attributes, count).getType() == Attribute.REAL):
-            print("getType()==Attribute.INTEGER......")
+            print("getType()==Attribute.INTEGER or Real ......")
             try:
                 print("inOut is:" + str(inOut) + ", curCount is: " + str(curCount))
-                print("The length of self.__realValues column is:  " + str(len(self.__realValues[0])))
+                print("The length of self.__realValues[0] column is:  " + str(len(self.__realValues[0])))
                 self.__realValues[inOut][curCount] = float(att)
                 print("self.__realValues[" + str(inOut) + "][" + str(curCount) + "]=" + att)
             except  ValueError as valueError:
@@ -403,7 +403,7 @@ class Instance:
             # also checks if the attribute is defined (is an input or an output).
             if self.isTrain and inOut != 2:
                 print("self.isTrain and inOut != 2......")
-                if curAtt.getFixedBounds() and (curAtt.isInBounds(self.__realValues[inOut][curCount]) == False):
+                if curAtt.getFixedBounds() and (not curAtt.isInBounds(self.__realValues[inOut][curCount])):
                     error_info_3 = ErrorInfo(ErrorInfo.TrainNumberOutOfRange, instanceNum, InstanceParser.lineCounter,
                                              curCount, Attribute.INPUT + inOut, self.isTrain,
                                              ("ERROR READING TRAIN FILE. Value " + str(self.__realValues[inOut][
@@ -419,7 +419,7 @@ class Instance:
 
         elif Attributes.getAttributeByPos(Attributes, count).getType() == Attribute.NOMINAL:
             print("getType()==Attribute.NOMINAL......")
-            print("inOut" + str(inOut) + " , curCount: " + str(curCount))
+            print("inOut : " + str(inOut) + " , curCount: " + str(curCount))
             self.__nominalValues[inOut][curCount] = att
             # Testing special cases.
             if self.isTrain and inOut != 2:
@@ -432,7 +432,7 @@ class Instance:
                     curCount) + ",columnLength: " + str(columnLength))
                 nominalValue = self.__nominalValues[inOut][curCount]
                 print("nominalValue: " + str(nominalValue))
-                if curAtt.getFixedBounds() and curAtt.isNominalValue(nominalValue) == False:
+                if curAtt.getFixedBounds() and not curAtt.isNominalValue(nominalValue):
                     print("There are error_info_4!! ")
                     error_info_4 = ErrorInfo.set_Eight_Parameters(ErrorInfo, ErrorInfo.TrainNominalOutOfRange,
                                                                   instanceNum, InstanceParser.lineCounter, curCount,
@@ -469,8 +469,8 @@ class Instance:
     # It reserves all the memory necessary for this instance
 
     def initClassAttributes(self):
-        print("initClassAttributes begin......")
-        print("Length of self.__anyMissingValue  is : " + str(len(self.__anyMissingValue)))
+        # print("initClassAttributes begin......")
+        # print("Length of self.__anyMissingValue  is : " + str(len(self.__anyMissingValue)))
         self.__anyMissingValue = [False for x in range(3)]
         self.__anyMissingValue[0] = False
         self.__anyMissingValue[1] = False
@@ -483,26 +483,26 @@ class Instance:
         self.__nominalValues = ["" for x in range(3)]
         self.__realValues = [0.0 for x in range(3)]
         self.__missingValues = [False for x in range(3)]
-        print("Length of self.__numInputAttributes  is : " + str(self.__numInputAttributes))
-        print("Length of self.__numOutputAttributes  is : " + str(self.__numOutputAttributes))
-        print("Length of self.__numUndefinedAttributes  is : " + str(self.__numUndefinedAttributes))
+        # print("Length of self.__numInputAttributes  is : " + str(self.__numInputAttributes))
+        # print("Length of self.__numOutputAttributes  is : " + str(self.__numOutputAttributes))
+        # print("Length of self.__numUndefinedAttributes  is : " + str(self.__numUndefinedAttributes))
 
-        print("Length of self.__nominalValues  is : " + str(len(self.__nominalValues)))
+        # print("Length of self.__nominalValues  is : " + str(len(self.__nominalValues)))
         self.__nominalValues[0] = ["" for x in range(self.__numInputAttributes)]
         self.__nominalValues[1] = ["" for x in range(self.__numOutputAttributes)]
         self.__nominalValues[2] = ["" for x in range(self.__numUndefinedAttributes)]
-        print("Length of self.__intNominalValues  is : " + str(len(self.__intNominalValues)))
+        # print("Length of self.__intNominalValues  is : " + str(len(self.__intNominalValues)))
         self.__intNominalValues[0] = [0 for x in range(self.__numInputAttributes)]
         self.__intNominalValues[1] = [0 for x in range(self.__numOutputAttributes)]
         self.__intNominalValues[2] = [0 for x in range(self.__numUndefinedAttributes)]
-        print("Length of self.__realValues  is : " + str(len(self.__realValues)))
+        # print("Length of self.__realValues  is : " + str(len(self.__realValues)))
         self.__realValues[0] = [0.0 for x in range(self.__numInputAttributes)]
-        print("Length of self.__realValues[0]  is : " + str(self.__numInputAttributes))
+        # print("Length of self.__realValues[0],__numInputAttributes,  is : " + str(self.__numInputAttributes))
         self.__realValues[1] = [0.0 for x in range(self.__numOutputAttributes)]
-        print("Length of self.__realValues[1]  is : " + str(self.__numOutputAttributes))
+        # print("Length of self.__realValues[1] ,__numOutputAttributes, is : " + str(self.__numOutputAttributes))
         self.__realValues[2] = [0.0 for x in range(self.__numUndefinedAttributes)]
-        print("Length of self.__realValues[2]  is : " + str(self.__numUndefinedAttributes))
-        print("Length of self.__missingValues  is : " + str(len(self.__missingValues)))
+        # print("Length of self.__realValues[2] ,__numUndefinedAttributes, is : " + str(self.__numUndefinedAttributes))
+        # print("Length of self.__missingValues  is : " + str(len(self.__missingValues)))
         self.__missingValues[0] = [0.0 for x in range(self.__numInputAttributes)]
         self.__missingValues[1] = [0.0 for x in range(self.__numOutputAttributes)]
         self.__missingValues[2] = [0.0 for x in range(self.__numUndefinedAttributes)]
@@ -696,7 +696,7 @@ class Instance:
         try:
 
             print(" len(self.__realValues)= " + str(len(self.__realValues)))
-            if self.__realValues[0] != None:
+            if self.__realValues[0] is not None:
                 return self.__realValues[0]
             else:
                 return 0
@@ -932,7 +932,7 @@ class Instance:
 
     def setInputNumericValue(self, pos, value):
         at = Attribute(Attributes.getInputAttribute(pos))
-        if (at.getType() == Attribute.NOMINAL):
+        if at.getType() == Attribute.NOMINAL:
             return False
         else:
             if at.isInBounds(value):
@@ -1015,8 +1015,8 @@ class Instance:
 
     def setOutputNominalValue(self, pos, value):
         at = Attribute(Attributes.getOutputAttribute(pos))
-        if (at.getType() != Attribute.NOMINAL):
-            return False;
+        if at.getType() != Attribute.NOMINAL:
+            return False
         else:
             if at.convertNominalValue(value) != -1:
                 self.__nominalValues[1][pos] = value
@@ -1282,7 +1282,7 @@ class Instance:
         print("  > Inputs (" + self.__numInputAttributes + "): ")
 
         for i in range(0, self.__numInputAttributes):
-            if (self.__missingValues[Instance.ATT_INPUT][i]):
+            if self.__missingValues[Instance.ATT_INPUT][i]:
                 print("?")
 
             else:
@@ -1556,16 +1556,16 @@ class Instance:
         aux = ""
         ending = ","
         for i in range(0, self.__numInputAttributes):
-            if (i == self.__numInputAttributes - 1 and self.__numOutputAttributes == 0):
+            if i == self.__numInputAttributes - 1 and self.__numOutputAttributes == 0:
                 ending = ""
             instAttrType = instAttributes.getInputAttribute(i).getType()
-            if (instAttrType == Attribute.NOMINAL):
+            if instAttrType == Attribute.NOMINAL:
                 aux += self.__nominalValues[0][i]
 
-            if (instAttrType == Attribute.INTEGER):
+            if instAttrType == Attribute.INTEGER:
                 aux += str(int(self.__realValues[0][i]))
 
-            if (instAttrType == Attribute.REAL):
+            if instAttrType == Attribute.REAL:
                 aux += str(float(self.__realValues[0][i]))
 
         aux += ending

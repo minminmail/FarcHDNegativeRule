@@ -126,7 +126,7 @@ class Fuzzy_Chi:
         aux = str(parameters.getParameter(1)).lower()  # Computation of the compatibility degree
         print("parameter 1 aux is :" + str(aux))
         self.combinationType = self.PRODUCT
-        if (aux == "minimum"):
+        if aux == "minimum":
             self.combinationType = self.MINIMUM
         aux = str(parameters.getParameter(2)).lower()
         print("parameter 2 aux is :" + str(aux))
@@ -195,14 +195,14 @@ class Fuzzy_Chi:
             print("dataset.getnData()" + str(dataset.getnData()))
             for i in range(0, dataset.getnData()):
                 # for classification:
-                print("before classificationOutput in Fuzzy_Chi")
+                # print("before classificationOutput in Fuzzy_Chi")
                 classOut = self.classificationOutput(dataset.getExample(i))
-                print("before getOutputAsStringWithPos in Fuzzy_Chi")
+                # print("before getOutputAsStringWithPos in Fuzzy_Chi")
                 self.output = self.output + dataset.getOutputAsStringWithPos(i) + " " + classOut + "\n"
-                print("before getOutputAsStringWithPos in Fuzzy_Chi")
-                if (dataset.getOutputAsStringWithPos(i) == classOut):
+                # print("before getOutputAsStringWithPos in Fuzzy_Chi")
+                if dataset.getOutputAsStringWithPos(i) == classOut:
                     hits = hits + 1
-            print("before open file in Fuzzy_Chi")
+            # print("before open file in Fuzzy_Chi")
             file = open(filename, "w")
             file.write(output)
             file.close()

@@ -3,8 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="format all the files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ParseParameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ParseParameters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +40,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Help_Classes/Attributes.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Help_Classes/Attributes.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -324,7 +336,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -359,29 +373,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/Instance.py</url>
-          <line>377</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
           <line>297</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="40" />
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
+          <line>433</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>200</line>
-          <option name="timeStamp" value="41" />
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
+          <line>439</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>202</line>
-          <option name="timeStamp" value="42" />
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
+          <line>437</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
+          <line>436</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

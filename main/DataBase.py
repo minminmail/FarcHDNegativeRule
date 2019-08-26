@@ -112,9 +112,9 @@ class DataBase:
     #      */
     # '''
     def membershipFunction(self, i, j, X):
-        print("len(self.dataBase[0])" + str(len(self.dataBase)))
+        # print("len(self.dataBase[0])" + str(len(self.dataBase)))
         value = self.dataBase[i][j].setX(X)
-        print("Get value form Fuzzy setX is :" + str(value))
+        # print("Get value form Fuzzy setX is :" + str(value))
         return value
 
     # '''

@@ -48,20 +48,19 @@
 #  */
 
 class InstanceParser:
+    # /////////////////////////////////////////////////////////////////////////////
+    # ////////////////// ATTRIBUTES OF THE PARSER CLASS ///////////////////////////
+    # /////////////////////////////////////////////////////////////////////////////
+    #
+    # /**
+    #  * A Buffered Reader to the DB input file.
+    #  */
 
-   # /////////////////////////////////////////////////////////////////////////////
-   # ////////////////// ATTRIBUTES OF THE PARSER CLASS ///////////////////////////
-   # /////////////////////////////////////////////////////////////////////////////
-   #
-   # /**
-   #  * A Buffered Reader to the DB input file.
-   #  */
-
-   #
-   # /**
-   #  * A flag indicating if the DB is a train or a test DB. The difference between
-   #  * them is that a test DB doesn't modify any parameter definition.
-   #  */
+    #
+    # /**
+    #  * A flag indicating if the DB is a train or a test DB. The difference between
+    #  * them is that a test DB doesn't modify any parameter definition.
+    #  */
 
     __isTrain = None
     # It counts the attribute number.
@@ -84,12 +83,12 @@ class InstanceParser:
     #  */
     #
 
-    def __init__(self,fileName, _isTrain):
+    def __init__(self, fileName, _isTrain):
         try:
             print("In init method of InstanceParser begin......")
-            self.file = open(fileName,"r")
+            self.file = open(fileName, "r")
             print("In init of InstanceParser, set file =" + str(fileName))
-            #print(self.file.read())
+            # print(self.file.read())
             self.lineCounter = 0
         except Exception as error:
             print("The exception in init of InstanceParse is: " + format(error))
@@ -97,6 +96,7 @@ class InstanceParser:
 
         self.__isTrain = _isTrain
         self.__attributeCount = 0
+
     # end of Parser constructor
 
     #  * It returns all the header read in parseHeader.
@@ -123,37 +123,37 @@ class InstanceParser:
         return self.getLines()
 
     # end getInstance
-     # * It returns the number of attributes
-     # * @return an integer with the number of attributes.
+    # * It returns the number of attributes
+    # * @return an integer with the number of attributes.
     def getAttributeNum(self):
         return self.__attributeCount
 
-     # * This method reads one valid line of the file. So, it ignores the comments,
-     # * and empty lines.
-     # * @return a string with the new line read.
+    # * This method reads one valid line of the file. So, it ignores the comments,
+    # * and empty lines.
+    # * @return a string with the new line read.
 
     def getLines(self):
         try:
             file_first_line = None
 
-            print("In InstanceParser getLines method, the file is "+ str(self.file))
+            print("In InstanceParser getLines method, the file is " + str(self.file))
             file_strings = self.file.read()
-            file_lines=file_strings.splitlines()
+            file_lines = file_strings.splitlines()
 
-            line_Nuember =len(file_lines)
-            if(line_Nuember!=0):
-                print("file has "+ str(line_Nuember) + " lines")
+            line_Nuember = len(file_lines)
+            if line_Nuember != 0:
+                print("file has " + str(line_Nuember) + " lines")
             else:
                 print("file_lines is empty!!")
 
             for line in file_lines:
-                if ( (line !="" or line !=None) and not line.startswith("%")): # line is not empty
+                if (line != "" or line is not None) and not line.startswith("%"):  # line is not empty
                     self.lineCounter = self.lineCounter + 1
                     file_first_line = line
 
-            print("file_lines: "+ str(file_lines))
+            print("file_lines: " + str(file_lines))
             print("file_first_line: " + str(file_first_line))
-            print("In getLines, there are " + str(self.lineCounter) +" lines")
+            print("In getLines, there are " + str(self.lineCounter) + " lines")
 
         except Exception as error:
             print("Inside getLines of InstanceParser , Exception is: " + format(error))
@@ -167,7 +167,7 @@ class InstanceParser:
 
     def close(self):
         try:
-            print("close file, name is :"+str(self.file.name))
+            print("close file, name is :" + str(self.file.name))
             self.file.close()
         except IOError as ioError:
             print("Error: the instance parser could not be closed. Exiting now." + format(ioError))

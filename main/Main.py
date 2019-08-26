@@ -1,4 +1,3 @@
-
 # /***********************************************************************
 #
 # 	This file is part of KEEL-software, the Data Mining tool for regression,
@@ -31,58 +30,53 @@
 from ParseParameters import ParseParameters
 from Fuzzy_Chi import Fuzzy_Chi
 from os import listdir
-from os.path import isfile,join
+from os.path import isfile, join
 import sys
 from pathlib import Path
 
- # * <p>It reads the configuration file (data-set files and parameters) and launch the algorithm</p>
- # *
- # * @author Written by Alberto Fern谩ndez (University of Granada) 14/10/2007
- # * @version 1.0
- # * @since JDK1.5
 
-class Main :
+# * <p>It reads the configuration file (data-set files and parameters) and launch the algorithm</p>
+# *
+# * @author Written by Alberto Fern谩ndez (University of Granada) 14/10/2007
+# * @version 1.0
+# * @since JDK1.5
 
-    config_files_folder=Path("C:\phd_algorithms\chi-scikit-negative-rules-tests\few_disjuncts_2")
+class Main:
+    config_files_folder = Path("C:\phd_algorithms\chi-scikit-negative-rules-tests\few_disjuncts_2")
     file_to_open = None
-       # Default Constructor
 
-               # * It launches the algorithm
-               # * @param confFile String it is the filename of the configuration file.
+    # Default Constructor
 
-    def execute(config_file):
+    # * It launches the algorithm
+    # * @param confFile String it is the filename of the configuration file.
+
+    def execute(self):
         print("Main execute begin...")
-        parameters=ParseParameters()
-        parameters.parseConfigurationFile(config_file)
-        fuzzy_chi =Fuzzy_Chi(parameters)
+        parameters = ParseParameters()
+        parameters.parseConfigurationFile(self)
+        fuzzy_chi = Fuzzy_Chi(parameters)
         fuzzy_chi.execute()
 
-    def executeMultiFiles(self,config_file):
-            print("MaultiMain execute begin...")
-            parameters = ParseParameters()
-            parameters.parseConfigurationFile(config_file)
-            fuzzy_chi = Fuzzy_Chi(parameters)
-            fuzzy_chi.execute()
+    def executeMultiFiles(self, config_file):
+        print("MaultiMain execute begin...")
+        parameters = ParseParameters()
+        parameters.parseConfigurationFile(config_file)
+        fuzzy_chi = Fuzzy_Chi(parameters)
+        fuzzy_chi.execute()
 
-           # * Main Program
-           # * @param args It contains the name of the configuration file
-           # * Format:
-           # * algorithm = ;algorithm name>
-           # * inputData = "training file" "validation file" "test file"
-           # * outputData = "training file" "test file"
-           # *
-           # * seed = value (if used)
-           # Parameter1; value1
-           # Parameter2&gt; value2
+    # * Main Program
+    # * @param args It contains the name of the configuration file
+    # * Format:
+    # * algorithm = ;algorithm name>
+    # * inputData = "training file" "validation file" "test file"
+    # * outputData = "training file" "test file"
+    # *
+    # * seed = value (if used)
+    # Parameter1; value1
+    # Parameter2&gt; value2
 
-
-    if __name__=='__main__':
+    if __name__ == '__main__':
         print("Executing Algorithm.")
 
         print("sys.argv: " + sys.argv[1])
         execute(sys.argv[1])
-
-
-
-
-

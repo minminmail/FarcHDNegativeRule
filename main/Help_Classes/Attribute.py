@@ -198,7 +198,7 @@ class Attribute:
     #  '''
 
     def setType(self, type):
-        if (self.__type != -1):
+        if self.__type != -1:
             print("Type already fixed !!")
             exit(1)
 
@@ -208,7 +208,7 @@ class Attribute:
         #     If type is nominal, a new vector has to be created to store the list of
         #     values that it can take.
         # '''
-        if (self.__type == self.NOMINAL):
+        if self.__type == self.NOMINAL:
             self.__nominalValues = []
             self.__newValuesList = []
 
@@ -254,7 +254,7 @@ class Attribute:
     #  '''
 
     def setBounds(self, minBound, maxBound):
-        if (self.__type != self.REAL and self.__type != self.INTEGER):
+        if self.__type != self.REAL and self.__type != self.INTEGER:
             return
         else:
             self.__fixedBounds = True
@@ -292,13 +292,13 @@ class Attribute:
     #  '''
 
     def enlargeBounds(self, value):
-        if (self.__type != self.REAL and self.__type != self.INTEGER):
+        if self.__type != self.REAL and self.__type != self.INTEGER:
             return
 
         if self.__firstTime:
             # //If it's the first attribute update and the bounds are not fixed in its
             # //specification, the min and max values are initialized.
-            if (not self.__fixedBounds):
+            if not self.__fixedBounds:
                 self.__min = value
                 self.__max = value
 
@@ -308,9 +308,9 @@ class Attribute:
 
         if self.__fixedBounds:
             return
-        if (value < self.__min):
+        if value < self.__min:
             self.__min = value
-        if (value > self.__max):
+        if value > self.__max:
             self.__max = value
 
     # end enlargeBounds
@@ -325,9 +325,9 @@ class Attribute:
     #  '''
 
     def rectifyValueInBounds(self, value):
-        if (value < self.__min):
+        if value < self.__min:
             return self.__min
-        if (value > self.__max):
+        if value > self.__max:
             return self.__max
         return value
 
@@ -341,7 +341,7 @@ class Attribute:
     #  '''
 
     def isInBounds(self, val):
-        return (val >= self.__min and val <= self.__max)
+        return self.__min <= val <= self.__max
 
     # end isInBounds
 
@@ -352,7 +352,7 @@ class Attribute:
     #  '''
 
     def isNominalValue(self, val):
-        return (val in self.__nominalValues)
+        return val in self.__nominalValues
 
     # end isNominalValue
 
@@ -384,9 +384,9 @@ class Attribute:
     #  '''
     def addNominalValue(self, value):
         print("addNominalValue begin......")
-        if (self.__type != self.NOMINAL):
+        if self.__type != self.NOMINAL:
             return
-        if (value not in self.__nominalValues):
+        if value not in self.__nominalValues:
             print("self.__nominalValues ,add value:" + str(value) + ",to __nominalValues")
             self.__nominalValues.append(str(value))
 
@@ -400,9 +400,9 @@ class Attribute:
     #  * @return a String with the most used value.
     #  '''
     def getMostFrequentValue(self, whichClass):
-        if (not self.__makeStatistics or self.__type != self.NOMINAL or self.__mostUsedValue == None):
+        if not self.__makeStatistics or self.__type != self.NOMINAL or self.__mostUsedValue is None:
             return None
-        if (whichClass < 0 or whichClass >= len(self.__mostUsedValue)):
+        if whichClass < 0 or whichClass >= len(self.__mostUsedValue):
             return None
         return self.__mostUsedValue[whichClass]
 
@@ -416,9 +416,9 @@ class Attribute:
     #  '''
     def getMeanValue(self, whichClass):
         if (not self.__makeStatistics or (
-                self.__type != self.REAL and self.__type != self.INTEGER) or self.__meanValue == None):
+                self.__type != self.REAL and self.__type != self.INTEGER) or self.__meanValue is None):
             return 0
-        if (whichClass < 0 or whichClass >= len(self.__meanValue)):
+        if whichClass < 0 or whichClass >= len(self.__meanValue):
             return 0
         return self.__meanValue[whichClass]
 
@@ -430,7 +430,7 @@ class Attribute:
     #  '''
     def initStatisticsTwo(self, classNumber):
         self.__makeStatistics = True
-        if (self.__type == self.NOMINAL):
+        if self.__type == self.NOMINAL:
             print("In initStatisticsTwo type is Nominal")
             # w, h = 8, 5;
             # Matrix = [[0 for x in range(w)] for y in range(h)]
@@ -497,7 +497,8 @@ class Attribute:
     #  '''
     def increaseClassFrequency(self, whichClass, value):
         print("increaseClassFrequency begin......")
-        if self.__makeStatistics and self.__classFrequencies != None and self.__classFrequencies[whichClass] != None:
+        if self.__makeStatistics and self.__classFrequencies is not None and \
+                self.__classFrequencies[whichClass] is not None:
             column_here = self.convertNominalValue(value)
             print("self.__classFrequencies, row here is :" + whichClass + ",column_here is :" + str(column_here))
             self.__classFrequencies[whichClass][column_here] = self.__classFrequencies[whichClass][column_here] + 1
@@ -728,7 +729,7 @@ class Attribute:
         else:
             print("[" + self.__min + "," + self.__max + "]")
 
-        if (self.__type == self.NOMINAL) and (self.__mostUsedValue != None):
+        if (self.__type == self.NOMINAL) and (self.__mostUsedValue is not None):
             print("\n    > Most used value: ")
             for i in range(0, len(self.__mostUsedValue)):
                 print("       > class " + str(i) + ":" + self.__mostUsedValue[i])
