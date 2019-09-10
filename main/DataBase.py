@@ -138,7 +138,7 @@ class DataBase:
         numcols = len(self.dataBase[0])
 
         print("numrows: " + str(numrows) + "numcols:" + str(numcols))
-        if (self.dataBase.size != 0):
+        if self.dataBase.size != 0:
             print("cadena: " + cadena)
             for i in range(0, self.n_variables):
                 print("i = " + str(i))

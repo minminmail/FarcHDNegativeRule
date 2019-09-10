@@ -469,12 +469,13 @@ class Attribute:
         if self.__type == self.NOMINAL:
             print("In Attribute class the type is nominal, in finishStatistics method")
             mostUsedValue = ["" for x in range(len(self.__classFrequencies))]
+
             for i in range(0, len(mostUsedValue)):
-                max = self.__classFrequencies[i][0]
+                max_value = self.__classFrequencies[i][0]
                 pos = 0
                 for j in range(1, len(self.__classFrequencies[i])):
-                    if self.__classFrequencies[i][j] > max:
-                        max = self.__classFrequencies[i][j]
+                    if self.__classFrequencies[i][j] > max_value:
+                        max_value = self.__classFrequencies[i][j]
                         pos = j
 
                 mostUsedValue[i] = str(self.__nominalValues[pos])
@@ -485,7 +486,7 @@ class Attribute:
                 print("self.__meanValue[i]  is :" + str(self.__meanValue[i]))
                 print("float(self.__numStatUpdates[i])" + str(float(self.__numStatUpdates[i])))
                 if self.__numStatUpdates[i] != 0:
-                    self.__meanValue[i] /= float(self.__numStatUpdates[i])
+                    self.__meanValue[i] = self.__meanValue[i] / float(self.__numStatUpdates[i])
 
     # end finishStatistics
 
@@ -601,11 +602,11 @@ class Attribute:
     #  * @return an int with the converted value.
     #  '''
     def convertNominalValue(self, value):
-        print("convertNominalValue begin......")
-        for value_inside in self.__nominalValues:
-            print("value in self.__nominalValues is :" + str(value_inside))
+        # print("convertNominalValue begin......")
+        # for value_inside in self.__nominalValues:
+        # print("value in self.__nominalValues is :" + str(value_inside))
         position_here = self.__nominalValues.index(value.strip())
-        print("for value pass :" + str(value) + ", position_here : " + str(position_here))
+        # print("for value pass :" + str(value) + ", position_here : " + str(position_here))
         return position_here
 
     # end convertNominalValue

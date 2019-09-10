@@ -115,13 +115,13 @@ class Instance:
         self.__nominalValues = []
 
     def setThreeParameters(self, defStr, _isTrain, instanceNum):
-        print("setThreeParameters begin...... ")
+        # print("setThreeParameters begin...... ")
         currentClass = -1
         # System.out.println ("Reading data: "+def);
-        print("In setThreeParameters,defStr is : " + defStr)
-        print("In setThreeParameters, instanceNum is : " + str(instanceNum))
+        # print("In setThreeParameters,defStr is : " + defStr)
+        # print("In setThreeParameters, instanceNum is : " + str(instanceNum))
         st = defStr.split(",")  # Separator: "," and " "
-        print("inside setThreeParameters st length is :" + str(len(st)))
+        # print("inside setThreeParameters st length is :" + str(len(st)))
         self.initClassAttributes()
         self.isTrain = _isTrain
 
@@ -167,9 +167,9 @@ class Instance:
 
             # The attribute is defined. So, its value is processed, and the attributes definitions
             # are checked to detect inconsistencies or to redefine undefined traits.
-            print("Before processReadValue......")
+            # print("Before processReadValue......")
             self.processReadValue(curAt, defStr, att, inputOutput, count, curCount, instanceNum)
-            print("After processReadValue......")
+            # print("After processReadValue......")
             # Finally, the counter of read attributes is updated.
             count = count + 1
             # end of the while
@@ -320,13 +320,13 @@ class Instance:
             elif not curAt.getType() == Attribute.NOMINAL:  # is not numerical
                 if inOut == 0:
                     self.__realValues[inOut][inHere] = values[i]
-                    inHere += 1
+                    inHere = inHere + 1
                 elif inOut == 1:
                     self.__realValues[inOut][outHere] = values[i]
-                    outHere += 1
+                    outHere = outHere + 1
                 else:
                     self.__realValues[inOut][undef] = values[i]
-                    undef += 1
+                    undef = undef + 1
 
             else:  # is nominal
 
@@ -361,10 +361,10 @@ class Instance:
     #  */
 
     def processReadValue(self, curAtt, defStr, att, inOut, count, curCount, instanceNum):
-        print("processReadValue begin......")
-        print("In processReadValue,count = " + str(count))
+        # print("processReadValue begin......")
+        # print("In processReadValue,count = " + str(count))
         # Checking if there is a missing value.
-        print(" In processReadValue, att = " + att)
+        # print(" In processReadValue, att = " + att)
         if att is None or att == "?":
             print("att==None or att==?......")
             Attributes.hasMissing = True
@@ -383,12 +383,12 @@ class Instance:
         elif (Attributes.getAttributeByPos(Attributes,
                                            count).getType() == Attribute.INTEGER or Attributes.getAttributeByPos(
             Attributes, count).getType() == Attribute.REAL):
-            print("getType()==Attribute.INTEGER or Real ......")
+            # print("getType()==Attribute.INTEGER or Real ......")
             try:
-                print("inOut is:" + str(inOut) + ", curCount is: " + str(curCount))
-                print("The length of self.__realValues[0] column is:  " + str(len(self.__realValues[0])))
+                # print("inOut is:" + str(inOut) + ", curCount is: " + str(curCount))
+                # print("The length of self.__realValues[0] column is:  " + str(len(self.__realValues[0])))
                 self.__realValues[inOut][curCount] = float(att)
-                print("self.__realValues[" + str(inOut) + "][" + str(curCount) + "]=" + att)
+                # print("self.__realValues[" + str(inOut) + "][" + str(curCount) + "]=" + att)
             except  ValueError as valueError:
                 error_info_2 = ErrorInfo(ErrorInfo.BadNumericValue, instanceNum,
                                          InstanceParser.lineCounter, curCount, Attribute.INPUT + inOut,
@@ -418,8 +418,8 @@ class Instance:
                 self.__realValues[inOut][curCount] = curAtt.rectifyValueInBounds(self.__realValues[inOut][curCount]);
 
         elif Attributes.getAttributeByPos(Attributes, count).getType() == Attribute.NOMINAL:
-            print("getType()==Attribute.NOMINAL......")
-            print("inOut : " + str(inOut) + " , curCount: " + str(curCount))
+            # print("getType()==Attribute.NOMINAL......")
+            # print("inOut : " + str(inOut) + " , curCount: " + str(curCount))
             self.__nominalValues[inOut][curCount] = att
             # Testing special cases.
             if self.isTrain and inOut != 2:

@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="format all the files">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="changed some format and commend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Fuzzy.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ParseParameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ParseParameters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,12 +36,12 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Help_Classes/Attributes.py" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\Help_Classes" />
       <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\simpleTest" />
-      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
     </key>
   </component>
@@ -319,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565464014753</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="changed some format and commend">
+      <created>1566854900702</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1566854900702</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -367,7 +365,8 @@
     <MESSAGE value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
     <MESSAGE value="format files" />
     <MESSAGE value="format all the files" />
-    <option name="LAST_COMMIT_MESSAGE" value="format all the files" />
+    <MESSAGE value="changed some format and commend" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed some format and commend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -378,24 +377,24 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
-          <line>433</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/main/Rule.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
-          <line>439</line>
-          <option name="timeStamp" value="44" />
+          <url>file://$PROJECT_DIR$/main/Rule.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
-          <line>437</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/main/Rule.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
-          <line>436</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/main/Rule.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

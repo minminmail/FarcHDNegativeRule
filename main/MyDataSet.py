@@ -207,7 +207,7 @@ class MyDataSet:
                     for outAtt in outAttrs:
                         i = 1
                         print("Att" + str(i) + str(outAtt.getName()))
-                        i += 1
+                        i = i + 1
                     print("" + Attributes.getOutputAttributesHeader(Attributes))
                     print("This algorithm can not process MIMO datasets")
                     print("All outputs but the first one will be removed")
