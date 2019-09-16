@@ -43,6 +43,10 @@ class Rule:
     weight = None
     compatibilityType = None
 
+    # added by rui for negative rule
+    rule_type = None
+    rule_priority = None
+
     def __init__(self):
         print("__init__ of Rule")
 
@@ -62,6 +66,10 @@ class Rule:
 
     def setClass(self, clas):
         self.class_value = clas
+
+    # added by rui for negative rule
+    def get_class(self):
+        return self.class_value
 
     # * It assigns the rule weight to the rule
     # * @param train myDataset the training set
@@ -210,3 +218,29 @@ class Rule:
             return True
         else:
             return False
+
+    def calculate_confident(self, data_row_array):
+        support_rule_number = 0
+        confident_value = 0
+        all_number_of_the_class = 0
+        for i in range(0, len(data_row_array)):
+            data_row_here = data_row_array[i]
+            if data_row_here.class_value == self.class_value:
+                all_number_of_the_class = all_number_of_the_class + 1
+                meet_antecedent = 0
+                for j in range(0, len(data_row_here.label_values)):
+                    if self.antecedent[j] == data_row_here.label_values[j]:  # meet the rule antecedent conditions
+                        meet_antecedent = meet_antecedent + 1
+                if len(self.antecedent) == meet_antecedent:
+                    support_rule_number = support_rule_number + 1
+        if all_number_of_the_class != 0:
+            confident_value = support_rule_number/all_number_of_the_class
+
+        return confident_value
+
+
+
+
+
+
+

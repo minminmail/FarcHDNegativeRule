@@ -30,6 +30,7 @@ from Fuzzy import Fuzzy
 from DataBase import DataBase
 from Rule import Rule
 import Fuzzy_Chi
+from data_row import data_row
 
 
 # * This class contains the representation of a Rule Set
@@ -40,6 +41,8 @@ import Fuzzy_Chi
 
 class RuleBase:
     ruleBase = []
+    # added by rui for negative rule
+    negative_rule_base_array = []
     dataBase = DataBase()
     n_variables = None
     n_labels = None
@@ -48,6 +51,7 @@ class RuleBase:
     compatibilityType = None
     names = []
     classes = []
+    data_row_array = []
 
     # /**
     #  * Rule Base Constructor
@@ -62,6 +66,8 @@ class RuleBase:
     def __init__(self, dataBase, inferenceType, compatibilityType, ruleWeight, names, classes):
         print("RuleBase init begin...")
         self.ruleBase = []
+        # added by rui for negative rule
+        self.negative_rule_base_array = []
         self.dataBase = dataBase
         self.n_variables = dataBase.numVariables()
         self.n_labels = dataBase.numLabels()
@@ -90,6 +96,7 @@ class RuleBase:
         print("In Generation, the size of train is :" + str(train.size()))
         for i in range(0, train.size()):
             rule = self.searchForBestAntecedent(train.getExample(i), train.getOutputAsIntegerWithPos(i))
+            self.data_row_array.append(rule.data_row)
             rule.assingConsequent(train, self.ruleWeight)
             if not (self.duplicated(rule)) and (rule.weight > 0):
                 self.ruleBase.append(rule)
@@ -106,6 +113,11 @@ class RuleBase:
         print("In searchForBestAntecedent ,self.n_variables is :" + str(self.n_variables))
         ruleInstance.setClass(clas)
         print("In searchForBestAntecedent ,self.n_labels is :" + str(self.n_labels))
+        example_feature_array = []
+        for f_variable in range(0, self.n_variables):
+            example_feature_array.append(example[f_variable])
+        label_array = []
+
         for i in range(0, self.n_variables):
             max_value = 0.0
             etq = -1
@@ -127,6 +139,9 @@ class RuleBase:
             print(" The max_value is : " + str(max_value))
             print(" ,the j value is : " + str(j))
             ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
+            label_array.append(etq)
+            self.data_row = data_row(clas, example_feature_array, label_array)
+
         return ruleInstance
 
     # * It prints the rule base into an string
@@ -146,6 +161,20 @@ class RuleBase:
             cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + ": " + str(
                 self.classes[rule.class_value]) + " with Rule Weight: " + str(rule.weight) + "\n"
         print("RuleBase cadena_string is:" + cadena_string)
+
+        # added negative rule print into file
+
+        cadena_string += "@Number of negative rules: " + str(len(self.negative_rule_base_array)) + "\n\n"
+        for i in range(0, len(self.negative_rule_base_array)):
+            rule = self.negative_rule_base_array[i]
+            cadena_string += str(i + 1) + ": "
+            for j in range(0, self.n_variables - 1):
+                cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + " AND "
+            j = j + 1
+            cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + ": " + str(
+                self.classes[rule.class_value]) + " with Rule Weight: " + str(rule.weight) + "\n"
+        print("RuleBase cadena_string is:" + cadena_string)
+
         return cadena_string
 
     # * It writes the rule base into an ouput file
@@ -212,3 +241,18 @@ class RuleBase:
                 class_value = l
 
         return class_value
+
+    def generate_negative_rules(self, train,confident_value_pass):
+        confident_value = 0
+        for i in range(0, len(self.ruleBase)):
+            rule_negative = Rule()
+            rule_negative = self.ruleBase[i]
+            for j in range(0, len(train.getnClasses())):
+                if j != rule_negative.get_class():
+                    rule_negative.setClass(j)    # change the class type in the rule
+                    confident_value = rule_negative.calculate_confident(self.data_row_array)
+                    if confident_value >= confident_value_pass:
+                        rule_negative.weight = confident_value
+                        self.negative_rule_base_array.append(rule_negative)
+
+

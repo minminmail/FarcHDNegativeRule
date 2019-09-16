@@ -52,6 +52,7 @@ class Fuzzy_Chi:
     ruleWeight = None
     dataBase = None
     ruleBase = None
+    negative_confident_value = 0.6
 
     # Configuration flags.
     MINIMUM = 0
@@ -164,6 +165,7 @@ class Fuzzy_Chi:
 
             print("Data Base:\n" + self.dataBase.printString())
             self.ruleBase.Generation(self.train_myDataSet)
+            self.ruleBase.generate_negative_rules(self, self.train_myDataSet, self.negative_confident_value)
 
             print("self.fileDB = " + str(self.fileDB))
             print("self.fileRB = " + str(self.fileRB))
