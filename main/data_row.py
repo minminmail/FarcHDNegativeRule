@@ -5,7 +5,10 @@ class data_row:
     feature_values = []
     label_values = []
 
-    def __init__(self, class_value, feature_array, label_array):
+    def __init__(self):
+        print("__init__ of data_row")
+
+    def set_three_parameters(self, class_value, feature_array, label_array):
         print("__init__ of data_row")
         self.class_value = class_value
         self.feature_values = feature_array

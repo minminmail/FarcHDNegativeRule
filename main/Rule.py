@@ -29,6 +29,7 @@
 
 import Fuzzy_Chi
 from Fuzzy import Fuzzy
+from  data_row import data_row
 
 
 # * <p>This class contains the structure of a Fuzzy Rule</p>
@@ -49,7 +50,9 @@ class Rule:
     data_row_here = None
 
     def __init__(self):
+
         print("__init__ of Rule")
+        data_row_here = data_row( )
 
     # Default constructor
 
@@ -226,6 +229,8 @@ class Rule:
         all_number_of_the_class = 0
         for i in range(0, len(data_row_array)):
             self.data_row_here = data_row_array[i]
+            print("self.data_row_here.class_value  :" + str(self.data_row_here.class_value))
+            print("self.class_value  :" + str(self.class_value))
             if self.data_row_here.class_value == self.class_value:
                 all_number_of_the_class = all_number_of_the_class + 1
                 meet_antecedent = 0

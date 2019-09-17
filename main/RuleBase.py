@@ -141,7 +141,7 @@ class RuleBase:
             print(" ,the j value is : " + str(j))
             ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
             label_array.append(etq)
-        self.data_row = data_row(clas, example_feature_array, label_array)
+        self.data_row = data_row.set_three_parameters(self, clas, example_feature_array, label_array)
 
         return ruleInstance
 
