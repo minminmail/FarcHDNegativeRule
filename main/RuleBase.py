@@ -76,6 +76,7 @@ class RuleBase:
         self.ruleWeight = ruleWeight
         self.names = names
         self.classes = classes
+        self.data_row = None
 
     # * It checks if a specific rule is already in the rule base
     # * @param r Rule the rule for comparison
@@ -96,7 +97,7 @@ class RuleBase:
         print("In Generation, the size of train is :" + str(train.size()))
         for i in range(0, train.size()):
             rule = self.searchForBestAntecedent(train.getExample(i), train.getOutputAsIntegerWithPos(i))
-            self.data_row_array.append(rule.data_row)
+            self.data_row_array.append(rule.data_row_here)
             rule.assingConsequent(train, self.ruleWeight)
             if not (self.duplicated(rule)) and (rule.weight > 0):
                 self.ruleBase.append(rule)
@@ -123,7 +124,7 @@ class RuleBase:
             etq = -1
             per = None
             for j in range(0, self.n_labels):
-                print("Inside the second loop of searchForBestAntecedent......")
+                # print("Inside the second loop of searchForBestAntecedent......")
                 per = self.dataBase.membershipFunction(i, j, example[i])
                 if per > max_value:
                     max_value = per
@@ -140,7 +141,7 @@ class RuleBase:
             print(" ,the j value is : " + str(j))
             ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
             label_array.append(etq)
-            self.data_row = data_row(clas, example_feature_array, label_array)
+        self.data_row = data_row(clas, example_feature_array, label_array)
 
         return ruleInstance
 
@@ -247,7 +248,7 @@ class RuleBase:
         for i in range(0, len(self.ruleBase)):
             rule_negative = Rule()
             rule_negative = self.ruleBase[i]
-            for j in range(0, len(train.getnClasses())):
+            for j in range(0, train.getnClasses()):
                 if j != rule_negative.get_class():
                     rule_negative.setClass(j)    # change the class type in the rule
                     confident_value = rule_negative.calculate_confident(self.data_row_array)

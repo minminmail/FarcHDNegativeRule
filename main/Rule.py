@@ -46,6 +46,7 @@ class Rule:
     # added by rui for negative rule
     rule_type = None
     rule_priority = None
+    data_row_here = None
 
     def __init__(self):
         print("__init__ of Rule")
@@ -224,12 +225,12 @@ class Rule:
         confident_value = 0
         all_number_of_the_class = 0
         for i in range(0, len(data_row_array)):
-            data_row_here = data_row_array[i]
-            if data_row_here.class_value == self.class_value:
+            self.data_row_here = data_row_array[i]
+            if self.data_row_here.class_value == self.class_value:
                 all_number_of_the_class = all_number_of_the_class + 1
                 meet_antecedent = 0
-                for j in range(0, len(data_row_here.label_values)):
-                    if self.antecedent[j] == data_row_here.label_values[j]:  # meet the rule antecedent conditions
+                for j in range(0, len(self.data_row_here.label_values)):
+                    if self.antecedent[j] == self.data_row_here.label_values[j]:  # meet the rule antecedent conditions
                         meet_antecedent = meet_antecedent + 1
                 if len(self.antecedent) == meet_antecedent:
                     support_rule_number = support_rule_number + 1
