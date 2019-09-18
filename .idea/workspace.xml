@@ -352,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568755215105</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="generated negative rules">
+      <created>1568756740499</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1568756740499</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -404,16 +411,5 @@
     <MESSAGE value="data_row" />
     <MESSAGE value="generated negative rules" />
     <option name="LAST_COMMIT_MESSAGE" value="generated negative rules" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

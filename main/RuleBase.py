@@ -76,7 +76,7 @@ class RuleBase:
         self.ruleWeight = ruleWeight
         self.names = names
         self.classes = classes
-        self.data_row = None
+        self.data_row = data_row()
 
     # * It checks if a specific rule is already in the rule base
     # * @param r Rule the rule for comparison
@@ -141,7 +141,7 @@ class RuleBase:
             print(" ,the j value is : " + str(j))
             ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
             label_array.append(etq)
-        self.data_row = data_row.set_three_parameters(self, clas, example_feature_array, label_array)
+        self.data_row.set_three_parameters(clas, example_feature_array, label_array)
 
         return ruleInstance
 
@@ -243,7 +243,7 @@ class RuleBase:
 
         return class_value
 
-    def generate_negative_rules(self, train,confident_value_pass):
+    def generate_negative_rules(self, train, confident_value_pass):
         confident_value = 0
         for i in range(0, len(self.ruleBase)):
             rule_negative = Rule()

@@ -29,7 +29,7 @@
 
 import Fuzzy_Chi
 from Fuzzy import Fuzzy
-from  data_row import data_row
+from data_row import data_row
 
 
 # * <p>This class contains the structure of a Fuzzy Rule</p>
@@ -52,7 +52,7 @@ class Rule:
     def __init__(self):
 
         print("__init__ of Rule")
-        data_row_here = data_row( )
+        self.data_row_here = data_row()
 
     # Default constructor
 
@@ -156,7 +156,7 @@ class Rule:
             classes_sum[train.getOutputAsIntegerWithPos(i)] = classes_sum[train.getOutputAsIntegerWithPos(i)] + comp
             total = total + comp
 
-        print("classes_sum[self.clas]  = " + str(classes_sum[self.class_value]) + "total" + str(total))
+        print("classes_sum[self.class_value]  = " + str(classes_sum[self.class_value]) + "total" + str(total))
         self.weight = classes_sum[self.class_value] / total
 
     # * Penalized Certainty Factor weight II (by Ishibuchi)
@@ -240,13 +240,6 @@ class Rule:
                 if len(self.antecedent) == meet_antecedent:
                     support_rule_number = support_rule_number + 1
         if all_number_of_the_class != 0:
-            confident_value = support_rule_number/all_number_of_the_class
+            confident_value = support_rule_number / all_number_of_the_class
 
         return confident_value
-
-
-
-
-
-
-
