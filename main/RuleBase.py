@@ -53,6 +53,7 @@ class RuleBase:
     classes = []
     data_row_array = []
 
+
     # /**
     #  * Rule Base Constructor
     #  * @param dataBase DataBase the Data Base containing the fuzzy partitions
@@ -76,7 +77,7 @@ class RuleBase:
         self.ruleWeight = ruleWeight
         self.names = names
         self.classes = classes
-        self.data_row = data_row()
+        self.data_row_array = []
 
     # * It checks if a specific rule is already in the rule base
     # * @param r Rule the rule for comparison
@@ -141,7 +142,9 @@ class RuleBase:
             print(" ,the j value is : " + str(j))
             ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
             label_array.append(etq)
-        self.data_row.set_three_parameters(clas, example_feature_array, label_array)
+        data_row_temp = data_row()
+        data_row_temp.set_three_parameters(clas, example_feature_array, label_array)
+        ruleInstance.data_row_here = data_row_temp
 
         return ruleInstance
 
@@ -174,7 +177,7 @@ class RuleBase:
             j = j + 1
             cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + ": " + str(
                 self.classes[rule.class_value]) + " with Rule Weight: " + str(rule.weight) + "\n"
-        print("RuleBase cadena_string is:" + cadena_string)
+
 
         return cadena_string
 
@@ -182,7 +185,7 @@ class RuleBase:
     # * @param filename String the name of the output file
 
     def writeFile(self, filename):
-        outputString = ""
+        print("rule string to save is: "+self.printString())
         outputString = self.printString()
         file = open(filename, "w")
         file.write(outputString)
@@ -247,12 +250,14 @@ class RuleBase:
         confident_value = 0
         for i in range(0, len(self.ruleBase)):
             rule_negative = Rule()
-            rule_negative = self.ruleBase[i]
+            rule_negative.antecedent = self.ruleBase[i].antecedent
             for j in range(0, train.getnClasses()):
                 if j != rule_negative.get_class():
                     rule_negative.setClass(j)    # change the class type in the rule
                     confident_value = rule_negative.calculate_confident(self.data_row_array)
+                    print("confident_value" + str(confident_value))
                     if confident_value >= confident_value_pass:
+
                         rule_negative.weight = confident_value
                         self.negative_rule_base_array.append(rule_negative)
 

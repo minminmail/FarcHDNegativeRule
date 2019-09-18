@@ -52,7 +52,7 @@ class Fuzzy_Chi:
     ruleWeight = None
     dataBase = None
     ruleBase = None
-    negative_confident_value = 0.6
+    negative_confident_value = 0.01
 
     # Configuration flags.
     MINIMUM = 0

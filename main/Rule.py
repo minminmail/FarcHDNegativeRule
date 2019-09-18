@@ -235,11 +235,14 @@ class Rule:
                 all_number_of_the_class = all_number_of_the_class + 1
                 meet_antecedent = 0
                 for j in range(0, len(self.data_row_here.label_values)):
-                    if self.antecedent[j] == self.data_row_here.label_values[j]:  # meet the rule antecedent conditions
+
+                    if self.antecedent[j].label == self.data_row_here.label_values[j]:  # meet the rule antecedent conditions
                         meet_antecedent = meet_antecedent + 1
                 if len(self.antecedent) == meet_antecedent:
                     support_rule_number = support_rule_number + 1
         if all_number_of_the_class != 0:
+            print("support_rule_number :"+str(support_rule_number))
+            print("all_number_of_the_class :" + str(all_number_of_the_class))
             confident_value = support_rule_number / all_number_of_the_class
 
         return confident_value
