@@ -27,7 +27,6 @@
 #
 # **********************************************************************/
 
-
 #  * <p>It reads the configuration file (data-set files and parameters)</p>
 #  *
 #  * @author Written by Alberto Fern谩ndez (University of Granada) 15/10/2007

@@ -248,17 +248,32 @@ class RuleBase:
 
     def generate_negative_rules(self, train, confident_value_pass):
         confident_value = 0
+        class_value_arr = self.get_class_value_array(train)
         for i in range(0, len(self.ruleBase)):
             rule_negative = Rule()
             rule_negative.antecedent = self.ruleBase[i].antecedent
-            for j in range(0, train.getnClasses()):
-                if j != rule_negative.get_class():
-                    rule_negative.setClass(j)    # change the class type in the rule
+            rule_negative.class_value = self.ruleBase[i].class_value
+            for j in range(0, len(class_value_arr)):
+                if class_value_arr[j] != rule_negative.get_class():
+                    rule_negative.setClass(class_value_arr[j])    # change the class type in the rule
                     confident_value = rule_negative.calculate_confident(self.data_row_array)
                     print("confident_value" + str(confident_value))
+                    print("rule_negative class_value" + str(rule_negative.class_value))
                     if confident_value >= confident_value_pass:
 
                         rule_negative.weight = confident_value
                         self.negative_rule_base_array.append(rule_negative)
+    def get_class_value_array(self, train):
+         class_value_array=[]
+         integer_array = train.getOutputAsInteger()
+         for i in range(0, len(integer_array)):
+             exist_yes = False
+             for j in range(0, len(class_value_array)):
+                 if integer_array[i] == class_value_array[j]:
+                     exist_yes = True
+             if not exist_yes:
+                class_value_array.append(integer_array[i])
+         return class_value_array
+
 
 
