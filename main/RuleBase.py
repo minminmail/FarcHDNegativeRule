@@ -53,7 +53,6 @@ class RuleBase:
     classes = []
     data_row_array = []
 
-
     # /**
     #  * Rule Base Constructor
     #  * @param dataBase DataBase the Data Base containing the fuzzy partitions
@@ -88,6 +87,14 @@ class RuleBase:
         found = False
         while (i < len(self.ruleBase)) and (not found):
             found = self.ruleBase[i].comparison(rule)
+            i = i + 1
+        return found
+
+    def duplicated_negative_rule(self, rule):
+        i = 0
+        found = False
+        while (i < len(self.negative_rule_base_array)) and (not found):
+            found = self.negative_rule_base_array[i].comparison(rule)
             i = i + 1
         return found
 
@@ -170,14 +177,13 @@ class RuleBase:
 
         cadena_string += "@Number of negative rules: " + str(len(self.negative_rule_base_array)) + "\n\n"
         for i in range(0, len(self.negative_rule_base_array)):
-            rule = self.negative_rule_base_array[i]
+            negative_rule = self.negative_rule_base_array[i]
             cadena_string += str(i + 1) + ": "
             for j in range(0, self.n_variables - 1):
-                cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + " AND "
+                cadena_string += self.names[j] + " IS " + negative_rule.antecedent[j].name + " AND "
             j = j + 1
-            cadena_string += self.names[j] + " IS " + rule.antecedent[j].name + ": " + str(
-                self.classes[rule.class_value]) + " with Rule Weight: " + str(rule.weight) + "\n"
-
+            cadena_string += self.names[j] + " IS " + negative_rule.antecedent[j].name + ": " + str(
+                self.classes[negative_rule.class_value]) + " with Rule Weight: " + str(negative_rule.weight) + "\n"
 
         return cadena_string
 
@@ -185,7 +191,7 @@ class RuleBase:
     # * @param filename String the name of the output file
 
     def writeFile(self, filename):
-        print("rule string to save is: "+self.printString())
+        print("rule string to save is: " + self.printString())
         outputString = self.printString()
         file = open(filename, "w")
         file.write(outputString)
@@ -252,28 +258,37 @@ class RuleBase:
         for i in range(0, len(self.ruleBase)):
             rule_negative = Rule()
             rule_negative.antecedent = self.ruleBase[i].antecedent
-            rule_negative.class_value = self.ruleBase[i].class_value
+            positive_rule_class_value = self.ruleBase[i].get_class()
+            rule_negative.setClass(positive_rule_class_value)
+
             for j in range(0, len(class_value_arr)):
-                if class_value_arr[j] != rule_negative.get_class():
-                    rule_negative.setClass(class_value_arr[j])    # change the class type in the rule
+                class_type = int(class_value_arr[j])
+                if positive_rule_class_value != class_type:  # need to get another class value for negative rule
+
+                    rule_negative.setClass(class_type)  # change the class type in the rule
                     confident_value = rule_negative.calculate_confident(self.data_row_array)
-                    print("confident_value" + str(confident_value))
-                    print("rule_negative class_value" + str(rule_negative.class_value))
+
                     if confident_value >= confident_value_pass:
-
                         rule_negative.weight = confident_value
-                        self.negative_rule_base_array.append(rule_negative)
+                        if not (self.duplicated_negative_rule(rule_negative)):
+
+                            for k in range(0, len(rule_negative.antecedent)):
+                                print("antecedent L_ " + str(rule_negative.antecedent[j].label))
+                            print("class value " + str(rule_negative.get_class()))
+                            print(" weight  " + str(rule_negative.weight))
+
+                            print("positive_rule_class_value" + str(positive_rule_class_value))
+                            print("class_type" + str(class_type))
+                            self.negative_rule_base_array.append(rule_negative)
+
     def get_class_value_array(self, train):
-         class_value_array=[]
-         integer_array = train.getOutputAsInteger()
-         for i in range(0, len(integer_array)):
-             exist_yes = False
-             for j in range(0, len(class_value_array)):
-                 if integer_array[i] == class_value_array[j]:
-                     exist_yes = True
-             if not exist_yes:
+        class_value_array = []
+        integer_array = train.getOutputAsInteger()
+        for i in range(0, len(integer_array)):
+            exist_yes = False
+            for j in range(0, len(class_value_array)):
+                if integer_array[i] == class_value_array[j]:
+                    exist_yes = True
+            if not exist_yes:
                 class_value_array.append(integer_array[i])
-         return class_value_array
-
-
-
+        return class_value_array
