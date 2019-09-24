@@ -251,7 +251,7 @@ class RuleBase:
                 class_value = l
 
         return class_value
-
+    # added by rui for negative  rules
     def generate_negative_rules(self, train, confident_value_pass):
         confident_value = 0
         class_value_arr = self.get_class_value_array(train)
@@ -292,3 +292,15 @@ class RuleBase:
             if not exist_yes:
                 class_value_array.append(integer_array[i])
         return class_value_array
+
+    # added by rui for granularity rules
+    def generate_granularity_rules(self):
+
+        # from negative rule get small_disjunct_train array
+
+        # for each small disjunct train generate positive rules, save into priority rule base
+        # make the small disjunct label as L0S0 L0S1,L1S0,L1S1,
+        # check accurate rate ,need to consider the granularity rules and positive rules
+
+
+

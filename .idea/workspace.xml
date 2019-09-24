@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="no error for negative rule logic, but no rule in file">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="get correct negative rule">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -379,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568854773228</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="get correct negative rule">
+      <created>1569149304958</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1569149304958</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView">
@@ -405,7 +412,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change parameter to lower case" />
     <MESSAGE value="modified the input read files and read algorithm name" />
     <MESSAGE value="correct debug errors." />
     <MESSAGE value="before cannot import name InstanceSet from InstanceSet error" />
@@ -430,6 +436,7 @@
     <MESSAGE value="data_row" />
     <MESSAGE value="generated negative rules" />
     <MESSAGE value="no error for negative rule logic, but no rule in file" />
-    <option name="LAST_COMMIT_MESSAGE" value="no error for negative rule logic, but no rule in file" />
+    <MESSAGE value="get correct negative rule" />
+    <option name="LAST_COMMIT_MESSAGE" value="get correct negative rule" />
   </component>
 </project>
