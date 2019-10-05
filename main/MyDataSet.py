@@ -47,8 +47,11 @@ class MyDataSet:
     #    * Outputs an array of examples with their corresponding attribute values.
     #    * @return double[][] an array of examples with their corresponding attribute values
     #  '''
-    def getX(self):
+    def get_x(self):
         return self.__X
+
+    def set_x(self, x_parameter):
+        self.__X = x_parameter
 
     # '''
     #    * Output a specific example
@@ -56,7 +59,7 @@ class MyDataSet:
     #    * @return double[] the attributes of the given example
     # '''
     def getExample(self, pos):
-        #print(" In getExample, len(self.__X) = " + str(len(self.__X)) + ", pos = " + str(
+        # print(" In getExample, len(self.__X) = " + str(len(self.__X)) + ", pos = " + str(
         #   pos) + "  ," + "self.__X[pos] ==" + str(self.__X[pos]))
         return self.__X[pos]
 
@@ -106,6 +109,9 @@ class MyDataSet:
     def getOutputAsIntegerWithPos(self, pos):
         return self.__outputInteger[pos]
 
+    def set_output_integer_array(self, integer_array):
+        self.__outputInteger = integer_array
+
     #    * It returns the output value of the example "pos"
     #    * @param pos int the position (id) of the example
     #    * @return double a real containing the output value
@@ -149,6 +155,9 @@ class MyDataSet:
 
         return self.__nData
 
+    def set_ndata(self, ndata):
+        self.__nData = ndata
+
     # *It gets the number of variables of the data - set(including the output)
     # * @ return int the number of variables of the data - set(including the output)
 
@@ -166,6 +175,27 @@ class MyDataSet:
 
     def getnClasses(self):
         return self.__nClasses
+
+    def set_nClasses(self, nclasses_value):
+        self.__nClasses = nclasses_value
+
+    # added by rui for granularity rule generation
+    def calculate_nclasses_for_small_granularity_zone(self, output_integer_array):
+        class_number = 0
+        class_array = []
+        has_class = False
+        for i in range(0, len(output_integer_array)):
+            if len(class_array) == 0:
+                class_array.append(output_integer_array[i])
+            else:
+                for j in range(0, len(class_array)):
+                    if class_array[j] == output_integer_array[i]:
+                        has_class = True
+                        break
+                if not has_class:
+                    class_array.append(output_integer_array[i])
+        class_number = len(class_array)
+        return class_number
 
     #  * This function checks if the attribute value is missing
     #  * @param i int Example id
@@ -200,7 +230,7 @@ class MyDataSet:
                 self.__nVars = self.__nInputs + Attributes.getOutputNumAttributes(Attributes)
                 print("In readClassificationSet , self.__nVars is : " + str(self.__nVars))
 
-                # outputIntegerheck that there is only one output variable
+                # outputInteger check that there is only one output variable
                 if Attributes.getOutputNumAttributes(Attributes) > 1:
                     outAttrs = Attributes.getOutputAttributes(Attributes)
                     print("Output Attributes number is bigger than 1")
@@ -255,7 +285,7 @@ class MyDataSet:
                     for j in range(0, nInputLength):
                         input_Numeric_Value = self.__instanceSet.getInputNumericValue(i, j)
                         # print("self.__X [i] = " + str(i) + ",[j] = " + str(j) + ",input_Numeric_Value:" + str(
-                          #  input_Numeric_Value))
+                        #  input_Numeric_Value))
 
                         self.__X[i][j] = input_Numeric_Value  # inst.getInputRealValues(j);
                         # print("after get self.__X[i][j]")
@@ -467,7 +497,8 @@ class MyDataSet:
                 for j in range(0, dataNum):
                     if not self.isMissing(j, i):
                         print("self.isMissing(j, i)==False")
-                        sum_value = sum_value + (self.__X[j][i] - self.__average[i]) * (self.__X[j][i] - self.__average[i])
+                        sum_value = sum_value + (self.__X[j][i] - self.__average[i]) * (
+                                self.__X[j][i] - self.__average[i])
 
                 if dataNum != 0:
                     print("dataNum != 0" + " , dataNum=" + str(dataNum))
@@ -477,7 +508,7 @@ class MyDataSet:
             sum_value = 0.0
             for j in range(0, len(self.__outputReal)):
                 sum_value += (self.__outputReal[j] - self.__average[average_length - 1]) * (
-                            self.__outputReal[j] - self.__average[average_length - 1])
+                        self.__outputReal[j] - self.__average[average_length - 1])
             if len(self.__outputReal) != 0:
                 sum_value /= len(self.__outputReal)
             self.__stdev[len(self.__stdev) - 1] = math.sqrt(sum_value)

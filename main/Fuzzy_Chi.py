@@ -164,12 +164,11 @@ class Fuzzy_Chi:
                                      self.train_myDataSet.getNames(), self.train_myDataSet.getClasses())
 
             print("Data Base:\n" + self.dataBase.printString())
-            self.ruleBase.Generation(self.train_myDataSet)
+            self.ruleBase.generation(self.train_myDataSet)
             # added by rui for negative rules
             self.ruleBase.generate_negative_rules(self.train_myDataSet, self.negative_confident_value)
             #  added by rui for granularity rules
-            self.ruleBase.generate_granularity_rules()
-
+            self.ruleBase.generate_granularity_rules_all_steps(self.train_myDataSet)
 
             print("self.fileDB = " + str(self.fileDB))
             print("self.fileRB = " + str(self.fileRB))

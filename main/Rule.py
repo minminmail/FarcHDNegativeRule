@@ -182,20 +182,23 @@ class Rule:
     # * @param train myDataset training dataset
 
     def consequent_PCF4(self, train):
-        classes_sum = [0.0 for x in range(train.getnClasses())]
+        class_number = train.getnClasses()
+        print("train data set get the class_number: " + str(class_number))
+        classes_sum = [0.0 for x in range(class_number)]
         for i in range(0, train.getnClasses()):
             classes_sum[i] = 0.0
 
         total = 0.0
-        comp = None
-
         train_size = train.size()
         print("train_size: " + str(train_size))
         # Computation of the sum by classes */
         for i in range(0, train_size):
             comp = self.compatibility(train.getExample(i))
             # print("comp = " + str(comp))
-            classes_sum[train.getOutputAsIntegerWithPos(i)] = classes_sum[train.getOutputAsIntegerWithPos(i)] + comp
+            print(" The list index out of range is i = " + str(i))
+            class_type = train.getOutputAsIntegerWithPos(i)
+            print(" class_type = " + str(class_type))
+            classes_sum[class_type] = classes_sum[train.getOutputAsIntegerWithPos(i)] + comp
             total = total + comp
 
         print("self.clas =" + str(self.class_value) + "classes_sum[self.clas] :" + str(classes_sum[self.class_value]))
@@ -229,8 +232,8 @@ class Rule:
         all_number_of_the_class = 0
         for i in range(0, len(data_row_array)):
             self.data_row_here = data_row_array[i]
-            print("self.data_row_here.class_value  :" + str(self.data_row_here.class_value))
-            print("self.class_value  :" + str(self.class_value))
+            #  print("self.data_row_here.class_value  :" + str(self.data_row_here.class_value))
+            #  print("self.class_value  :" + str(self.class_value))
             if self.data_row_here.class_value == self.class_value:
                 all_number_of_the_class = all_number_of_the_class + 1
                 meet_antecedent = 0

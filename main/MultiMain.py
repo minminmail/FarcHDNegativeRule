@@ -13,4 +13,4 @@ class MultiMain:
             whole_path_file = join(config_files_folder, file)
             main = Main()
             main.executeMultiFiles(whole_path_file)
-            main=None
+            main= None
