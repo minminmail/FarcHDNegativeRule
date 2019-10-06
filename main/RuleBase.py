@@ -95,6 +95,14 @@ class RuleBase:
             i = i + 1
         return found
 
+    def duplicated_granularity_rule(self, rule):
+        i = 0
+        found = False
+        while (i < len(self.granularity_rule_Base)) and (not found):
+            found = self.granularity_rule_Base[i].comparison(rule)
+            i = i + 1
+        return found
+
     def duplicated_negative_rule(self, rule):
         i = 0
         found = False
@@ -322,7 +330,7 @@ class RuleBase:
         x_array = [[] for x in range(negative_rule_num)]
         output_integer = [[] for x in range(train.size())]
         train_x_array = train.get_x()
-        print("generate granularity rules begin :")
+        # print("generate granularity rules begin :")
         data_row_number = len(self.data_row_array)
 
         for m in range(0, negative_rule_num):
@@ -356,6 +364,7 @@ class RuleBase:
             print("num_sub_zone " + str(k) + " is  :" + str(num_sub_zone))
             # set the rule base nClasses value
             nclasses_number = self.my_data_set_train_sub_zone[k].calculate_nclasses_for_small_granularity_zone(output_integer[k])
+            print("nclasses_number of " + str(k) + " is  :" + str(nclasses_number))
             self.my_data_set_train_sub_zone[k].set_nClasses(nclasses_number)
 
 
@@ -365,7 +374,7 @@ class RuleBase:
             granularity_rule = self.searchForBestAntecedent(train.getExample(i), train.getOutputAsIntegerWithPos(i))
             self.granularity_data_row_array.append(granularity_rule.data_row_here)
             granularity_rule.assingConsequent(train, self.ruleWeight)
-            if not (self.duplicated(granularity_rule)) and (granularity_rule.weight > 0):
+            if not (self.duplicated_granularity_rule(granularity_rule)) and (granularity_rule.weight > 0):
                 self.granularity_rule_Base.append(granularity_rule)
         print("The total granularity_data_row_array is " + str(len(self.granularity_data_row_array)))
         print("The total granularity_rule_Base has : " + str(len(self.granularity_rule_Base)))

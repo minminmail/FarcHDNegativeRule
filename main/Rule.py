@@ -31,7 +31,6 @@ import Fuzzy_Chi
 from Fuzzy import Fuzzy
 from data_row import data_row
 
-
 # * <p>This class contains the structure of a Fuzzy Rule</p>
 # *
 # * @author Written by Alberto Fern谩ndez (University of Granada) 29/10/2007
@@ -185,6 +184,7 @@ class Rule:
         class_number = train.getnClasses()
         print("train data set get the class_number: " + str(class_number))
         classes_sum = [0.0 for x in range(class_number)]
+        print("classes_sum length is : " + str(len(classes_sum)))
         for i in range(0, train.getnClasses()):
             classes_sum[i] = 0.0
 
@@ -195,10 +195,10 @@ class Rule:
         for i in range(0, train_size):
             comp = self.compatibility(train.getExample(i))
             # print("comp = " + str(comp))
-            print(" The list index out of range is i = " + str(i))
+            # print(" The list index out of range is i = " + str(i))
             class_type = train.getOutputAsIntegerWithPos(i)
-            print(" class_type = " + str(class_type))
-            classes_sum[class_type] = classes_sum[train.getOutputAsIntegerWithPos(i)] + comp
+            # print(" class_type = " + str(class_type))
+            classes_sum[class_type] = classes_sum[class_type] + comp
             total = total + comp
 
         print("self.clas =" + str(self.class_value) + "classes_sum[self.clas] :" + str(classes_sum[self.class_value]))

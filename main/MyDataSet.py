@@ -185,13 +185,15 @@ class MyDataSet:
         class_array = []
         has_class = False
         for i in range(0, len(output_integer_array)):
+            print(" output_integer_array[i] " + str(output_integer_array[i]))
             if len(class_array) == 0:
                 class_array.append(output_integer_array[i])
             else:
+                has_class = False
                 for j in range(0, len(class_array)):
                     if class_array[j] == output_integer_array[i]:
+                        print(" class_array[j] " + str(class_array[j]))
                         has_class = True
-                        break
                 if not has_class:
                     class_array.append(output_integer_array[i])
         class_number = len(class_array)
