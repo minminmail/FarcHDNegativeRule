@@ -199,6 +199,18 @@ class RuleBase:
             cadena_string += self.names[j] + " IS " + negative_rule.antecedent[j].name + ": " + str(
                 self.classes[negative_rule.class_value]) + " with Rule Weight: " + str(negative_rule.weight) + "\n"
 
+            # added for granularity rules
+
+            cadena_string += "@Number of granularity rules: " + str(len(self.granularity_rule_Base)) + "\n\n"
+            for i in range(0, len(self.granularity_rule_Base)):
+                granularity_rule = self.granularity_rule_Base[i]
+                cadena_string += str(i + 1) + ": "
+                for j in range(0, self.n_variables - 1):
+                    cadena_string += self.names[j] + " IS " + granularity_rule.antecedent[j].name + " AND "
+                j = j + 1
+                cadena_string += self.names[j] + " IS " + granularity_rule.antecedent[j].name + ": " + str(
+                    self.classes[granularity_rule.class_value]) + " with Rule Weight: " + str(granularity_rule.weight) + "\n"
+
         return cadena_string
 
     # * It writes the rule base into an ouput file

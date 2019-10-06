@@ -7,4 +7,12 @@
 @Number of negative rules: 2
 
 1: feature1 IS L_0 AND feature2 IS L_1: 2 with Rule Weight: 0.2
+@Number of granularity rules: 2
+
+1: feature1 IS L_0 AND feature2 IS L_1: 1 with Rule Weight: 0.5413915835575066
+2: feature1 IS L_1 AND feature2 IS L_0: 2 with Rule Weight: 0.48526140853542865
 2: feature1 IS L_1 AND feature2 IS L_0: 1 with Rule Weight: 0.14285714285714285
+@Number of granularity rules: 2
+
+1: feature1 IS L_0 AND feature2 IS L_1: 1 with Rule Weight: 0.5413915835575066
+2: feature1 IS L_1 AND feature2 IS L_0: 2 with Rule Weight: 0.48526140853542865
