@@ -170,6 +170,9 @@ class MyDataSet:
     def getnInputs(self):
         return self.__nInputs
 
+    def set_nInputs(self, nInputs_value):
+        self.__nInputs = nInputs_value
+
     #    * It gets the number of output attributes of the data-set (for example number of classes in classification)
     #    * @return int the number of different output values of the data-set
 
@@ -596,14 +599,17 @@ class MyDataSet:
 
     #  * It returns the discourse universe for the input and output variables
     #  * @return double[][] The minimum [0] and maximum [1] range of each variable
+    def set_nVars(self,nVar_value):
+        self.__nVars = nVar_value
 
     def getRanges(self):
 
         print("self.getnVars()" + str(self.getnVars()))
         rangos = [[0.0 for y in range(2)] for x in range(self.getnVars())]
         print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnVars()) + ",second is 2")
-        for i in range(0, self.getnInputs()):
-            print("self.getnInputs()" + str(self.getnInputs()) + " i = " + str(i))
+        nInputs = self.getnInputs()
+        for i in range(0, nInputs):
+            print("self.getnInputs()" + str(nInputs) + " i = " + str(i))
             attHere = Attributes.getInputAttribute(Attributes, i)
             print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
             if attHere.getNumNominalValues() > 0:

@@ -47,6 +47,7 @@ class Rule:
     rule_type = None
     rule_priority = None
     data_row_here = None
+    granularity_sub_zone = None
 
     def __init__(self):
 

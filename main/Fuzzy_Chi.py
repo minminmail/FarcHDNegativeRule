@@ -51,8 +51,14 @@ class Fuzzy_Chi:
     inferenceType = None
     ruleWeight = None
     dataBase = None
+    granularity_data_base_array = []
     ruleBase = None
+    granularity_rulebase = []
     negative_confident_value = 0.01
+    # added by rui
+    negative_rule_number = None
+    granularity_data_row_array = []
+    my_dataset_train_sub_zone = []
 
     # Configuration flags.
     MINIMUM = 0
@@ -160,15 +166,15 @@ class Fuzzy_Chi:
             self.dataBase.setMultipleParameters(self.train_myDataSet.getnInputs(), self.nLabels,
                                                 self.train_myDataSet.getRanges(), self.train_myDataSet.getNames())
             print("DataBase object has been created......")
-            self.ruleBase = RuleBase(self.dataBase, self.inferenceType, self.combinationType, self.ruleWeight,
+            self.ruleBase = RuleBase()
+            self.ruleBase.set_six_parameter_init(self.dataBase, self.inferenceType, self.combinationType, self.ruleWeight,
                                      self.train_myDataSet.getNames(), self.train_myDataSet.getClasses())
 
             print("Data Base:\n" + self.dataBase.printString())
             self.ruleBase.generation(self.train_myDataSet)
             # added by rui for negative rules
             self.ruleBase.generate_negative_rules(self.train_myDataSet, self.negative_confident_value)
-            #  added by rui for granularity rules
-            self.ruleBase.generate_granularity_rules_all_steps(self.train_myDataSet)
+            self.negative_rule_number = len(self.ruleBase.negative_rule_base_array)
 
             print("self.fileDB = " + str(self.fileDB))
             print("self.fileRB = " + str(self.fileRB))
@@ -182,6 +188,40 @@ class Fuzzy_Chi:
             print("Accuracy obtained in training: " + str(accTra))
             print("Accuracy obtained in test: " + str(accTst))
             print("Algorithm Finished")
+            # 1. get the sub train myDataSet from negative rules
+            self.granularity_database_array = [DataBase() for x in range(self.negative_rule_number)]
+            self.granularity_rule_base =[RuleBase() for x in range(self.negative_rule_number)]
+
+            # from negative rule get small_disjunct_train array
+            self.extract_small_disjunct_train_array_step_one(self.train_myDataSet)
+
+            # need to get below 4 values:
+            # self.train_myDataSet.getnInputs(), self.nLabels,
+            # self.train_myDataSet.getRanges(), self.train_myDataSet.getNames()
+
+            for i in range(0, self.negative_rule_number):
+                # 2. for each sub train myDataSet, do self.granularity_data_base[i]= DataBase()
+                self.granularity_database_array[i] = DataBase()
+                # 3. self.granularity_data_base[i].setMultipleParameters(......)
+                self.my_dataset_train_sub_zone[i].set_nVars(self.train_myDataSet.getnVars())
+                self.my_dataset_train_sub_zone[i].set_nInputs(self.train_myDataSet.getnInputs())
+                self.granularity_database_array[i].setMultipleParameters(self.my_dataset_train_sub_zone[i].getnInputs(),
+                                                                         self.nLabels,
+                                                                         self.my_dataset_train_sub_zone[i].getRanges(),
+                                                                         self.my_dataset_train_sub_zone[i].getNames())
+                #  added by rui for granularity rules
+                self.granularity_rule_base[i] = RuleBase()
+                self.granularity_rule_base[i].set_six_parameter_init(self.granularity_database_array[i], self.inferenceType, self.combinationType, self.ruleWeight,
+                                                      self.my_dataset_train_sub_zone[i].getNames(), self.my_dataset_train_sub_zone[i].getClasses())
+                self.generate_granularity_rules_all_steps(self.train_myDataSet, self.granularity_rule_base[i])
+
+                print("self.fileDB = " + str(self.fileDB))
+                print("self.fileRB = " + str(self.fileRB))
+                self.granularity_database_array[i].writeFile(self.fileDB)
+            granularity_rule_number = len(self.granularity_rulebase)
+
+            for x in range(0, granularity_rule_number):
+                self.granularity_rulebase.writeFile(self.fileRB)
 
     # """
     #    * It generates the output file from a given dataset and stores it in a file
@@ -231,3 +271,76 @@ class Fuzzy_Chi:
             print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
             self.output = self.train_myDataSet.getOutputValue(classOut)
         return self.output
+
+        # added by rui for granularity rules
+
+    def generate_granularity_rules_all_steps(self, train, rule_base_pass):
+        # from negative rule get small_disjunct_train array
+        self.extract_small_disjunct_train_array_step_one(train)
+        # for each small disjunct train generate positive rules, save into priority rule base
+        negative_rule_num = len(rule_base_pass.negative_rule_base_array)
+        for i in range(0, negative_rule_num):
+            sub_train_zone = self.my_dataset_train_sub_zone[i]
+            self.generation_rule_step_two(sub_train_zone, i)
+
+        # generate granularity rules
+
+        # make the small disjunct label as L0S0 L0S1,L1S0,L1S1,
+
+        # check accurate rate ,need to consider the granularity rules and positive rules
+
+    def extract_small_disjunct_train_array_step_one(self, train):
+        self.negative_rule_number = len(self.ruleBase.negative_rule_base_array)
+        x_array = [[] for x in range(self.negative_rule_number)]
+        output_integer = [[] for x in range(train.size())]
+        train_x_array = train.get_x()
+        # print("generate granularity rules begin :")
+        data_row_number = len(self.ruleBase.data_row_array)
+
+        for m in range(0, self.negative_rule_number):
+            x_array[m] = []
+            output_integer[m] = []
+        self.my_dataset_train_sub_zone = [MyDataSet() for x in range(self.negative_rule_number)]
+
+        for i in range(0, self.negative_rule_number):
+            for dr in range(0, data_row_number):
+                same_label_num = 0
+                negative_rule_here = self.ruleBase.negative_rule_base_array[i]
+                for j in range(0, self.ruleBase.n_labels):
+                    print(" self.data_row_array[dr].label_values[j]" + str(self.ruleBase.data_row_array[dr].label_values[j]))
+                    print(" negative_rule_here.antecedent[j]: " + str(negative_rule_here.antecedent[j].label))
+                    if self.ruleBase.data_row_array[dr].label_values[j] == negative_rule_here.antecedent[j].label:
+                        same_label_num = same_label_num + 1
+                if same_label_num == self.ruleBase.n_labels:
+                    # added the related __X in new sub zone train data set
+                    print("train_x_array[dr]" + str(train_x_array[dr]))
+                    x_array[i].append(train_x_array[dr])
+                    output_integer[i].append(train.getOutputAsIntegerWithPos(dr))
+            print(" output_integer length is " + str(len(output_integer[i])))
+
+        for k in range(0, self.negative_rule_number):
+            print(" my_dataset_train_sub_zone[ " + str(k) + " ] :" + str(self.my_dataset_train_sub_zone[k]))
+            num_sub_zone = len(x_array[k])
+            # set my data set X array
+            self.my_dataset_train_sub_zone[k].set_x(x_array[k])
+            self.my_dataset_train_sub_zone[k].set_output_integer_array(output_integer[k])
+            self.my_dataset_train_sub_zone[k].set_ndata(num_sub_zone)
+            print("num_sub_zone " + str(k) + " is  :" + str(num_sub_zone))
+            # set the rule base nClasses value
+            nclasses_number = self.my_dataset_train_sub_zone[k].calculate_nclasses_for_small_granularity_zone(
+                output_integer[k])
+            print("nclasses_number of " + str(k) + " is  :" + str(nclasses_number))
+            self.my_dataset_train_sub_zone[k].set_nClasses(nclasses_number)
+
+    def generation_rule_step_two(self, train, sub_zone_number,rule_base_pass):
+        print("In generation, the size of train is :" + str(train.size()))
+        for i in range(0, train.size()):
+            granularity_rule = rule_base_pass.searchForBestAntecedent(train.getExample(i), train.getOutputAsIntegerWithPos(i))
+            self.granularity_data_row_array.append(granularity_rule.data_row_here)
+            granularity_rule.assingConsequent(train, self.ruleWeight)
+            if not (rule_base_pass.duplicated_granularity_rule(granularity_rule)) and (granularity_rule.weight > 0):
+                granularity_rule.granularity_sub_zone = sub_zone_number
+                rule_base_pass.granularity_rule_Base.append(granularity_rule)
+
+        print("The total granularity_data_row_array is " + str(len(self.granularity_data_row_array)))
+        print("The total granularity_rule_Base has : " + str(len(rule_base_pass.granularity_rule_Base)))

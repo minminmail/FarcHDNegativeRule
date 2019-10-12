@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="granularity rule generation has result">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 06 before sleep">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
     </list>
@@ -29,9 +33,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Help_Classes/Attributes.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Help_Classes/Attributes.py" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -400,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570393521327</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="oct 06 before sleep">
+      <created>1570395505582</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1570395505582</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -426,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="before cannot import name InstanceSet from InstanceSet error" />
     <MESSAGE value="rewritten in python some classes" />
     <MESSAGE value="before fix the error:Unexpected error:'ParseParameters' object has no attribute 'get'" />
     <MESSAGE value="ParseParameters' object has no attribute 'get' still" />
@@ -451,6 +461,7 @@
     <MESSAGE value="get correct negative rule" />
     <MESSAGE value="granularity rule generation" />
     <MESSAGE value="granularity rule generation has result" />
-    <option name="LAST_COMMIT_MESSAGE" value="granularity rule generation has result" />
+    <MESSAGE value="oct 06 before sleep" />
+    <option name="LAST_COMMIT_MESSAGE" value="oct 06 before sleep" />
   </component>
 </project>

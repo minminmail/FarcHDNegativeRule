@@ -156,10 +156,11 @@ class DataBase:
     # '''
     #      * It writes the Data Base into an output file
     #      * @param filename String the name of the output file
+    #      w+ to save all the database
     # '''
     def writeFile(self, filename):
 
-        file = open(filename, "w")
+        file = open(filename, "w+")
         outputString = self.printString()
         file.write(outputString)
         file.close()
