@@ -198,13 +198,14 @@ class Fuzzy_Chi:
             # need to get below 4 values:
             # self.train_myDataSet.getnInputs(), self.nLabels,
             # self.train_myDataSet.getRanges(), self.train_myDataSet.getNames()
-
+            nVars = self.train_myDataSet.getnVars()
+            nInputs = self.train_myDataSet.getnInputs()
             for i in range(0, self.negative_rule_number):
                 # 2. for each sub train myDataSet, do self.granularity_data_base[i]= DataBase()
                 self.granularity_database_array[i] = DataBase()
                 # 3. self.granularity_data_base[i].setMultipleParameters(......)
-                self.my_dataset_train_sub_zone[i].set_nVars(self.train_myDataSet.getnVars())
-                self.my_dataset_train_sub_zone[i].set_nInputs(self.train_myDataSet.getnInputs())
+                self.my_dataset_train_sub_zone[i].set_nVars(nVars)
+                self.my_dataset_train_sub_zone[i].set_nInputs(nInputs)
                 self.granularity_database_array[i].setMultipleParameters(self.my_dataset_train_sub_zone[i].getnInputs(),
                                                                          self.nLabels,
                                                                          self.my_dataset_train_sub_zone[i].getRanges(),
@@ -213,7 +214,8 @@ class Fuzzy_Chi:
                 self.granularity_rule_base[i] = RuleBase()
                 self.granularity_rule_base[i].set_six_parameter_init(self.granularity_database_array[i], self.inferenceType, self.combinationType, self.ruleWeight,
                                                       self.my_dataset_train_sub_zone[i].getNames(), self.my_dataset_train_sub_zone[i].getClasses())
-                self.generate_granularity_rules_all_steps(self.train_myDataSet, self.granularity_rule_base[i])
+
+                self.generate_granularity_rules(self.granularity_rule_base[i])
 
                 print("self.fileDB = " + str(self.fileDB))
                 print("self.fileRB = " + str(self.fileRB))
@@ -274,14 +276,13 @@ class Fuzzy_Chi:
 
         # added by rui for granularity rules
 
-    def generate_granularity_rules_all_steps(self, train, rule_base_pass):
+    def generate_granularity_rules(self, rule_base_pass):
         # from negative rule get small_disjunct_train array
-        self.extract_small_disjunct_train_array_step_one(train)
         # for each small disjunct train generate positive rules, save into priority rule base
         negative_rule_num = len(rule_base_pass.negative_rule_base_array)
         for i in range(0, negative_rule_num):
             sub_train_zone = self.my_dataset_train_sub_zone[i]
-            self.generation_rule_step_two(sub_train_zone, i)
+            self.generation_rule_step_two(self, sub_train_zone, sub_train_zone.size(), self.granularity_rulebase)
 
         # generate granularity rules
 
@@ -331,8 +332,9 @@ class Fuzzy_Chi:
                 output_integer[k])
             print("nclasses_number of " + str(k) + " is  :" + str(nclasses_number))
             self.my_dataset_train_sub_zone[k].set_nClasses(nclasses_number)
+            number_of_data = self.my_dataset_train_sub_zone[k].size()
 
-    def generation_rule_step_two(self, train, sub_zone_number,rule_base_pass):
+    def generation_rule_step_two(self, train, sub_zone_number, rule_base_pass):
         print("In generation, the size of train is :" + str(train.size()))
         for i in range(0, train.size()):
             granularity_rule = rule_base_pass.searchForBestAntecedent(train.getExample(i), train.getOutputAsIntegerWithPos(i))
