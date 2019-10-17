@@ -198,6 +198,90 @@ class Instance:
 
     # end Instance
 
+    def setThreeParameters(self, defStr, _isTrain, instanceNum):
+        # print("setThreeParameters begin...... ")
+        currentClass = -1
+        # System.out.println ("Reading data: "+def);
+        # print("In setThreeParameters,defStr is : " + defStr)
+        # print("In setThreeParameters, instanceNum is : " + str(instanceNum))
+        st = defStr.split(",")  # Separator: "," and " "
+        # print("inside setThreeParameters st length is :" + str(len(st)))
+        self.initClassAttributes()
+        self.isTrain = _isTrain
+
+        count = 0
+        inAttCount = 0
+        outAttCount = 0
+        indefCount = 0
+        inputOutput = 0
+        curCount = 0
+        for att in st:
+            att = att.strip()
+            # Looking if the attribute is an input, an output or it's undefined
+
+            curAt = Attributes.getAttributeByPos(Attributes, count)
+            # print("inside setThreeParameters curAtis :" + str(curAt))
+            directionAttr = curAt.getDirectionAttribute()
+            # print("inside setThreeParameters directionAttr :" + str(directionAttr))
+            if directionAttr == Attribute.INPUT:
+                print("directionAttr==Attribute.INPUT")
+                inputOutput = Instance.ATT_INPUT
+                curCount = inAttCount
+                print("curCount is : " + str(curCount))
+                inAttCount = inAttCount + 1
+                print("inAttCount is : " + str(inAttCount))
+
+            elif directionAttr == Attribute.OUTPUT:
+                print("directionAttr==Attribute.OUTPUT")
+                inputOutput = Instance.ATT_OUTPUT
+                if curAt.getType() == Attribute.NOMINAL:
+                    print("curAt.getType() == Attribute.NOMINAL")
+                    currentClass = curAt.convertNominalValue(att)
+
+                    # System.out.println ( " The position of the current class "+ att +" is: "+ currentClass );
+                curCount = outAttCount
+                outAttCount = outAttCount + 1
+
+            else:
+                print("Attribute not defined neither as input or output")
+                # Attribute not defined neither as input or output. So, it is not read.
+                inputOutput = Instance.ATT_NONDEF
+                curCount = indefCount
+                indefCount = indefCount + 1
+
+            # The attribute is defined. So, its value is processed, and the attributes definitions
+            # are checked to detect inconsistencies or to redefine undefined traits.
+            # print("Before processReadValue......")
+            self.processReadValue(curAt, defStr, att, inputOutput, count, curCount, instanceNum)
+            # print("After processReadValue......")
+            # Finally, the counter of read attributes is updated.
+            count = count + 1
+            # end of the while
+
+        # Checking if the instance doesn't have the same number of attributes than defined.
+        if count != Attributes.getNumAttributes(Attributes):
+            print("count != Attributes.getNumAttributes(Attributes)......")
+            er = ErrorInfo(ErrorInfo.BadNumberOfValues, instanceNum, InstanceParser.lineCounter, 0, 0, self.isTrain, (
+                    "Instance " + defStr + " has a different number of attributes than defined\n   > Number of attributes defined: " + Attributes.getNumAttributes() + "   > Number of attributes read:    " + count))
+            # InstanceSet.errorLogger.setError(er)
+
+        # Compute the statistics
+        if self.isTrain:
+            print("self.isTrain==True......")
+            atts = Attributes.getInputAttributes(Attributes)
+            length = int(len(atts))
+            for i in range(0, length):
+                if not self.__missingValues[Instance.ATT_INPUT][i]:
+                    if (atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes() == 1):
+                        atts[i].increaseClassFrequency(currentClass, self.__nominalValues[Instance.ATT_INPUT][i])
+                    elif ((atts[i].getType() == Attribute.INTEGER or atts[i].getType() == Attribute.REAL) and
+                          not self.__missingValues[Instance.ATT_INPUT][i]):
+                        atts[i].addInMeanValue(currentClass, self.__realValues[Instance.ATT_INPUT][i])
+
+        # print("setThreeParameters finished...... ")
+
+    # end Instance
+
     # * Creates a deep copy of the Instance
     # * @param inst Original Instance to be copied
 

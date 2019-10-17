@@ -99,6 +99,19 @@ class InstanceParser:
 
     # end of Parser constructor
 
+    def init_for_granularity_parser(self, data_array, _isTrain):
+        try:
+            print("In init of init_for_granularity_parser, set file =" )
+            self.lineCounter = 0
+        except Exception as error:
+            print("The exception in init_for_granularity_parser of InstanceParse is: " + format(error))
+            exit(1)
+
+        self.__isTrain = _isTrain
+        self.__attributeCount = 0
+
+    # end of Parser constructor
+
     #  * It returns all the header read in parseHeader.
     #  * @return a string with the header information.
 

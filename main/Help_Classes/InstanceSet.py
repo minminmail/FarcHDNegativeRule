@@ -250,19 +250,17 @@ class InstanceSet:
 
         # read set from data row array for granularity
     def read_set_from_data_row_array(self, data_raw_array, isTrain):
-        print("Before try in readSet of InstanceSet, fileName is :" + str(fileName) + ".")
-        print("Opening the file in readSet of InstanceSet: " + str(fileName) + ".")
+        print("Before try in read_set_from_data_row_array of InstanceSet")
         try:
             # Parsing the header of the DB.
             errorLogger = FormatErrorKeeper()
-            self.file_to_open = self.data_folder / fileName
             # Declaring an instance parser
-            print("In readSet,file_to_open is:" + str(self.file_to_open))
+
             # to do The exception in init InstanceParserof InstanceParse is: can only concatenate str (not "WindowsPath") to str
-            instance_parser = InstanceParser(self.file_to_open, isTrain)
+            instance_parser = InstanceParser.init_for_granularity_parser(data_raw_array, isTrain)
             # Reading information in the header, i.e., @relation, @attribute, @inputs and @outputs
-            print("In readSet finished read file " + str(self.file_to_open))
-            self.parseHeader(instance_parser, isTrain)
+            print("data_raw_array size" + str(len(data_raw_array)))
+            self.parse_header_from_data_row_array(instance_parser, isTrain)
             print(" The number of output attributes is: " + str(Attributes.getOutputNumAttributes(Attributes)))
             # The attributes statistics are init if we are in train mode.
             print("In readSet, isTrain is " + str(isTrain))
@@ -271,23 +269,21 @@ class InstanceSet:
                 Attributes.initStatistics(Attributes)
             # A temporal vector is used to store the instances read.
 
-            print("Reading the data")
+            print("Reading the data in read_set_from_data_row_array")
             tempSet = []
             print("begin instance_parser.getLines()...... ")
             lines = self.data_lines
             new_data_lines = []
-            print("*********  There are : " + str(len(lines)) + "In original Data lines ********* ")
-            for line in lines:
-                if ("@relation" not in line) and ("@attribute" not in line) and ("@inputs" not in line) and (
-                        "@outputs" not in line) and ("@data" not in line):
-                    new_data_lines.append(line)
+            number_of_lines = len(data_raw_array)
+            print("*********  There are : " + str(number_of_lines) + "In original Data lines ********* ")
+
             print("*********  There are : " + str(len(new_data_lines)) + " In new Data lines ********* ")
-            for line in new_data_lines:
-                if new_data_lines is not None:
-                    print("Data line: " + str(line))
+            for i in range(0, number_of_lines):
+                if len(new_data_lines) != 0:
+                    print("Data line: " + str(data_raw_array[i]))
                     newInstance = Instance()
                     print("how many data already in the instanceSet: " + str(len(tempSet)))
-                    newInstance.setThreeParameters(line, isTrain, len(tempSet))
+                    newInstance.setThreeParameters(data_raw_array[i], isTrain, len(tempSet))
                     tempSet.append(newInstance)
 
                 # The vector of instances is converted to an array of instances.
@@ -321,6 +317,76 @@ class InstanceSet:
 
 
     def parseHeader(self, parser, isTrain):
+        # 1. Declaration of variables
+        inputAttrNames = []
+        outputAttrNames = []
+        inputsDef = False
+        outputsDef = False
+        self.header = ""
+        attCount = 0
+        lineCount = 0
+        self.attHeader = None
+
+        print("Begin to call the InstanceParser.getLines(),parser.getLines(), in InstanceSet.")
+        lines = parser.getLines()
+        self.data_lines = lines
+
+        for line in lines:
+            line = str(line).strip()
+            print("In parseHeader method of InstanceSet, the line is:" + line)
+            if line == "@data".lower():
+
+                break
+            else:
+                print("  Line read: " + line + ".")
+                lineCount = lineCount + 1
+                if "@relation" in line:
+
+                    if isTrain:
+                        relationName = str(line.replace("@relation", "")).strip()
+                        print("set Relation name :" + str(relationName))
+                        Attributes.setRelationName(self, relationName)
+                elif "@attribute" in line:
+
+                    if isTrain:
+                        print("Begin insertAttribute ......")
+                        self.insertAttribute(line)
+                        attCount = attCount + 1
+
+                elif "@inputs" in line:
+
+                    print("@inputs in " + str(line))
+                    self.attHeader = self.header
+                    inputsDef = True
+
+                    aux = line[8:]
+
+                    if isTrain:
+                        print("Has @inputs, aux is :" + aux)
+                        self.insertInputOutput(aux, lineCount, inputAttrNames, "inputs", isTrain)
+                elif "@outputs" in line:
+
+                    if self.attHeader is None:
+                        self.attHeader = self.header
+                    outputsDef = True
+                    print("Defining the output in line :" + line)
+                    sub_line = line.split()  # To get the output attribute name
+                    aux = sub_line[1]
+                    if isTrain:
+                        print("Has @outputs, aux is :" + aux)
+                        self.insertInputOutput(aux, lineCount, outputAttrNames, "outputs", isTrain)
+
+                        print("Size of the output is: " + str(len(outputAttrNames)))
+
+                self.header += line + "\n"
+        if self.attHeader is None:
+            self.attHeader = self.header
+        self.processInputsAndOutputs(isTrain, inputsDef, outputsDef, outputAttrNames, inputAttrNames)
+
+    # end headerParse
+
+    # added by rui for granularity rules
+    def parse_header_from_data_row_array(self, parser, isTrain):
         # 1. Declaration of variables
         inputAttrNames = []
         outputAttrNames = []
