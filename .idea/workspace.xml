@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 16 morning">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 17 morning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ParseParameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ParseParameters.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -422,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571200178162</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="oct 17 morning">
+      <created>1571286508544</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1571286508544</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView">
@@ -448,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ParseParameters' object has no attribute 'get' still" />
     <MESSAGE value="need to fix Attribute.py for next step" />
     <MESSAGE value="Unexpected error in readSet of InstanceSet class :'NoneType' object is not subscriptable" />
     <MESSAGE value="need to work at readClassificationSet() in MyDataSet.py" />
@@ -473,7 +481,8 @@
     <MESSAGE value="oct 06 before sleep" />
     <MESSAGE value="oct 15 before sleep" />
     <MESSAGE value="oct 16 morning" />
-    <option name="LAST_COMMIT_MESSAGE" value="oct 16 morning" />
+    <MESSAGE value="oct 17 morning" />
+    <option name="LAST_COMMIT_MESSAGE" value="oct 17 morning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

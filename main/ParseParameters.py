@@ -124,16 +124,6 @@ class ParseParameters:
             if file_type == "dat" or file_type == "tra" or file_type == "tst":
                 file_list.append(fileName)
 
-            # if (fileName[-3:]=='dat'):
-            #     self.__inputFiles.append(fileName)
-            #     print("Inside readInputFiles, line " + str(lineNumber) + ",added fileName: " + str(fileName))
-            #     fileNameWithoutSuffix = fileName.rpartition('.')[0]
-            #     typeInputFile =fileNameWithoutSuffix[-3:]
-            #     #check  input file's  type :trainning or test
-            #     if typeInputFile=='tra':
-            #         self.__inputTraFiles.append(fileName)
-            #     elif typeInputFile=='tst':
-            #         self.__inputTstFiles.append(fileName)
         file_number = len(file_list)
         print("file_number :" + str(file_number))
         for i in range(0, file_number):

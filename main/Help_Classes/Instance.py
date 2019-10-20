@@ -198,14 +198,12 @@ class Instance:
 
     # end Instance
 
-    def setThreeParameters(self, defStr, _isTrain, instanceNum):
+   # added by rui for granularity rules
+    def set_three_parameters_for_granularity_rules(self, data_row, _isTrain, instanceNum):
         # print("setThreeParameters begin...... ")
         currentClass = -1
-        # System.out.println ("Reading data: "+def);
-        # print("In setThreeParameters,defStr is : " + defStr)
-        # print("In setThreeParameters, instanceNum is : " + str(instanceNum))
-        st = defStr.split(",")  # Separator: "," and " "
-        # print("inside setThreeParameters st length is :" + str(len(st)))
+        st = data_row
+
         self.initClassAttributes()
         self.isTrain = _isTrain
 
@@ -1608,10 +1606,10 @@ class Instance:
             missingValuesUndef[undefPosition] = self.__missingValues[index][i]
 
         # Copying the rest of the undefined values
-        k = 0;
+        k = 0
         for i in range(0, self.__numUndefinedAttributes):
             if i == undefPosition:
-                continue;
+                continue
 
             nominalValuesUndef[i] = self.__nominalValues[Instance.ATT_NONDEF][k]
             intNominalValuesUndef[i] = self.__intNominalValues[Instance.ATT_NONDEF][k]

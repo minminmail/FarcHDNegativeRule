@@ -72,6 +72,11 @@ class InstanceParser:
     # Counter of the line
     lineCounter = 0
     file = None
+    # added for granularity rule
+
+    data_row_array = []
+    data_row_counter = 0
+
 
     # /////////////////////////////////////////////////////////////////////////////
     # /////////////////// METHODS OF THE PARSER CLASS /////////////////////////////
@@ -101,8 +106,9 @@ class InstanceParser:
 
     def init_for_granularity_parser(self, data_array, _isTrain):
         try:
-            print("In init of init_for_granularity_parser, set file =" )
-            self.lineCounter = 0
+            print("In init of init_for_granularity_parser, set file =")
+            self.data_row_array = data_array
+            self.data_row_counter = 0
         except Exception as error:
             print("The exception in init_for_granularity_parser of InstanceParse is: " + format(error))
             exit(1)
@@ -174,10 +180,21 @@ class InstanceParser:
 
         return file_lines
 
-    # end getLine
+    # added by rui for granularity rules
+    def get_rows(self):
+
+        row_number = len(self.data_row_array)
+        if row_number != 0:
+            print("row array has " + str(row_number) + " rows")
+        else:
+            print("row_number is 0 !!")
+
+        self.data_row_counter = row_number
+        return self.data_row_array
+
+    # end get_rows
 
     # This method closes the buffered reader used to parse the instances
-
     def close(self):
         try:
             print("close file, name is :" + str(self.file.name))

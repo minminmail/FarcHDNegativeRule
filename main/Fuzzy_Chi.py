@@ -190,7 +190,7 @@ class Fuzzy_Chi:
             print("Algorithm Finished")
             # 1. get the sub train myDataSet from negative rules
             self.granularity_database_array = [DataBase() for x in range(self.negative_rule_number)]
-            self.granularity_rule_base =[RuleBase() for x in range(self.negative_rule_number)]
+            self.granularity_rule_base = [RuleBase() for x in range(self.negative_rule_number)]
 
             # from negative rule get small_disjunct_train array
             self.extract_small_disjunct_train_array_step_one(self.train_myDataSet)
