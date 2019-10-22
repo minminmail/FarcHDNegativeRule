@@ -326,6 +326,12 @@ class MyDataSet:
     #   * @param train boolean It must have the value "true" if we are reading the training data-set
     #   * @throws IOException If there ocurs any problem with the reading of the data-set
 
+    # added by rui for granularity rule generation
+    def read_classification_set_from_data_row_array(self, data_row_array):
+
+        self.compute_statistics_data_row_array(data_row_array)
+        self.compute_instances_perclass_data_row_array(data_row_array)
+
     def readRegressionSet(self, datasetFile, train):
 
         try:

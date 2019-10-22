@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 17 morning">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 21 morning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ParseParameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ParseParameters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -431,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571286508544</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="oct 21 morning">
+      <created>1571608758506</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1571608758506</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView">
@@ -457,7 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="need to fix Attribute.py for next step" />
     <MESSAGE value="Unexpected error in readSet of InstanceSet class :'NoneType' object is not subscriptable" />
     <MESSAGE value="need to work at readClassificationSet() in MyDataSet.py" />
     <MESSAGE value="file name repeated for 2 times" />
@@ -482,15 +485,26 @@
     <MESSAGE value="oct 15 before sleep" />
     <MESSAGE value="oct 16 morning" />
     <MESSAGE value="oct 17 morning" />
-    <option name="LAST_COMMIT_MESSAGE" value="oct 17 morning" />
+    <MESSAGE value="oct 21 morning" />
+    <option name="LAST_COMMIT_MESSAGE" value="oct 21 morning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>337</line>
+          <line>339</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
+          <line>208</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
+          <line>207</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

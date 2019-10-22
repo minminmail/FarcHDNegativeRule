@@ -204,6 +204,7 @@ class Fuzzy_Chi:
                 # 2. for each sub train myDataSet, do self.granularity_data_base[i]= DataBase()
                 self.granularity_database_array[i] = DataBase()
                 # 3. self.granularity_data_base[i].setMultipleParameters(......)
+
                 self.my_dataset_train_sub_zone[i].set_nVars(nVars)
                 self.my_dataset_train_sub_zone[i].set_nInputs(nInputs)
                 self.granularity_database_array[i].setMultipleParameters(self.my_dataset_train_sub_zone[i].getnInputs(),
@@ -221,7 +222,7 @@ class Fuzzy_Chi:
                 print("self.fileRB = " + str(self.fileRB))
                 self.granularity_database_array[i].writeFile(self.fileDB)
             granularity_rule_number = len(self.granularity_rulebase)
-
+            print("The granularity rule number is :" + str(granularity_rule_number))
             for x in range(0, granularity_rule_number):
                 self.granularity_rulebase.writeFile(self.fileRB)
 
@@ -333,13 +334,14 @@ class Fuzzy_Chi:
             print("nclasses_number of " + str(k) + " is  :" + str(nclasses_number))
             self.my_dataset_train_sub_zone[k].set_nClasses(nclasses_number)
             number_of_data = self.my_dataset_train_sub_zone[k].size()
+            print(" The my_dataset_train_sub_zone " + str(k) + " number is :" + str(number_of_data))
 
-    def generation_rule_step_two(self, train, sub_zone_number, rule_base_pass):
-        print("In generation, the size of train is :" + str(train.size()))
-        for i in range(0, train.size()):
-            granularity_rule = rule_base_pass.searchForBestAntecedent(train.getExample(i), train.getOutputAsIntegerWithPos(i))
+    def generation_rule_step_two(self, sub_train, sub_zone_number, rule_base_pass):
+        print("In generation, the size of train is :" + str(sub_train.size()))
+        for i in range(0, sub_train.size()):
+            granularity_rule = rule_base_pass.searchForBestAntecedent(sub_train.getExample(i), sub_train.getOutputAsIntegerWithPos(i))
             self.granularity_data_row_array.append(granularity_rule.data_row_here)
-            granularity_rule.assingConsequent(train, self.ruleWeight)
+            granularity_rule.assingConsequent(sub_train, self.ruleWeight)
             if not (rule_base_pass.duplicated_granularity_rule(granularity_rule)) and (granularity_rule.weight > 0):
                 granularity_rule.granularity_sub_zone = sub_zone_number
                 rule_base_pass.granularity_rule_Base.append(granularity_rule)
