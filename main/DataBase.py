@@ -62,7 +62,7 @@ class DataBase:
         rangos = array(rangos)
         marca = 0.0
 
-        for i in range(0, self.n_variables):
+        for i in range(0, self.n_labels):
             print("i= " + str(i))
             marca = (float(rangos[i][1]) - float(rangos[i][0])) / (float(n_labels) - 1)
             if marca == 0:  # there are no ranges (an unique valor)
@@ -140,7 +140,7 @@ class DataBase:
         print("numrows: " + str(numrows) + "numcols:" + str(numcols))
         if self.dataBase.size != 0:
             print("cadena: " + cadena)
-            for i in range(0, self.n_variables):
+            for i in range(0, self.n_labels):
                 print("i = " + str(i))
                 print("cadena: " + cadena)
                 cadena += "\n" + self.names[i] + ":\n"

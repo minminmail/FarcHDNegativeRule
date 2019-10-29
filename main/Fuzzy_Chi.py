@@ -205,9 +205,13 @@ class Fuzzy_Chi:
                 self.granularity_database_array[i] = DataBase()
                 # 3. self.granularity_data_base[i].setMultipleParameters(......)
 
+
+
                 self.my_dataset_train_sub_zone[i].set_nVars(nVars)
                 self.my_dataset_train_sub_zone[i].set_nInputs(nInputs)
-                self.granularity_database_array[i].setMultipleParameters(self.my_dataset_train_sub_zone[i].getnInputs(),
+
+                print("size of sub zone :" + str(self.my_dataset_train_sub_zone[i].size()))
+                self.granularity_database_array[i].setMultipleParameters(self.my_dataset_train_sub_zone[i].getnVars(),
                                                                          self.nLabels,
                                                                          self.my_dataset_train_sub_zone[i].getRanges(),
                                                                          self.my_dataset_train_sub_zone[i].getNames())
