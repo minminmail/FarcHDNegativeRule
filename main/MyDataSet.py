@@ -615,7 +615,7 @@ class MyDataSet:
         print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnVars()) + ",second is 2")
         nInputs = self.getnInputs()
         for i in range(0, nInputs):
-            print("self.getnInputs()" + str(nInputs) + " i = " + str(i))
+            print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
             attHere = Attributes.getInputAttribute(Attributes, i)
             print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
             if attHere.getNumNominalValues() > 0:
@@ -634,6 +634,32 @@ class MyDataSet:
         rangos[self.getnVars() - 1][1] = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
         return rangos
 
+
+    def get_granularity_zone_ranges(self):
+
+        print("self.getnVars()" + str(self.getnVars()))
+        rangos = [[0.0 for y in range(2)] for x in range(self.getnVars())]
+        print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnVars()) + ",second is 2")
+        nInputs = self.getnInputs()
+        for i in range(0, nInputs):
+            print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
+            attHere = Attributes.getInputAttribute(Attributes, i)
+            print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
+            if attHere.getNumNominalValues() > 0:
+                rangos[i][0] = 0.0
+                rangos[i][1] = attHere.getNumNominalValues() - 1
+                print(" attHere.getNumNominalValues() > 0,rangos[" + str(i) + "][0]==" + str(
+                    rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
+
+            else:
+                rangos[i][0] = attHere.getMinAttribute()
+                rangos[i][1] = attHere.getMaxAttribute()
+                print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(
+                    rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
+
+        rangos[self.getnVars() - 1][0] = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
+        rangos[self.getnVars() - 1][1] = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
+        return rangos
     #    * It returns the attribute labels for the input features
     #    * @return String[] the attribute labels for the input features
 

@@ -64,6 +64,9 @@ class Attributes:
     #  */
     attributes = []
 
+    # added by rui for set new granularity attributes max and min values.
+    granularity_attributes = []
+
     # /**
     #  * It contains a reference to all input attributes.
     #  */
