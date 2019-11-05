@@ -635,7 +635,7 @@ class MyDataSet:
         return rangos
 
 
-    def get_granularity_zone_ranges(self):
+    def get_granularity_zone_ranges(self, data_set_x_array, attribute_number):
 
         print("self.getnVars()" + str(self.getnVars()))
         rangos = [[0.0 for y in range(2)] for x in range(self.getnVars())]
@@ -652,8 +652,8 @@ class MyDataSet:
                     rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
 
             else:
-                rangos[i][0] = attHere.getMinAttribute()
-                rangos[i][1] = attHere.getMaxAttribute()
+                rangos[i][0] = attHere.get_min_granularity_attribute(data_set_x_array, attribute_number)
+                rangos[i][1] = attHere.get_max_granularity_attribute(data_set_x_array, attribute_number)
                 print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(
                     rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
 

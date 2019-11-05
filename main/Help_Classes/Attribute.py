@@ -37,7 +37,7 @@
 # *
 # * @author Albert Orriols Puig
 # * @version keel0.1
-
+import numpy as np
 class Attribute:
     #  '''
     # /////////////////////////////////////////////////////////////////////////////
@@ -365,6 +365,9 @@ class Attribute:
     def getMinAttribute(self):
         return self.__min
 
+    def get_min_granularity_attribute(self, data_set_x_array, attribute_number):
+        min_value = np.min(np.array(data_set_x_array)[:, attribute_number])
+        return min_value
     # end minAttribute
 
     #
@@ -374,6 +377,10 @@ class Attribute:
     #  '''
     def getMaxAttribute(self):
         return self.__max
+
+    def get_max_granularity_attribute(self, data_set_x_array, attribute_number):
+        max_value = np.max(np.array(data_set_x_array)[:, attribute_number])
+        return max_value
 
     # end maxAttribute
 

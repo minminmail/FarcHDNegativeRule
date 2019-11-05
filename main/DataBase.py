@@ -36,11 +36,13 @@ class DataBase:
     n_labels = None
     dataBase = []
     names = []
+    cadena = None
 
     # Default constructor
     def __init__(self):
         self.n_variables = None
         self.n_labels = None
+        self.cadena = ""
 
         # Constructor with parameters. It performs a homegeneous partition of the input space for
         # a given number of fuzzy labels.
@@ -131,27 +133,27 @@ class DataBase:
     #      * @return String the data base
     # '''
     def printString(self):
-        cadena = "@Using Triangular Membership Functions as antecedent fuzzy sets\n"
-        cadena += "@Number of Labels per variable: " + str(self.n_labels) + "\n"
+        self.cadena += "@Using Triangular Membership Functions as antecedent fuzzy sets\n"
+        self.cadena += "@Number of Labels per variable: " + str(self.n_labels) + "\n"
         numrows = len(self.dataBase)
         print("numrows: " + str(numrows))
         numcols = len(self.dataBase[0])
 
         print("numrows: " + str(numrows) + "numcols:" + str(numcols))
         if self.dataBase.size != 0:
-            print("cadena: " + cadena)
+            print("cadena: " + self.cadena)
             for i in range(0, self.n_labels):
                 print("i = " + str(i))
-                print("cadena: " + cadena)
-                cadena += "\n" + self.names[i] + ":\n"
+                print("cadena: " + self.cadena)
+                self.cadena += "\n" + self.names[i] + ":\n"
                 for j in range(0, self.n_labels):
                     print("i = " + str(i))
-                    cadena += " L_" + str(int(j + 1)) + ": (" + str(self.dataBase[i][j].x0) + "," + str(
+                    self.cadena += " L_" + str(int(j + 1)) + ": (" + str(self.dataBase[i][j].x0) + "," + str(
                         self.dataBase[i][j].x1) + "," + str(self.dataBase[i][j].x3) + ")\n"
         else:
             print("self.dataBase is None")
 
-        return cadena
+        return self.cadena
 
     # '''
     #      * It writes the Data Base into an output file

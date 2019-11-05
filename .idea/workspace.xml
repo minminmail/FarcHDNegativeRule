@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 23 night before sleep">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -450,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572386543641</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class">
+      <created>1572473301994</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1572473301994</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView">
@@ -476,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="need to work at readClassificationSet() in MyDataSet.py" />
     <MESSAGE value="file name repeated for 2 times" />
     <MESSAGE value="in initStatisticas has the class number already" />
     <MESSAGE value="fixed the validation file missing problem" />
@@ -501,25 +509,21 @@
     <MESSAGE value="oct 17 morning" />
     <MESSAGE value="oct 21 morning" />
     <MESSAGE value="oct 23 night before sleep" />
-    <option name="LAST_COMMIT_MESSAGE" value="oct 23 night before sleep" />
+    <MESSAGE value="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class" />
+    <option name="LAST_COMMIT_MESSAGE" value="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
-          <line>83</line>
-          <option name="timeStamp" value="22" />
+          <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
+          <line>621</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
-          <line>634</line>
-          <option name="timeStamp" value="27" />
+          <line>622</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -209,9 +209,10 @@ class Fuzzy_Chi:
                 self.my_dataset_train_sub_zone[i].set_nInputs(nInputs)
 
                 print("size of sub zone :" + str(self.my_dataset_train_sub_zone[i].size()))
+                sub_x_array = self.my_dataset_train_sub_zone[i].get_x()
                 self.granularity_database_array[i].setMultipleParameters(self.my_dataset_train_sub_zone[i].getnVars(),
                                                                          self.nLabels,
-                                                                         self.my_dataset_train_sub_zone[i].getRanges(),
+                                                                         self.my_dataset_train_sub_zone[i].get_granularity_zone_ranges(sub_x_array, i),
                                                                          self.my_dataset_train_sub_zone[i].getNames())
                 #  added by rui for granularity rules
                 self.granularity_rule_base[i] = RuleBase()
@@ -253,7 +254,7 @@ class Fuzzy_Chi:
                 if dataset.getOutputAsStringWithPos(i) == classOut:
                     hits = hits + 1
             # print("before open file in Fuzzy_Chi")
-            file = open(filename, "w")
+            file = open(filename, "w+")
             file.write(output)
             file.close()
         except Exception as excep:
@@ -320,7 +321,8 @@ class Fuzzy_Chi:
                     print("train_x_array[dr]" + str(train_x_array[dr]))
                     x_array[i].append(train_x_array[dr])
                     output_integer[i].append(train.getOutputAsIntegerWithPos(dr))
-            print(" output_integer length is " + str(len(output_integer[i])))
+            print(" output_integer length is： " + str(len(output_integer[i])))
+            print(" x_array length is： " + str(len(x_array[i])))
 
         for k in range(0, self.negative_rule_number):
             print(" my_dataset_train_sub_zone[ " + str(k) + " ] :" + str(self.my_dataset_train_sub_zone[k]))
