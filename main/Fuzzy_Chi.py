@@ -178,7 +178,7 @@ class Fuzzy_Chi:
 
             print("self.fileDB = " + str(self.fileDB))
             print("self.fileRB = " + str(self.fileRB))
-            self.dataBase.writeFile(self.fileDB)
+            self.dataBase.writeFile(self.fileDB, "1")
             self.ruleBase.writeFile(self.fileRB)
 
             # Finally we should fill the training and test output files
@@ -223,7 +223,7 @@ class Fuzzy_Chi:
 
                 print("self.fileDB = " + str(self.fileDB))
                 print("self.fileRB = " + str(self.fileRB))
-                self.granularity_database_array[i].writeFile(self.fileDB)
+                self.granularity_database_array[i].writeFile(self.fileDB, "2")
             granularity_rule_number = len(self.granularity_rulebase)
             print("The granularity rule number is :" + str(granularity_rule_number))
             for x in range(0, granularity_rule_number):

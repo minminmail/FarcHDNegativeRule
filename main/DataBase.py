@@ -160,9 +160,17 @@ class DataBase:
     #      * @param filename String the name of the output file
     #      w+ to save all the database
     # '''
-    def writeFile(self, filename):
+    def writeFile(self, filename, who_call):
 
-        file = open(filename, "w+")
-        outputString = self.printString()
-        file.write(outputString)
-        file.close()
+        if who_call == "1":
+            outputString = "normal rule database write file" + "\n" + self.printString()
+            file = open(filename, "w+")
+            file.write(outputString)
+            file.close()
+        else:
+            with open(filename, 'a') as file_append:
+                outputString = who_call + "\n" + self.printString()
+                file_append.write(outputString)
+                file_append.write('\n')
+                file_append.close()
+
