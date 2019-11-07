@@ -133,7 +133,7 @@ class DataBase:
     #      * @return String the data base
     # '''
     def printString(self):
-        self.cadena += "@Using Triangular Membership Functions as antecedent fuzzy sets\n"
+        self.cadena = "@Using Triangular Membership Functions as antecedent fuzzy sets\n"
         self.cadena += "@Number of Labels per variable: " + str(self.n_labels) + "\n"
         numrows = len(self.dataBase)
         print("numrows: " + str(numrows))
@@ -169,8 +169,7 @@ class DataBase:
             file.close()
         else:
             with open(filename, 'a') as file_append:
-                outputString = who_call + "\n" + self.printString()
+                outputString = "granularity rule database write file" + "\n" + self.printString()
                 file_append.write(outputString)
-                file_append.write('\n')
                 file_append.close()
 
