@@ -145,14 +145,14 @@ class DataBase:
             for i in range(0, self.n_labels):
                 print("i = " + str(i))
                 print("cadena: " + self.cadena)
-                self.cadena += "\n" + self.names[i] + ":\n"
+                self.cadena += "\n" + "      " +self.names[i] + ":\n"
                 for j in range(0, self.n_labels):
                     print("i = " + str(i))
-                    self.cadena += " L_" + str(int(j + 1)) + ": (" + str(self.dataBase[i][j].x0) + "," + str(
+                    self.cadena += "      " + " L_" + str(int(j + 1)) + ": (" + str(self.dataBase[i][j].x0) + "," + str(
                         self.dataBase[i][j].x1) + "," + str(self.dataBase[i][j].x3) + ")\n"
         else:
             print("self.dataBase is None")
-
+        self.cadena += "\n"
         return self.cadena
 
     # '''
@@ -160,16 +160,16 @@ class DataBase:
     #      * @param filename String the name of the output file
     #      w+ to save all the database
     # '''
-    def writeFile(self, filename, who_call):
+    def writeFile(self, filename, who_call, zone_number):
 
         if who_call == "1":
-            outputString = "normal rule database write file" + "\n" + self.printString()
+            outputString = "normal rule area" + "\n"+"\n" + self.printString()
             file = open(filename, "w+")
             file.write(outputString)
             file.close()
         else:
             with open(filename, 'a') as file_append:
-                outputString = "granularity rule database write file" + "\n" + self.printString()
+                outputString = "granularity rule of negative zone area " + str(zone_number)+ "\n" + "\n" + self.printString()
                 file_append.write(outputString)
                 file_append.close()
 
