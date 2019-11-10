@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="Nov 8th for deleted one duplicated database write file. still has another one">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="got granularity features DB correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,13 +119,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00003" summary="first time to push all">
-      <created>1537591282181</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1537591282181</updated>
     </task>
     <task id="LOCAL-00004" summary="process finished with exit 0">
       <created>1537591341864</created>
@@ -465,17 +456,15 @@
       <option name="project" value="LOCAL" />
       <updated>1573168158371</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="got granularity features DB correctly">
+      <created>1573392143660</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1573392143660</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -491,7 +480,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed the validation file missing problem" />
     <MESSAGE value="finished with exit code 1" />
     <MESSAGE value="no error ,but result is wrong" />
     <MESSAGE value="read parameters are all correct" />
@@ -516,7 +504,8 @@
     <MESSAGE value="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class" />
     <MESSAGE value="Nov 05 night for changed the get granularity zone ranges ,in fuzzy_chi, myDataSet , attribute classes." />
     <MESSAGE value="Nov 8th for deleted one duplicated database write file. still has another one" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nov 8th for deleted one duplicated database write file. still has another one" />
+    <MESSAGE value="got granularity features DB correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="got granularity features DB correctly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -532,14 +521,9 @@
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/DataBase.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
-          <line>644</line>
-          <option name="timeStamp" value="61" />
+          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
+          <line>345</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

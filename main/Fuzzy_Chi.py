@@ -178,7 +178,7 @@ class Fuzzy_Chi:
 
             print("self.fileDB = " + str(self.fileDB))
             print("self.fileRB = " + str(self.fileRB))
-            self.dataBase.writeFile(self.fileDB, "1",None)
+            self.dataBase.writeFile(self.fileDB, "1", None)
             self.ruleBase.writeFile(self.fileRB)
 
             # Finally we should fill the training and test output files
@@ -219,7 +219,7 @@ class Fuzzy_Chi:
                 self.granularity_rule_base[i].set_six_parameter_init(self.granularity_database_array[i], self.inferenceType, self.combinationType, self.ruleWeight,
                                                       self.my_dataset_train_sub_zone[i].getNames(), self.my_dataset_train_sub_zone[i].getClasses())
 
-                self.generate_granularity_rules(self.granularity_rule_base[i])
+                self.generate_granularity_rules()
 
                 print("self.fileDB = " + str(self.fileDB))
                 print("self.fileRB = " + str(self.fileRB))
@@ -274,19 +274,18 @@ class Fuzzy_Chi:
         # classification output from the input example
         classOut = self.ruleBase.FRM(example)
         if classOut >= 0:
-            print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
+            # print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
             self.output = self.train_myDataSet.getOutputValue(classOut)
         return self.output
 
         # added by rui for granularity rules
 
-    def generate_granularity_rules(self, rule_base_pass):
+    def generate_granularity_rules(self):
         # from negative rule get small_disjunct_train array
         # for each small disjunct train generate positive rules, save into priority rule base
-        negative_rule_num = len(rule_base_pass.negative_rule_base_array)
-        for i in range(0, negative_rule_num):
+        for i in range(0, self.negative_rule_number):
             sub_train_zone = self.my_dataset_train_sub_zone[i]
-            self.generation_rule_step_two(self, sub_train_zone, sub_train_zone.size(), self.granularity_rulebase)
+            self.generation_rule_step_two(sub_train_zone, sub_train_zone.size(),i)
 
         # generate granularity rules
 
@@ -312,13 +311,13 @@ class Fuzzy_Chi:
                 same_label_num = 0
                 negative_rule_here = self.ruleBase.negative_rule_base_array[i]
                 for j in range(0, self.ruleBase.n_labels):
-                    print(" self.data_row_array[dr].label_values[j]" + str(self.ruleBase.data_row_array[dr].label_values[j]))
-                    print(" negative_rule_here.antecedent[j]: " + str(negative_rule_here.antecedent[j].label))
+                    # print(" self.data_row_array[dr].label_values[j]" + str(self.ruleBase.data_row_array[dr].label_values[j]))
+                    # print(" negative_rule_here.antecedent[j]: " + str(negative_rule_here.antecedent[j].label))
                     if self.ruleBase.data_row_array[dr].label_values[j] == negative_rule_here.antecedent[j].label:
                         same_label_num = same_label_num + 1
                 if same_label_num == self.ruleBase.n_labels:
                     # added the related __X in new sub zone train data set
-                    print("train_x_array[dr]" + str(train_x_array[dr]))
+                    # print("train_x_array[dr]" + str(train_x_array[dr]))
                     x_array[i].append(train_x_array[dr])
                     output_integer[i].append(train.getOutputAsIntegerWithPos(dr))
             print(" output_integer length is： " + str(len(output_integer[i])))
@@ -340,15 +339,15 @@ class Fuzzy_Chi:
             number_of_data = self.my_dataset_train_sub_zone[k].size()
             print(" The my_dataset_train_sub_zone " + str(k) + " number is :" + str(number_of_data))
 
-    def generation_rule_step_two(self, sub_train, sub_zone_number, rule_base_pass):
+    def generation_rule_step_two(self, sub_train, sub_zone_number,area_number):
         print("In generation, the size of train is :" + str(sub_train.size()))
         for i in range(0, sub_train.size()):
-            granularity_rule = rule_base_pass.searchForBestAntecedent(sub_train.getExample(i), sub_train.getOutputAsIntegerWithPos(i))
+            granularity_rule = self.granularity_rule_base[area_number].searchForBestAntecedent(sub_train.getExample(i), sub_train.getOutputAsIntegerWithPos(i))
             self.granularity_data_row_array.append(granularity_rule.data_row_here)
             granularity_rule.assingConsequent(sub_train, self.ruleWeight)
-            if not (rule_base_pass.duplicated_granularity_rule(granularity_rule)) and (granularity_rule.weight > 0):
+            if not (self.granularity_rule_base[area_number].duplicated_granularity_rule(granularity_rule)) and (granularity_rule.weight > 0):
                 granularity_rule.granularity_sub_zone = sub_zone_number
-                rule_base_pass.granularity_rule_Base.append(granularity_rule)
+                self.granularity_rule_Base[area_number].append(granularity_rule)
 
         print("The total granularity_data_row_array is " + str(len(self.granularity_data_row_array)))
-        print("The total granularity_rule_Base has : " + str(len(rule_base_pass.granularity_rule_Base)))
+        print("The total granularity_rule_Base has : " + str(len(self.granularity_rule_Base[area_number])))
