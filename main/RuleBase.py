@@ -43,7 +43,7 @@ from MyDataSet import MyDataSet
 class RuleBase:
     ruleBase = []
     # added by rui for negative rule
-    negative_rule_base_array = []
+    granularity_rule_Base = []
     dataBase = DataBase()
     n_variables = None
     n_labels = None
@@ -138,6 +138,8 @@ class RuleBase:
         print("In searchForBestAntecedent ,self.n_labels is :" + str(self.n_labels))
         example_feature_array = []
         for f_variable in range(0, self.n_variables):
+            print("The f_variable is :"+str(f_variable))
+            print("The example is :" + str(example))
             example_feature_array.append(example[f_variable])
         label_array = []
 
