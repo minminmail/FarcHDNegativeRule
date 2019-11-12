@@ -284,7 +284,7 @@ class Fuzzy_Chi:
         # for each small disjunct train generate positive rules, save into priority rule base
         for i in range(0, self.negative_rule_number):
             sub_train_zone = self.my_dataset_train_sub_zone[i]
-            self.generation_rule_step_two(sub_train_zone, sub_train_zone.size(),i)
+            self.generation_rule_step_two(sub_train_zone, sub_train_zone.size(), i)
 
         # generate granularity rules
 
@@ -338,7 +338,7 @@ class Fuzzy_Chi:
             number_of_data = self.my_dataset_train_sub_zone[k].size()
             print(" The my_dataset_train_sub_zone " + str(k) + " number is :" + str(number_of_data))
 
-    def generation_rule_step_two(self, sub_train, sub_zone_number,area_number):
+    def generation_rule_step_two(self, sub_train, sub_zone_number, area_number):
         print("In generation, the area_number is :" + str(area_number))
         print("In generation, the size of sub train is :" + str(sub_train.size()))
         for i in range(0, sub_train.size()):
@@ -351,5 +351,8 @@ class Fuzzy_Chi:
 
         print("The total granularity_data_row_array is " + str(len(self.granularity_data_row_array)))
         print(" In area_number "+str(area_number) + " ,The total granularity_rule_Base rule number is  : " + str(len(self.granularity_rule_Base_array[area_number].granularity_rule_Base)))
-        for i in range(0,self.negative_rule_number):
-            self.granularity_rule_Base_array[i].writeFile(self.fileRB)
+
+        for i in range(0, self.negative_rule_number):
+            print(" The loop i number is :"+str(i))
+            self.granularity_rule_Base_array[i].write_File_for_granularity_rule(self.fileRB)
+

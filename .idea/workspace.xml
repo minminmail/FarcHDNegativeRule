@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="list out of index error">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 12 night">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,9 +30,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/DataBase.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/DataBase.py" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -121,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00005" summary="change parameter to lower case">
-      <created>1537594134254</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1537594134254</updated>
     </task>
     <task id="LOCAL-00006" summary="modified the input read files and read algorithm name">
       <created>1538217059757</created>
@@ -465,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573425143563</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="nov 12 night">
+      <created>1573515963687</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1573515963688</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="no error ,but result is wrong" />
     <MESSAGE value="read parameters are all correct" />
     <MESSAGE value="no error , but need to analysis the result." />
     <MESSAGE value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
@@ -507,7 +505,8 @@
     <MESSAGE value="Nov 8th for deleted one duplicated database write file. still has another one" />
     <MESSAGE value="got granularity features DB correctly" />
     <MESSAGE value="list out of index error" />
-    <option name="LAST_COMMIT_MESSAGE" value="list out of index error" />
+    <MESSAGE value="nov 12 night" />
+    <option name="LAST_COMMIT_MESSAGE" value="nov 12 night" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -521,16 +520,6 @@
           <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
           <line>622</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
