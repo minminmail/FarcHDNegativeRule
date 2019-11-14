@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 12 night">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 13 night">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
@@ -120,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00006" summary="modified the input read files and read algorithm name">
-      <created>1538217059757</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1538217059757</updated>
     </task>
     <task id="LOCAL-00007" summary="correct debug errors.">
       <created>1538257109010</created>
@@ -464,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573515963688</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="nov 13 night">
+      <created>1573599892268</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1573599892268</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -481,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="read parameters are all correct" />
     <MESSAGE value="no error , but need to analysis the result." />
     <MESSAGE value="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range" />
     <MESSAGE value="format files" />
@@ -506,7 +505,8 @@
     <MESSAGE value="got granularity features DB correctly" />
     <MESSAGE value="list out of index error" />
     <MESSAGE value="nov 12 night" />
-    <option name="LAST_COMMIT_MESSAGE" value="nov 12 night" />
+    <MESSAGE value="nov 13 night" />
+    <option name="LAST_COMMIT_MESSAGE" value="nov 13 night" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -522,24 +522,9 @@
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>218</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>221</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>349</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>351</line>
-          <option name="timeStamp" value="77" />
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>211</line>
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

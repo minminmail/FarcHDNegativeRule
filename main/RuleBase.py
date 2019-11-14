@@ -236,7 +236,7 @@ class RuleBase:
 
     def write_File_for_granularity_rule(self, filename):
         with open(filename, 'a') as file_append:
-            outputString = "\n"+"\n" + "Begin with write file of granularity"+self.print_granularity_rule_string()
+            outputString = "\n"+"\n" +self.print_granularity_rule_string()
             file_append.write(outputString)
             file_append.close()
 

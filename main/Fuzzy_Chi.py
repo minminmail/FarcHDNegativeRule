@@ -185,8 +185,8 @@ class Fuzzy_Chi:
             accTra = self.doOutput(self.val_myDataSet, self.outputTr)
             accTst = self.doOutput(self.test_myDataSet, self.outputTst)
 
-            print("Accuracy obtained in training: " + str(accTra))
-            print("Accuracy obtained in test: " + str(accTst))
+            print("Accuracy for normal rules obtained in training: " + str(accTra))
+            print("Accuracy for normal rules obtained in test: " + str(accTst))
             print("Algorithm Finished")
             # 1. get the sub train myDataSet from negative rules
             self.granularity_database_array = [DataBase() for x in range(self.negative_rule_number)]
@@ -226,6 +226,15 @@ class Fuzzy_Chi:
             for i in range(0, self.negative_rule_number):
                 self.granularity_database_array[i].writeFile(self.fileDB, "2", i)
 
+            # Finally we should fill the training and test output files with granularity rule result
+
+            accTra = self.doOutput(self.val_myDataSet, self.outputTr)
+            accTst = self.doOutput(self.test_myDataSet, self.outputTst)
+            for i in range(0, self.negative_rule_number):
+                accTra = self.doOutput(self.my_dataset_train_sub_zone[i], self.outputTr)
+                # accTst = self.doOutput(self.test_myDataSet, self.outputTst)
+                print("Accuracy for normal rules obtained in training: " + str(accTra))
+                # print("Accuracy for normal rules obtained in test: " + str(accTst))
 
 
     # """
@@ -285,6 +294,9 @@ class Fuzzy_Chi:
         for i in range(0, self.negative_rule_number):
             sub_train_zone = self.my_dataset_train_sub_zone[i]
             self.generation_rule_step_two(sub_train_zone, sub_train_zone.size(), i)
+        for i in range(0, self.negative_rule_number):
+            print(" The loop i number is :"+str(i))
+            self.granularity_rule_Base_array[i].write_File_for_granularity_rule(self.fileRB)
 
         # generate granularity rules
 
@@ -352,7 +364,5 @@ class Fuzzy_Chi:
         print("The total granularity_data_row_array is " + str(len(self.granularity_data_row_array)))
         print(" In area_number "+str(area_number) + " ,The total granularity_rule_Base rule number is  : " + str(len(self.granularity_rule_Base_array[area_number].granularity_rule_Base)))
 
-        for i in range(0, self.negative_rule_number):
-            print(" The loop i number is :"+str(i))
-            self.granularity_rule_Base_array[i].write_File_for_granularity_rule(self.fileRB)
+
 
