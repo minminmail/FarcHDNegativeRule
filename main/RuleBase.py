@@ -265,6 +265,18 @@ class RuleBase:
                 class_value = rule.class_value
         return class_value
 
+    def FRM_Granularity(self, example):
+        class_value = -1
+        max_value = 0.0
+        for i in range(0, len(self.granularity_rule_Base)):
+            rule = self.granularity_rule_Base[i]
+            produc = rule.compatibility(example)
+            produc *= rule.weight
+            if produc > max_value:
+                max_value = produc
+                class_value = rule.class_value
+        return class_value
+
     # * Additive Combination FRM
     # * @param example double[] the input example
     # * @return int the class label for the set of rules with the highest sum of membership degree per class

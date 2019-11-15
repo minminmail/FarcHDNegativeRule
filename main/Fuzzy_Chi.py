@@ -182,8 +182,8 @@ class Fuzzy_Chi:
             self.ruleBase.writeFile(self.fileRB)
 
             # Finally we should fill the training and test output files
-            accTra = self.doOutput(self.val_myDataSet, self.outputTr)
-            accTst = self.doOutput(self.test_myDataSet, self.outputTst)
+            accTra = self.doOutput(self.val_myDataSet, self.outputTr,False,111)
+            accTst = self.doOutput(self.test_myDataSet, self.outputTst,False,111)
 
             print("Accuracy for normal rules obtained in training: " + str(accTra))
             print("Accuracy for normal rules obtained in test: " + str(accTst))
@@ -227,13 +227,10 @@ class Fuzzy_Chi:
                 self.granularity_database_array[i].writeFile(self.fileDB, "2", i)
 
             # Finally we should fill the training and test output files with granularity rule result
-
-            accTra = self.doOutput(self.val_myDataSet, self.outputTr)
-            accTst = self.doOutput(self.test_myDataSet, self.outputTst)
             for i in range(0, self.negative_rule_number):
-                accTra = self.doOutput(self.my_dataset_train_sub_zone[i], self.outputTr)
+                accTra = self.doOutput(self.my_dataset_train_sub_zone[i], self.outputTr, True,i)
                 # accTst = self.doOutput(self.test_myDataSet, self.outputTst)
-                print("Accuracy for normal rules obtained in training: " + str(accTra))
+                print("Accuracy for granularity  rules obtained in training: " + str(accTra))
                 # print("Accuracy for normal rules obtained in test: " + str(accTst))
 
 
@@ -244,7 +241,7 @@ class Fuzzy_Chi:
     #    *
     #    * @return The classification accuracy
     # """
-    def doOutput(self, dataset, filename):
+    def doOutput(self, dataset, filename,granularity_rule,zone_number_pass):
         try:
             output = ""
             hits = 0
@@ -255,7 +252,10 @@ class Fuzzy_Chi:
             for i in range(0, dataset.getnData()):
                 # for classification:
                 # print("before classificationOutput in Fuzzy_Chi")
-                classOut = self.classificationOutput(dataset.getExample(i))
+                if granularity_rule:
+                    classOut = self.classification_Output_granularity(dataset.getExample(i), zone_number_pass)
+                else:
+                    classOut = self.classificationOutput(dataset.getExample(i))
                 # print("before getOutputAsStringWithPos in Fuzzy_Chi")
                 self.output = self.output + dataset.getOutputAsStringWithPos(i) + " " + classOut + "\n"
                 # print("before getOutputAsStringWithPos in Fuzzy_Chi")
@@ -283,6 +283,17 @@ class Fuzzy_Chi:
         classOut = self.ruleBase.FRM(example)
         if classOut >= 0:
             # print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
+            self.output = self.train_myDataSet.getOutputValue(classOut)
+        return self.output
+
+    def classification_Output_granularity(self, example,zone_area_number):
+        self.output = "?"
+            # Here we should include the algorithm directives to generate the
+            # classification output from the input example
+        for i in range(0, self.negative_rule_number):
+            classOut = self.granularity_rule_Base_array[zone_area_number].FRM_Granularity(example)
+        if classOut >= 0:
+                # print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
             self.output = self.train_myDataSet.getOutputValue(classOut)
         return self.output
 
