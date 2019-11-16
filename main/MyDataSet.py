@@ -100,6 +100,8 @@ class MyDataSet:
     #    * @return String a string containing the output value
 
     def getOutputAsStringWithPos(self, pos):
+        print("pos is in getOutputAsStringWithPos "+str(pos))
+        # maybe the exception is here.
         return self.__output[pos]
 
     #    * It returns the output value of the example "pos"
@@ -676,5 +678,6 @@ class MyDataSet:
         clases = ["" for x in range(self.__nClasses)]
         print(" getClasses,self.__nClasses: " + str(self.__nClasses))
         for i in range(0, self.__nClasses):
+            print(" getClasses method i is "+str(i))
             clases[i] = Attributes.getOutputAttribute(Attributes, 0).getNominalValue(i)
         return clases

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 15 night, accurate for granularity rule">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Fuzzy.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy.py" afterDir="false" />
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range">
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/data_row.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/data_row.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00009" summary="rewritten in python some classes">
-      <created>1538287093852</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1538287093852</updated>
     </task>
     <task id="LOCAL-00010" summary="before fix the error:Unexpected error:'ParseParameters' object has no attribute 'get'">
       <created>1538341287491</created>
@@ -468,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573853407657</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range">
+      <created>1573941597173</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1573941597174</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="format files" />
     <MESSAGE value="format all the files" />
     <MESSAGE value="changed some format and commend" />
     <MESSAGE value="small changes for formatting" />
@@ -510,19 +505,20 @@
     <MESSAGE value="nov 13 night" />
     <MESSAGE value="nov 15 night, get granularity rules and deleted the duplicated print in result file." />
     <MESSAGE value="nov 15 night, accurate for granularity rule" />
-    <option name="LAST_COMMIT_MESSAGE" value="nov 15 night, accurate for granularity rule" />
+    <MESSAGE value="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range" />
+    <option name="LAST_COMMIT_MESSAGE" value="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
-          <line>621</line>
+          <line>623</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
-          <line>622</line>
+          <line>624</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -544,6 +540,16 @@
           <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
           <line>256</line>
           <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
+          <line>602</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Help_Classes/Attribute.py</url>
+          <line>601</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

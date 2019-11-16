@@ -257,9 +257,10 @@ class Fuzzy_Chi:
                     classOut = self.classification_Output_granularity(dataset.getExample(i), zone_number_pass)
                 else:
                     classOut = self.classificationOutput(dataset.getExample(i))
-                # print("before getOutputAsStringWithPos in Fuzzy_Chi")
+
+                # arrived here, print("before getOutputAsStringWithPos in Fuzzy_Chi")
                 self.output = self.output + dataset.getOutputAsStringWithPos(i) + " " + classOut + "\n"
-                # print("before getOutputAsStringWithPos in Fuzzy_Chi")
+                # not arrive here, print("before getOutputAsStringWithPos in Fuzzy_Chi")
                 if dataset.getOutputAsStringWithPos(i) == classOut:
                     hits = hits + 1
             # print("before open file in Fuzzy_Chi")
