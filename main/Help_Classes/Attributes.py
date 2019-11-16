@@ -365,7 +365,7 @@ class Attributes:
         for i in range(0, len(self.outputAttr)):
             # Writting the name and type of the attributeoutputAttr
             aux = aux + self.outputAttr[i].toString() + "\n"
-        print("getOutputAttributesHeader, aux =" + aux)
+        # print("getOutputAttributesHeader, aux =" + aux)
         return aux
 
     # end getOutputAttributesHeader

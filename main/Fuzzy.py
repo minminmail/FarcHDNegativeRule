@@ -46,7 +46,10 @@ class Fuzzy:
     label = None
 
     def __init__(self):
-        print("init of Fuzzy Class ")
+        x0 = None
+        x1 = None
+        x3 = None
+        # print("init of Fuzzy Class ")
 
     # * If fuzzyfies a crisp value
     # * @param X double The crips value

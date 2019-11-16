@@ -51,7 +51,7 @@ class Rule:
 
     def __init__(self):
 
-        print("__init__ of Rule")
+        # print("__init__ of Rule")
         self.data_row_here = data_row()
 
     # Default constructor
@@ -61,7 +61,7 @@ class Rule:
     # * @param compatibilityType int
 
     def setTwoParameters(self, n_variables, compatibilityType):
-        print("In rule calss , setTwoParameters method, the n_variables = " + str(n_variables))
+        # print("In rule calss , setTwoParameters method, the n_variables = " + str(n_variables))
         self.antecedent = [Fuzzy() for x in range(n_variables)]
         self.compatibilityType = compatibilityType
 
@@ -104,6 +104,8 @@ class Rule:
         else:
             # print("self.compatibilityType != Fuzzy_Chi.Fuzzy_Chi.MINIMUM"+", self.compatibilityType = "+ str(
             # self.compatibilityType))
+            # here is the algorithm arrives
+            # print("in compatibility before the productCompatibility method:  ")
             return self.productCompatibility(example)
 
     # * Operator T-min
@@ -131,6 +133,7 @@ class Rule:
         product = 1.0
         antecedent_number = len(self.antecedent)
         # print("antecedent_number = " + str(antecedent_number))
+        # print("before the antecedent loop :")
         for i in range(0, antecedent_number):
             # print("example[i="+ str(i)+"]"+":"+ str(example[i]))
             membershipDegree = self.antecedent[i].setX(example[i])
@@ -183,15 +186,15 @@ class Rule:
 
     def consequent_PCF4(self, train):
         class_number = train.getnClasses()
-        print("train data set get the class_number: " + str(class_number))
+        # print("train data set get the class_number: " + str(class_number))
         classes_sum = [0.0 for x in range(class_number)]
-        print("classes_sum length is : " + str(len(classes_sum)))
+        # print("classes_sum length is : " + str(len(classes_sum)))
         for i in range(0, train.getnClasses()):
             classes_sum[i] = 0.0
 
         total = 0.0
         train_size = train.size()
-        print("train_size: " + str(train_size))
+        # print("train_size: " + str(train_size))
         # Computation of the sum by classes */
         for i in range(0, train_size):
             comp = self.compatibility(train.getExample(i))
@@ -202,7 +205,7 @@ class Rule:
             classes_sum[class_type] = classes_sum[class_type] + comp
             total = total + comp
 
-        print("self.clas =" + str(self.class_value) + "classes_sum[self.clas] :" + str(classes_sum[self.class_value]))
+        # print("self.clas =" + str(self.class_value) + "classes_sum[self.clas] :" + str(classes_sum[self.class_value]))
         sum_value = total - classes_sum[self.class_value]
         self.weight = (classes_sum[self.class_value] - sum_value) / total
 

@@ -403,17 +403,17 @@ class MyDataSet:
     def copyHeader(self):
 
         p = ""
-        print("copyHeader begin...., P is :" + p)
+        # print("copyHeader begin...., P is :" + p)
         p = "@relation " + Attributes.getRelationName(Attributes) + "\n"
-        print(" after relation P is :" + p)
+        # print(" after relation P is :" + p)
         p += Attributes.getInputAttributesHeader(Attributes)
-        print(" after getInputAttributesHeader P is :" + p)
+        # print(" after getInputAttributesHeader P is :" + p)
         p += Attributes.getOutputAttributesHeader(Attributes)
-        print(" after getOutputAttributesHeader P is :" + p)
+        # print(" after getOutputAttributesHeader P is :" + p)
         p += Attributes.getInputHeader(Attributes) + "\n"
-        print(" after getInputHeader P is :" + p)
+        # print(" after getInputHeader P is :" + p)
         p += Attributes.getOutputHeader(Attributes) + "\n"
-        print(" after getOutputHeader P is :" + p)
+        # print(" after getOutputHeader P is :" + p)
         p += "@data\n"
 
         print("P is :" + p)

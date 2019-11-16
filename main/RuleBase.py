@@ -133,13 +133,13 @@ class RuleBase:
     def searchForBestAntecedent(self, example, clas):
         ruleInstance = Rule()
         ruleInstance.setTwoParameters(self.n_variables, self.compatibilityType)
-        print("In searchForBestAntecedent ,self.n_variables is :" + str(self.n_variables))
+        # print("In searchForBestAntecedent ,self.n_variables is :" + str(self.n_variables))
         ruleInstance.setClass(clas)
-        print("In searchForBestAntecedent ,self.n_labels is :" + str(self.n_labels))
+        # print("In searchForBestAntecedent ,self.n_labels is :" + str(self.n_labels))
         example_feature_array = []
         for f_variable in range(0, self.n_variables):
-            print("The f_variable is :"+str(f_variable))
-            print("The example is :" + str(example))
+            # print("The f_variable is :"+str(f_variable))
+            # print("The example is :" + str(example))
             example_feature_array.append(example[f_variable])
         label_array = []
 
@@ -154,15 +154,15 @@ class RuleBase:
                     max_value = per
                     etq = j
             if max_value == 0.0:
-                print("There was an Error while searching for the antecedent of the rule")
-                print("Example: ")
+                # print("There was an Error while searching for the antecedent of the rule")
+                # print("Example: ")
                 for j in range(0, self.n_variables):
                     print(example[j] + "\t")
 
                 print("Variable " + str(i))
                 exit(1)
-            print(" The max_value is : " + str(max_value))
-            print(" ,the j value is : " + str(j))
+            # print(" The max_value is : " + str(max_value))
+            # print(" ,the j value is : " + str(j))
             ruleInstance.antecedent[i] = self.dataBase.clone(i, etq)  # self.dataBase[i][j]
             label_array.append(etq)
         data_row_temp = data_row()
@@ -263,18 +263,34 @@ class RuleBase:
             if produc > max_value:
                 max_value = produc
                 class_value = rule.class_value
-        return class_value
 
+        return class_value
+    '''
+       The granularity rules with normal rules, one new row data come, how to choose which rule
+       Check if the data meet the granularity rule scope, if yes, go to the granularity rule, else
+       go to the normal rules
+    '''
     def FRM_Granularity(self, example):
+        # print("FRM_Granularity begin :  ")
         class_value = -1
         max_value = 0.0
         for i in range(0, len(self.granularity_rule_Base)):
             rule = self.granularity_rule_Base[i]
+            # print("after get rule of the FRM_Granularity :")
             produc = rule.compatibility(example)
             produc *= rule.weight
             if produc > max_value:
                 max_value = produc
                 class_value = rule.class_value
+        if produc == 0:
+            for i in range(0, len(self.ruleBase)):
+                rule = self.ruleBase[i]
+                produc = rule.compatibility(example)
+                produc *= rule.weight
+                if produc > max_value:
+                    max_value = produc
+                    class_value = rule.class_value
+
         return class_value
 
     # * Additive Combination FRM
