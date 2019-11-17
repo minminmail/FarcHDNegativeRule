@@ -742,7 +742,7 @@ class Attribute:
             print("\n    > Most used value: ")
             for i in range(0, len(self.__mostUsedValue)):
                 print("       > class " + str(i) + ":" + self.__mostUsedValue[i])
-                print("  (" + self.__classFrequencies[i][self.__convertNominalValue(self.__mostUsedValue[i])] + ").")
+                print("  (" + self.__classFrequencies[i][self.convertNominalValue(self.__mostUsedValue[i])] + ").")
 
         elif self.__meanValue is not None:
             print("\n    > Mean used value: ")

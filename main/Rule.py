@@ -135,10 +135,10 @@ class Rule:
         # print("antecedent_number = " + str(antecedent_number))
         # print("before the antecedent loop :")
         for i in range(0, antecedent_number):
-            # print("example[i="+ str(i)+"]"+":"+ str(example[i]))
-            # print("in loop before get memebershipdegree")
+            print("example[i="+ str(i)+"]"+":"+ str(example[i]))
+            print("in loop before get memebershipdegree")
             membershipDegree = self.antecedent[i].setX(example[i])
-            # print("membershipDegree in productCompatibility  = " +str(membershipDegree))
+            print("membershipDegree in productCompatibility  = " +str(membershipDegree))
             product = product * membershipDegree
         # print("product: "+ str(product))
         return product
