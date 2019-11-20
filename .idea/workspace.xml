@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 16 night,last push">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="nov 17 night,last push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,13 +119,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00011" summary="ParseParameters' object has no attribute 'get' still">
-      <created>1538430460621</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1538430460624</updated>
     </task>
     <task id="LOCAL-00012" summary="need to fix Attribute.py for next step">
       <created>1538495650018</created>
@@ -464,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573942875086</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="nov 17 night,last push">
+      <created>1574029792040</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1574029792040</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -481,7 +480,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed some format and commend" />
     <MESSAGE value="small changes for formatting" />
     <MESSAGE value="data_row" />
     <MESSAGE value="generated negative rules" />
@@ -506,30 +504,21 @@
     <MESSAGE value="nov 15 night, accurate for granularity rule" />
     <MESSAGE value="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range" />
     <MESSAGE value="nov 16 night,last push" />
-    <option name="LAST_COMMIT_MESSAGE" value="nov 16 night,last push" />
+    <MESSAGE value="nov 17 night,last push" />
+    <option name="LAST_COMMIT_MESSAGE" value="nov 17 night,last push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>230</line>
-          <option name="timeStamp" value="119" />
+          <line>259</line>
+          <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
           <line>257</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/Fuzzy_Chi.py</url>
-          <line>262</line>
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main/MyDataSet.py</url>
-          <line>104</line>
-          <option name="timeStamp" value="144" />
+          <option name="timeStamp" value="151" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -322,6 +322,7 @@ class Fuzzy_Chi:
         self.negative_rule_number = len(self.ruleBase.negative_rule_base_array)
         x_array = [[] for x in range(self.negative_rule_number)]
         output_integer = [[] for x in range(train.size())]
+        output = [[] for x in range(train.size())]
         train_x_array = train.get_x()
         # print("generate granularity rules begin :")
         data_row_number = len(self.ruleBase.data_row_array)
@@ -329,6 +330,7 @@ class Fuzzy_Chi:
         for m in range(0, self.negative_rule_number):
             x_array[m] = []
             output_integer[m] = []
+            output[m] = []
         self.my_dataset_train_sub_zone = [MyDataSet() for x in range(self.negative_rule_number)]
 
         for i in range(0, self.negative_rule_number):
@@ -345,6 +347,7 @@ class Fuzzy_Chi:
                     # print("train_x_array[dr]" + str(train_x_array[dr]))
                     x_array[i].append(train_x_array[dr])
                     output_integer[i].append(train.getOutputAsIntegerWithPos(dr))
+                    output[i].append(train.getOutputAsStringWithPos(dr))
             print(" output_integer length is： " + str(len(output_integer[i])))
             print(" x_array length is： " + str(len(x_array[i])))
 
@@ -354,6 +357,7 @@ class Fuzzy_Chi:
             # set my data set X array
             self.my_dataset_train_sub_zone[k].set_x(x_array[k])
             self.my_dataset_train_sub_zone[k].set_output_integer_array(output_integer[k])
+            self.my_dataset_train_sub_zone[k].set_output_array(output[k])
             self.my_dataset_train_sub_zone[k].set_ndata(num_sub_zone)
             print("num_sub_zone " + str(k) + " is  :" + str(num_sub_zone))
             # set the rule base nClasses value

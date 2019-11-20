@@ -114,6 +114,9 @@ class MyDataSet:
     def set_output_integer_array(self, integer_array):
         self.__outputInteger = integer_array
 
+
+    def set_output_array(self, output_array):
+        self.__output = output_array
     #    * It returns the output value of the example "pos"
     #    * @param pos int the position (id) of the example
     #    * @return double a real containing the output value
