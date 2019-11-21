@@ -182,8 +182,8 @@ class Fuzzy_Chi:
             self.ruleBase.writeFile(self.fileRB)
 
             # Finally we should fill the training and test output files
-            accTra = self.doOutput(self.val_myDataSet, self.outputTr,False,111)
-            accTst = self.doOutput(self.test_myDataSet, self.outputTst,False,111)
+            accTra = self.doOutput(self.val_myDataSet, self.outputTr,False,None)
+            accTst = self.doOutput(self.test_myDataSet, self.outputTst,False,None)
 
             print("Accuracy for normal rules obtained in training: " + str(accTra))
             print("Accuracy for normal rules obtained in test: " + str(accTst))
@@ -227,11 +227,11 @@ class Fuzzy_Chi:
                 self.granularity_database_array[i].writeFile(self.fileDB, "2", i)
 
             # Finally we should fill the training and test output files with granularity rule result
-            for i in range(0, self.negative_rule_number):
-                accTra = self.doOutput(self.my_dataset_train_sub_zone[i], self.outputTr, True, i)
-                # accTst = self.doOutput(self.test_myDataSet, self.outputTst)
-                print("Accuracy for granularity  rules obtained in training: " + str(accTra))
-                # print("Accuracy for normal rules obtained in test: " + str(accTst))
+
+            accTra = self.doOutput(self.val_myDataSet, self.outputTr, True, i)
+            # accTst = self.doOutput(self.test_myDataSet, self.outputTst)
+            print("Accuracy for granularity  rules obtained in training: " + str(accTra))
+            # print("Accuracy for normal rules obtained in test: " + str(accTst))
 
 
     # """
@@ -254,8 +254,19 @@ class Fuzzy_Chi:
                 print(" In the doOutput the loop number i is  " + str(i))
                 # for classification:
                 # print("before classificationOutput in Fuzzy_Chi")
+                class_out_here = None
                 if granularity_rule:
-                    classOut = self.classification_Output_granularity(dataset.getExample(i), zone_number_pass)
+                    for j in range(0,self.negative_rule_number):
+
+                        classOut = self.classification_Output_granularity(dataset.getExample(j), j)
+                        if classOut is not "?":
+                            class_out_here = classOut
+
+                    if class_out_here is None:  #
+                            classOut = self.classificationOutput(dataset.getExample(i))
+                    else:
+                        classOut = class_out_here
+
                 else:
                     classOut = self.classificationOutput(dataset.getExample(i))
 
