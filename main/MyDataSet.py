@@ -100,7 +100,7 @@ class MyDataSet:
     #    * @return String a string containing the output value
 
     def getOutputAsStringWithPos(self, pos):
-        print("pos is in getOutputAsStringWithPos "+str(pos))
+        # print("pos is in getOutputAsStringWithPos "+str(pos))
         # maybe the exception is here.
         return self.__output[pos]
 
@@ -460,7 +460,7 @@ class MyDataSet:
 
     def sizeWithoutMissing(self):
         tam = 0
-        print("self.__nData is :" + str(self.__nData) + ", self.__nInputs :" + str(self.__nInputs))
+        # print("self.__nData is :" + str(self.__nData) + ", self.__nInputs :" + str(self.__nInputs))
         for i in range(0, self.__nData):
             for j in range(1, self.__nInputs):
                 # changed the isMissing condition inside if
@@ -468,7 +468,7 @@ class MyDataSet:
                     print("It is missing value is i = " + str(i) + ",j==" + str(j))
                     break
             j = j + 1
-            print("sizeWithoutMissing,  i = " + str(i) + ",j==" + str(j))
+            # print("sizeWithoutMissing,  i = " + str(i) + ",j==" + str(j))
             if j == self.__nInputs:
                 tam = tam + 1
         print("tam=" + str(tam))
@@ -587,9 +587,9 @@ class MyDataSet:
     #    * @return String the corrresponding class label
 
     def getOutputValue(self, intValue):
-        print("Before att get ")
+        # print("Before att get ")
         att = Attributes.getOutputAttribute(Attributes, 0)
-        print("After att get ")
+        # print("After att get ")
         return att.getNominalValue(intValue)
 
     #  * It returns the type of the variable

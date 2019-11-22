@@ -34,3 +34,27 @@ In negative zone area : 125 , has rules :
 3: feature1 IS L_0 AND feature2 IS L_1: 2 with Rule Weight: 0.015863344897727012
 In negative zone area : 125 , has rules : 
 4: feature1 IS L_0 AND feature2 IS L_0: 2 with Rule Weight: 0.4914802807702758
+
+
+@Number of granularity rules: 4
+
+In negative zone area : 160 , has rules : 
+1: feature1 IS L_1 AND feature2 IS L_0: 1 with Rule Weight: 0.38295616718935055
+In negative zone area : 160 , has rules : 
+2: feature1 IS L_1 AND feature2 IS L_1: 1 with Rule Weight: 0.6198307428516189
+In negative zone area : 160 , has rules : 
+3: feature1 IS L_0 AND feature2 IS L_0: 1 with Rule Weight: 0.40880299000728954
+In negative zone area : 160 , has rules : 
+4: feature1 IS L_0 AND feature2 IS L_1: 1 with Rule Weight: 0.6290620808571123
+
+
+@Number of granularity rules: 4
+
+In negative zone area : 125 , has rules : 
+1: feature1 IS L_1 AND feature2 IS L_1: 2 with Rule Weight: 0.44248810769664243
+In negative zone area : 125 , has rules : 
+2: feature1 IS L_1 AND feature2 IS L_0: 2 with Rule Weight: 0.741886625075386
+In negative zone area : 125 , has rules : 
+3: feature1 IS L_0 AND feature2 IS L_1: 2 with Rule Weight: 0.015863344897727012
+In negative zone area : 125 , has rules : 
+4: feature1 IS L_0 AND feature2 IS L_0: 2 with Rule Weight: 0.4914802807702758

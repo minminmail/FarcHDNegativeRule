@@ -220,6 +220,7 @@ class Fuzzy_Chi:
                                                       self.my_dataset_train_sub_zone[i].getNames(), self.my_dataset_train_sub_zone[i].getClasses())
 
             self.generate_granularity_rules()
+            self.prunerules_granularity_rules()
 
             print("self.fileDB = " + str(self.fileDB))
             print("self.fileRB = " + str(self.fileRB))
@@ -247,18 +248,19 @@ class Fuzzy_Chi:
             hits = 0
             self.output = dataset.copyHeader()  # we insert the header in the output file
             # We write the output for each example
-            print("before loop in Fuzzy_Chi")
+            # print("before loop in Fuzzy_Chi")
             data_number = dataset.getnData()
-            print("dataset.getnData()" + str(dataset.getnData()))
+            # print("dataset.getnData()" + str(dataset.getnData()))
             for i in range(0, data_number):
-                print(" In the doOutput the loop number i is  " + str(i))
+                # print(" In the doOutput the loop number i is  " + str(i))
                 # for classification:
                 # print("before classificationOutput in Fuzzy_Chi")
                 class_out_here = None
                 if granularity_rule:
                     for j in range(0,self.negative_rule_number):
 
-                        classOut = self.classification_Output_granularity(dataset.getExample(j), j)
+                        # classOut = self.classification_Output_granularity(dataset.getExample(j), j)
+                        classOut = self.classification_Output_pruned_granularity(dataset.getExample(j), j)
                         if classOut is not "?":
                             class_out_here = classOut
 
@@ -306,6 +308,17 @@ class Fuzzy_Chi:
             # classification output from the input example
 
         classOut = self.granularity_rule_Base_array[zone_area_number].FRM_Granularity(example)
+        if classOut >= 0:
+                # print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
+            self.output = self.my_dataset_train_sub_zone[zone_area_number].getOutputValue(classOut)
+        return self.output
+
+    def classification_Output_pruned_granularity(self, example, zone_area_number):
+        self.output = "?"
+            # Here we should include the algorithm directives to generate the
+            # classification output from the input example
+
+        classOut = self.granularity_rule_Base_array[zone_area_number].FRM_Pruned_Granularity(example)
         if classOut >= 0:
                 # print("In Fuzzy_Chi,classOut >= 0, to call getOutputValue")
             self.output = self.my_dataset_train_sub_zone[zone_area_number].getOutputValue(classOut)
@@ -392,6 +405,23 @@ class Fuzzy_Chi:
 
         print("The total granularity_data_row_array is " + str(len(self.granularity_data_row_array)))
         print(" In area_number "+str(area_number) + " ,The total granularity_rule_Base rule number is  : " + str(len(self.granularity_rule_Base_array[area_number].granularity_rule_Base)))
+
+    def prunerules_granularity_rules(self):
+        for i in range(0,self.negative_rule_number):
+            print("in prunerules_granularity_rules the i is: "+str(i))
+            for j in range(0, len(self.granularity_rule_Base_array[i].granularity_rule_Base)):
+                rule =self.granularity_rule_Base_array[i].granularity_rule_Base[j]
+
+                if rule.weight > 0.4:
+                    self.granularity_rule_Base_array[i].granularity_prune_rule_base.append(rule)
+                    print(" Added a new pruned granularity rule in  granularity_prune_rule_base")
+        for i in range(0, self.negative_rule_number):
+            print(" The loop i number is :" + str(i))
+            self.granularity_rule_Base_array[i].write_File_for_granularity_rule(self.fileRB)
+
+
+
+
 
 
 

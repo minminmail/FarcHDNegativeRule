@@ -596,10 +596,10 @@ class Attribute:
     #  * @return a string with the value.
     #  '''
     def getNominalValue(self, pos):
-        print("length of self.__nominalValues is: " + str(len(self.__nominalValues)))
+        # print("length of self.__nominalValues is: " + str(len(self.__nominalValues)))
         if self.__type != self.NOMINAL:
             return None
-        print("pos is in getNominalValue" + str(pos))
+        # print("pos is in getNominalValue" + str(pos))
         return str(self.__nominalValues[pos])
 
     # end getNominalValue

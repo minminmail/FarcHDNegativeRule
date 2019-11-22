@@ -44,6 +44,7 @@ class RuleBase:
     ruleBase = []
     # added by rui for negative rule
     granularity_rule_Base = []
+    granularity_prune_rule_base= []
     dataBase = DataBase()
     n_variables = None
     n_labels = None
@@ -72,6 +73,7 @@ class RuleBase:
         self.granularity_rule_Base = []
         # added by rui for negative rule
         self.negative_rule_base_array = []
+        self.granularity_prune_rule_base= []
         self.dataBase = dataBase
         self.n_variables = dataBase.numVariables()
         self.n_labels = dataBase.numLabels()
@@ -224,6 +226,24 @@ class RuleBase:
         print("granularity rules RuleBase cadena_string is:" + cadena_string)
         return cadena_string
 
+    def print_pruned_granularity_rule_string(self):
+        # added for granularity rules
+        cadena_string = ""
+        cadena_string += "@Number of granularity rules: " + str(len(self.granularity_prune_rule_base)) + "\n\n"
+        for i in range(0, len(self.granularity_prune_rule_base)):
+            granularity_prune_rule = self.granularity_prune_rule_base[i]
+            cadena_string += "In negative zone area : " + str(
+                granularity_prune_rule.granularity_sub_zone) + " , has rules : " + "\n"
+            cadena_string += str(i + 1) + ": "
+            for j in range(0, self.n_variables - 1):
+                cadena_string += self.names[j] + " IS " + granularity_prune_rule.antecedent[j].name + " AND "
+            j = j + 1
+            cadena_string += self.names[j] + " IS " + granularity_prune_rule.antecedent[j].name + ": " + str(
+                self.classes[granularity_prune_rule.class_value]) + " with Rule Weight: " + str(
+                granularity_prune_rule.weight) + "\n"
+        print("granularity rules RuleBase cadena_string is:" + cadena_string)
+        return cadena_string
+
     # * It writes the rule base into an ouput file
     # * @param filename String the name of the output file
 
@@ -237,6 +257,12 @@ class RuleBase:
     def write_File_for_granularity_rule(self, filename):
         with open(filename, 'a') as file_append:
             outputString = "\n"+"\n" +self.print_granularity_rule_string()
+            file_append.write(outputString)
+            file_append.close()
+
+    def write_File_for_pruned_granularity_rule(self, filename):
+        with open(filename, 'a') as file_append:
+            outputString = "\n"+"\n" +self.print_pruned_granularity_rule_string()
             file_append.write(outputString)
             file_append.close()
 
@@ -276,6 +302,29 @@ class RuleBase:
         max_value = 0.0
         for i in range(0, len(self.granularity_rule_Base)):
             rule = self.granularity_rule_Base[i]
+            # print("after get rule of the FRM_Granularity :")
+            produc = rule.compatibility(example)
+            produc *= rule.weight
+            if produc > max_value:
+                max_value = produc
+                class_value = rule.class_value
+        if produc == 0:
+            for i in range(0, len(self.ruleBase)):
+                rule = self.ruleBase[i]
+                produc = rule.compatibility(example)
+                produc *= rule.weight
+                if produc > max_value:
+                    max_value = produc
+                    class_value = rule.class_value
+
+        return class_value
+
+    def FRM_Pruned_Granularity(self, example):
+        # print("FRM_Granularity begin :  ")
+        class_value = -1
+        max_value = 0.0
+        for i in range(0, len(self.granularity_prune_rule_base)):
+            rule = self.granularity_prune_rule_base[i]
             # print("after get rule of the FRM_Granularity :")
             produc = rule.compatibility(example)
             produc *= rule.weight
