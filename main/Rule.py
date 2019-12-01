@@ -85,7 +85,7 @@ class Rule:
 
         elif ruleWeight == Fuzzy_Chi.Fuzzy_Chi.PCF_II:
             self.consequent_PCF2(train)
-
+        # arrived here
         elif ruleWeight == Fuzzy_Chi.Fuzzy_Chi.PCF_IV:
             self.consequent_PCF4(train)
 
@@ -100,7 +100,7 @@ class Rule:
         if self.compatibilityType == Fuzzy_Chi.Fuzzy_Chi.MINIMUM:
             # print("self.compatibilityType == Fuzzy_Chi.Fuzzy_Chi.MINIMUM")
             return self.minimumCompatibility(example)
-
+    # arrived here
         else:
             # print("self.compatibilityType != Fuzzy_Chi.Fuzzy_Chi.MINIMUM"+", self.compatibilityType = "+ str(
             # self.compatibilityType))
@@ -127,7 +127,7 @@ class Rule:
     # * Operator T-product
     # * @param example double[] The input example
     # * @return double the computation the the product T-norm
-
+    # arrive here
     def productCompatibility(self, example):
 
         product = 1.0
@@ -197,9 +197,13 @@ class Rule:
         train_size = train.size()
         # print("train_size: " + str(train_size))
         # Computation of the sum by classes */
+        # print("Begin a new loop for calculating comp " + "/n/n")
+        zeroCompNumber = 0
         for i in range(0, train_size):
             comp = self.compatibility(train.getExample(i))
-            # print("comp = " + str(comp))
+            if comp == 0:
+                zeroCompNumber = zeroCompNumber+1
+
             # print(" The list index out of range is i = " + str(i))
             class_type = train.getOutputAsIntegerWithPos(i)
             # print(" class_type = " + str(class_type))
@@ -207,6 +211,7 @@ class Rule:
             total = total + comp
 
         # print("self.clas =" + str(self.class_value) + "classes_sum[self.clas] :" + str(classes_sum[self.class_value]))
+        # print(" The zero comp number in this loop is :" + str(zeroCompNumber))
         sum_value = total - classes_sum[self.class_value]
         self.weight = (classes_sum[self.class_value] - sum_value) / total
 

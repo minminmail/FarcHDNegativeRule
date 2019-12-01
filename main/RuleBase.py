@@ -44,7 +44,7 @@ class RuleBase:
     ruleBase = []
     # added by rui for negative rule
     granularity_rule_Base = []
-    granularity_prune_rule_base= []
+    granularity_prune_rule_base = []
     dataBase = DataBase()
     n_variables = None
     n_labels = None
@@ -282,6 +282,7 @@ class RuleBase:
     def FRM_WR(self, example):
         class_value = -1
         max_value = 0.0
+        produc = 0
         for i in range(0, len(self.ruleBase)):
             rule = self.ruleBase[i]
             produc = rule.compatibility(example)
@@ -300,6 +301,7 @@ class RuleBase:
         # print("FRM_Granularity begin :  ")
         class_value = -1
         max_value = 0.0
+        produc = 0
         for i in range(0, len(self.granularity_rule_Base)):
             rule = self.granularity_rule_Base[i]
             # print("after get rule of the FRM_Granularity :")
@@ -323,6 +325,7 @@ class RuleBase:
         # print("FRM_Granularity begin :  ")
         class_value = -1
         max_value = 0.0
+        produc=0
         for i in range(0, len(self.granularity_prune_rule_base)):
             rule = self.granularity_prune_rule_base[i]
             # print("after get rule of the FRM_Granularity :")
@@ -349,6 +352,7 @@ class RuleBase:
     def FRM_AC(self, example):
         class_value = -1
         class_degrees = []
+        produc=0
         for i in range(0, len(self.ruleBase)):
             rule = self.ruleBase[i]
             produc = rule.compatibility(example)
