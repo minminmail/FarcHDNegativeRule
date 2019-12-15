@@ -333,6 +333,8 @@ class Attributes:
     #      * @return the output attribute being int the position passed as an argument.
     #  */
     def getOutputAttribute(self, pos):
+        print("The pos is " + str(pos))
+        print("len of self.outputAttr is :"+str(len(self.outputAttr)))
         if pos < 0 or pos >= len(self.outputAttr):
             return None
         return self.outputAttr[pos]

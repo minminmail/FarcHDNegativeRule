@@ -66,7 +66,7 @@ class DataBase:
 
         for i in range(0, self.n_labels):
             print("i= " + str(i))
-            marca = (float(rangos[i][1]) - float(rangos[i][0])) / (float(n_labels) - 1)
+            marca = (float(rangos[i][1]) - float(rangos[i][0])) / (int(n_labels)- 1)
             if marca == 0:  # there are no ranges (an unique valor)
                 print("Marca =0 in DataBase init method...")
 
@@ -82,7 +82,7 @@ class DataBase:
 
             else:
                 print("Marca !=0 in DataBase init method...")
-                print("n_labels = " + n_labels)
+                print("n_labels = " + str(n_labels))
                 for etq in range(0, int(n_labels)):
                     print(" i = " + str(i) + ",etq = " + str(etq))
                     self.dataBase[i][etq].x0 = rangos[i][0] + marca * (etq - 1)

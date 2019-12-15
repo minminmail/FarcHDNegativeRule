@@ -106,7 +106,7 @@ class InstanceAttributes:
 
     def __init__(self):
         self.__attributes = []
-        self.inputAttr = []
+        self.__inputAttr = []
         self.__outputAttr = []
         self.__undefinedAttr = []
         self.__hasNominal = False
@@ -305,9 +305,9 @@ class InstanceAttributes:
     #  */
 
     def getOutputAttribute(self, pos):
-        if pos < 0 or pos >= len(self._outputAttr):
+        if pos < 0 or pos >= len(self.__outputAttr):
             return None
-        return Attribute(self._outputAttr[pos])
+        return Attribute(self.__outputAttr[pos])
 
     # end getOutputAttribute
 
@@ -337,9 +337,9 @@ class InstanceAttributes:
 
     def getOutputAttributesHeader(self):
         aux = ""
-        for i in range(0, len(self._outputAttr)):
+        for i in range(0, len(self.__outputAttr)):
             # Writting the name and type of the attribute
-            aux += self._outputAttr[i].toString() + "\n"
+            aux += self.__outputAttr[i].toString() + "\n"
 
         return aux
 
@@ -353,7 +353,7 @@ class InstanceAttributes:
     def getUndefinedAttribute(self, pos):
         if pos < 0 or pos >= len(self.__undefinedAttr):
             return None
-        return Attribute(self.undefinedAttr[pos])
+        return Attribute(self.__undefinedAttr[pos])
 
     # end getUndefinedAttribute
 
@@ -412,7 +412,7 @@ class InstanceAttributes:
     #  * @return an int with the number of attributes
     #  */
     def getInputNumAttributes(self):
-        return len(self.inputAttr)
+        return len(self.__inputAttr)
 
     # end getInputNumAttributes
 
@@ -483,16 +483,16 @@ class InstanceAttributes:
 
         for index in range(0, 2):
             if index == 0:
-                iterations = len(self._inputAttr)
+                iterations = len(self.__inputAttr)
             else:
-                iterations = len(self._outputAttr)
+                iterations = len(self.__outputAttr)
 
             for i in range(0, iterations):
 
                 if index == 0:
-                    att = Attribute(self._inputAttr[i])
+                    att = Attribute(self.__inputAttr[i])
                 else:
-                    att = Attribute(self._outputAttr[i])
+                    att = Attribute(self.__outputAttr[i])
                 if att.getType() == Attribute.NOMINAL:
 
                     self.__hasNominal = True
@@ -518,7 +518,7 @@ class InstanceAttributes:
             return False
 
         for i in range(0, len(self.__inputAttr)):
-            input_name = Attribute(self.inputAttr[i]).getName()
+            input_name = Attribute(self.__inputAttr[i]).getName()
             if input_name not in inputNames:
                 return False
         return True
@@ -538,7 +538,7 @@ class InstanceAttributes:
             return False
 
         for i in range(0, len(self.__outputAttr)):
-            out_put_name = Attribute(self._outputAttr[i]).getName()
+            out_put_name = Attribute(self.__outputAttr[i]).getName()
             if out_put_name not in outputNames:
                 return False
 
@@ -582,7 +582,7 @@ class InstanceAttributes:
 
     def removeAttribute(self, inputAtt, whichAtt):
         atToDel = None;
-        if inputAtt and (whichAtt >= len(self._inputAttr) or whichAtt < 0):
+        if inputAtt and (whichAtt >= len(self.__inputAttr) or whichAtt < 0):
             return False;
         if self.__inputAtt and (whichAtt >= len(self.__outputAttr) or whichAtt < 0):
             return False;

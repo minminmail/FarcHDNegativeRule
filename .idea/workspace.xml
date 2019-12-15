@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="fixed one bug of produc is not defined before use,dicember one">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="fixed one bug of rule information for pruned and granularity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/MultiMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MultiMain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,13 +123,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00016" summary="file name repeated for 2 times">
-      <created>1538867408735</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1538867408735</updated>
     </task>
     <task id="LOCAL-00017" summary="in initStatisticas has the class number already">
       <created>1538929149193</created>
@@ -468,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575235814075</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="fixed one bug of rule information for pruned and granularity">
+      <created>1576393033984</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1576393033984</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="get correct negative rule" />
     <MESSAGE value="granularity rule generation" />
     <MESSAGE value="granularity rule generation has result" />
     <MESSAGE value="oct 06 before sleep" />
@@ -510,6 +508,7 @@
     <MESSAGE value="nov 21 night,granularity rule accurate is 0.46" />
     <MESSAGE value="nov 22 night,granularity rule accurate is 0.5833333333333334" />
     <MESSAGE value="fixed one bug of produc is not defined before use,dicember one" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed one bug of produc is not defined before use,dicember one" />
+    <MESSAGE value="fixed one bug of rule information for pruned and granularity" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed one bug of rule information for pruned and granularity" />
   </component>
 </project>

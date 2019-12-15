@@ -363,6 +363,7 @@ class Attribute:
     #  '''
 
     def getMinAttribute(self):
+        print(" attribute the min value is " + str(self.__min))
         return self.__min
 
     def get_min_granularity_attribute(self, data_set_x_array, attribute_number):
@@ -376,6 +377,7 @@ class Attribute:
     #  * @return a double with the maximum value
     #  '''
     def getMaxAttribute(self):
+        print(" attribute the max value is " + str(self.__min))
         return self.__max
 
     def get_max_granularity_attribute(self, data_set_x_array, attribute_number):

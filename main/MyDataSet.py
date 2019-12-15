@@ -616,8 +616,8 @@ class MyDataSet:
     def getRanges(self):
 
         print("self.getnVars()" + str(self.getnVars()))
-        rangos = [[0.0 for y in range(2)] for x in range(self.getnVars())]
-        print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnVars()) + ",second is 2")
+        rangos = [[0.0 for y in range(2)] for x in range(self.getnInputs())]
+        print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnInputs()) + ",second is 2")
         nInputs = self.getnInputs()
         for i in range(0, nInputs):
             print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
@@ -635,8 +635,8 @@ class MyDataSet:
                 print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(
                     rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
 
-        rangos[self.getnVars() - 1][0] = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
-        rangos[self.getnVars() - 1][1] = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
+        # rangos[self.getnVars() - 1][0] = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
+        # rangos[self.getnVars() - 1][1] = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
         return rangos
 
 
@@ -661,9 +661,11 @@ class MyDataSet:
                 rangos[i][1] = attHere.get_max_granularity_attribute(data_set_x_array, i)
                 print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(
                     rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
-
-        rangos[self.getnVars() - 1][0] = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
-        rangos[self.getnVars() - 1][1] = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
+        last_min_value = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
+        last_max_value = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
+        print("The last_min_value is " + str(last_min_value)+" The last_max_value is " + str(last_max_value))
+        rangos[self.getnVars() - 1][0] = last_min_value
+        rangos[self.getnVars() - 1][1] = last_max_value
         return rangos
     #    * It returns the attribute labels for the input features
     #    * @return String[] the attribute labels for the input features
