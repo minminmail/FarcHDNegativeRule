@@ -42,7 +42,7 @@ from pathlib import Path
 # * @since JDK1.5
 
 class Main:
-    config_files_folder = Path("C:\phd_algorithms\chi-scikit-negative-rules-tests\few_disjuncts_2")
+    config_files_folder = Path("C:\phd_algorithms\chi-scikit-granularity-rules-experiments\few_disjuncts_1")
     file_to_open = None
 
     # Default Constructor

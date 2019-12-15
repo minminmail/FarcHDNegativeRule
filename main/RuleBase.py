@@ -229,7 +229,7 @@ class RuleBase:
     def print_pruned_granularity_rule_string(self):
         # added for granularity rules
         cadena_string = ""
-        cadena_string += "@Number of granularity rules: " + str(len(self.granularity_prune_rule_base)) + "\n\n"
+        cadena_string += "@Number of pruned granularity rules: " + str(len(self.granularity_prune_rule_base)) + "\n\n"
         for i in range(0, len(self.granularity_prune_rule_base)):
             granularity_prune_rule = self.granularity_prune_rule_base[i]
             cadena_string += "In negative zone area : " + str(
@@ -241,7 +241,7 @@ class RuleBase:
             cadena_string += self.names[j] + " IS " + granularity_prune_rule.antecedent[j].name + ": " + str(
                 self.classes[granularity_prune_rule.class_value]) + " with Rule Weight: " + str(
                 granularity_prune_rule.weight) + "\n"
-        print("granularity rules RuleBase cadena_string is:" + cadena_string)
+        print("pruned granularity rules RuleBase cadena_string is:" + cadena_string)
         return cadena_string
 
     # * It writes the rule base into an ouput file

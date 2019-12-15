@@ -7,7 +7,7 @@ class MultiMain:
 
 
     if __name__=='__main__':
-        config_files_folder = "C:\phd_algorithms\chi-scikit-negative-rules-tests\few_disjuncts_2"
+        config_files_folder = "C:\phd_algorithms\chi-scikit-granularity-rules-experiments\few_disjuncts_1"
         con_files = listdir(config_files_folder)
         for file in con_files:
             whole_path_file = join(config_files_folder, file)

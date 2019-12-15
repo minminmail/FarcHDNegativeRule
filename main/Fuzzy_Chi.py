@@ -54,7 +54,7 @@ class Fuzzy_Chi:
     granularity_data_base_array = []
     ruleBase = None
     granularity_rule_Base_array = []
-    negative_confident_value = 0.01
+    negative_confident_value = 0.5
     # added by rui
     negative_rule_number = None
     granularity_data_row_array = []
@@ -408,7 +408,7 @@ class Fuzzy_Chi:
             self.granularity_data_row_array.append(granularity_rule.data_row_here)
             granularity_rule.assingConsequent(sub_train, self.ruleWeight)
             if not (self.granularity_rule_Base_array[area_number].duplicated_granularity_rule(granularity_rule)) and (
-                    granularity_rule.weight > 0):
+                    granularity_rule.weight > 0.2):
                 granularity_rule.granularity_sub_zone = sub_zone_number
                 self.granularity_rule_Base_array[area_number].granularity_rule_Base.append(granularity_rule)
 
@@ -422,7 +422,7 @@ class Fuzzy_Chi:
             for j in range(0, len(self.granularity_rule_Base_array[i].granularity_rule_Base)):
                 rule = self.granularity_rule_Base_array[i].granularity_rule_Base[j]
 
-                if rule.weight > 0.75:
+                if rule.weight > 0:
                     self.granularity_rule_Base_array[i].granularity_prune_rule_base.append(rule)
                     print(" Added a new pruned granularity rule in  granularity_prune_rule_base, rule weight is :" + str(rule.weight))
         for i in range(0, self.negative_rule_number):

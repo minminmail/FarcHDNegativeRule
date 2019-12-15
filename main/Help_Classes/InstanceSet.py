@@ -99,7 +99,7 @@ class InstanceSet:
     # /////////////////////////////////////////////////////////////////////////////
 
     # It instances a new instance of InstanceSet
-    data_folder = PureWindowsPath('C:/phd_algorithms/chi-scikit-negative-rules-tests/few_disjuncts_2')
+    data_folder = PureWindowsPath('C:/phd_algorithms/chi-scikit-granularity-rules-experiments/OneDisjuncts_2')
     file_to_open = None
     data_lines = None
 
