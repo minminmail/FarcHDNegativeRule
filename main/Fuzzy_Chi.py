@@ -444,5 +444,11 @@ class Fuzzy_Chi:
                 if negative_rule.class_value == granularity_rule.class_vale:
                     self.more_granularity = False
                     break
+                if not self.more_granularity:
+                    break
+            if not self.more_granularity:
+                break
+
+
 
 

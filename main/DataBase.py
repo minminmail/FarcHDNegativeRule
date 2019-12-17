@@ -64,7 +64,7 @@ class DataBase:
         rangos = array(rangos)
         marca = 0.0
 
-        for i in range(0, self.n_labels):
+        for i in range(0, self.n_variables):
             print("i= " + str(i))
             marca = (float(rangos[i][1]) - float(rangos[i][0])) / (int(n_labels)- 1)
             if marca == 0:  # there are no ranges (an unique valor)
@@ -142,10 +142,10 @@ class DataBase:
         print("numrows: " + str(numrows) + "numcols:" + str(numcols))
         if self.dataBase.size != 0:
             print("cadena: " + self.cadena)
-            for i in range(0, self.n_labels):
+            for i in range(0, self.n_variables):
                 print("i = " + str(i))
                 print("cadena: " + self.cadena)
-                self.cadena += "\n" + "      " +self.names[i] + ":\n"
+                self.cadena += "\n" + " " + self.names[i] + ":\n"
                 for j in range(0, self.n_labels):
                     print("i = " + str(i))
                     self.cadena += "      " + " L_" + str(int(j + 1)) + ": (" + str(self.dataBase[i][j].x0) + "," + str(
@@ -169,7 +169,8 @@ class DataBase:
             file.close()
         else:
             with open(filename, 'a') as file_append:
-                outputString = "granularity rule of negative zone area " + str(zone_number)+ "\n" + "\n" + self.printString()
+                outputString = "granularity rule of negative zone area " + str(zone_number)
+                outputString = outputString + "\n" + "\n" + self.printString()
                 file_append.write(outputString)
                 file_append.close()
 
