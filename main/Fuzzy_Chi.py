@@ -245,7 +245,8 @@ class Fuzzy_Chi:
                 print("Accuracy for granularity  rules obtained in training: " + str(accTra))
                 # print("Accuracy for normal rules obtained in test: " + str(accTst))
                 self.nLabels = int(self.nLabels) + 1
-                print(" self.nLabels after being added by one " + str(self.nLabels))
+                # print(" self.nLabels after being added by one " + str(self.nLabels))
+                self.decide_more_granularity_or_not()
 
 
     # """
@@ -436,18 +437,22 @@ class Fuzzy_Chi:
             self.granularity_rule_Base_array[i].write_File_for_pruned_granularity_rule(self.fileRB)
 
     def decide_more_granularity_or_not(self):
-        print("compare granularity rule and negative rule to see if negative granularity rule has been generated ")
+        # print("compare granularity rule and negative rule to see if negative granularity rule has been generated ")
         for i in range(0, self.negative_rule_number):
             negative_rule = self.ruleBase.negative_rule_base_array[i]
             for j in range(0, len(self.granularity_rule_Base_array[i].granularity_rule_Base)):
                 granularity_rule = self.granularity_rule_Base_array[i].granularity_rule_Base[j]
-                if negative_rule.class_value == granularity_rule.class_vale:
+                # print(" negative_rule.class_value" + str(negative_rule.class_value))
+                # print(" granularity_rule.class_value" + str(granularity_rule.class_value))
+                if negative_rule.class_value == granularity_rule.class_value:
                     self.more_granularity = False
+                    # print(" Set the self.more_granularity = False")
                     break
                 if not self.more_granularity:
                     break
             if not self.more_granularity:
                 break
+
 
 
 
