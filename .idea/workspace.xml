@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="December 17, the loop is not stop">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="December 17, accuracy is 0.9628">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,13 +118,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fixed the validation file missing problem">
-      <created>1538949793931</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1538949793931</updated>
     </task>
     <task id="LOCAL-00019" summary="fixed the validation file missing problem">
       <created>1539143079477</created>
@@ -465,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576619133853</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="December 17, accuracy is 0.9628">
+      <created>1576620271922</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1576620271922</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="granularity rule generation has result" />
     <MESSAGE value="oct 06 before sleep" />
     <MESSAGE value="oct 15 before sleep" />
     <MESSAGE value="oct 16 morning" />
@@ -507,6 +503,7 @@
     <MESSAGE value="fixed one bug of produc is not defined before use,dicember one" />
     <MESSAGE value="fixed one bug of rule information for pruned and granularity" />
     <MESSAGE value="December 17, the loop is not stop" />
-    <option name="LAST_COMMIT_MESSAGE" value="December 17, the loop is not stop" />
+    <MESSAGE value="December 17, accuracy is 0.9628" />
+    <option name="LAST_COMMIT_MESSAGE" value="December 17, accuracy is 0.9628" />
   </component>
 </project>

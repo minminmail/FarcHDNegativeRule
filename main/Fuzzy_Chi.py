@@ -123,7 +123,9 @@ class Fuzzy_Chi:
         self.somethingWrong = self.somethingWrong or self.train_myDataSet.hasMissingAttributes()
 
         self.outputTr = parameters.getTrainingOutputFile()
+        print(" *********self.outputTr is  *********" + str(self.outputTr))
         self.outputTst = parameters.getTestOutputFile()
+        print(" ********* self.outputTst *********" + str(self.outputTst))
 
         self.fileDB = parameters.getOutputFile(0)
         self.fileRB = parameters.getOutputFile(1)
@@ -190,7 +192,7 @@ class Fuzzy_Chi:
 
             print("Accuracy for normal rules obtained in training: " + str(accTra))
             print("Accuracy for normal rules obtained in test: " + str(accTst))
-            print("Algorithm Finished")
+            print("Normal rule Algorithm Finished")
             # 1. get the sub train myDataSet from negative rules
             self.granularity_database_array = [DataBase() for x in range(self.negative_rule_number)]
             self.granularity_rule_Base_array = [RuleBase() for x in range(self.negative_rule_number)]
@@ -241,8 +243,9 @@ class Fuzzy_Chi:
                 # Finally we should fill the training and test output files with granularity rule result
 
                 accTra = self.doOutput(self.val_myDataSet, self.outputTr, True)
-                # accTst = self.doOutput(self.test_myDataSet, self.outputTst)
-                print("Accuracy for granularity  rules obtained in training: " + str(accTra))
+                accTst = self.doOutput(self.test_myDataSet, self.outputTst,True)
+                print("Accuracy for granularity  rules obtained in training data is : " + str(accTra))
+                print("Accuracy for granularity  rules obtained in test data is: " + str(accTst))
                 # print("Accuracy for normal rules obtained in test: " + str(accTst))
                 self.nLabels = int(self.nLabels) + 1
                 # print(" self.nLabels after being added by one " + str(self.nLabels))
@@ -264,7 +267,7 @@ class Fuzzy_Chi:
             # We write the output for each example
             # print("before loop in Fuzzy_Chi")
             data_number = dataset.getnData()
-            # print("dataset.getnData()" + str(dataset.getnData()))
+            print("in doOutput dataset.getnData()" + str(dataset.getnData()))
             for i in range(0, data_number):
                 # print(" In the doOutput the loop number i is  " + str(i))
                 # for classification:
@@ -298,6 +301,7 @@ class Fuzzy_Chi:
         except Exception as excep:
             print("There is exception in doOutput in Fuzzy chi class !!! The exception is :" + str(excep))
         if dataset.size() != 0:
+            print(" in doOutput the hits is "+str(hits)+" ,the dataset.size() is "+str(dataset.size()))
             return 1.0 * hits / dataset.size()
         else:
             return 0
