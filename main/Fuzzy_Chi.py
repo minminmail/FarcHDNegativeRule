@@ -205,7 +205,8 @@ class Fuzzy_Chi:
             # self.train_myDataSet.getRanges(), self.train_myDataSet.getNames()
             nVars = self.train_myDataSet.getnVars()
             nInputs = self.train_myDataSet.getnInputs()
-            while self.more_granularity:
+
+            while self.more_granularity and self.negative_rule_number >0:
 
                 for i in range(0, self.negative_rule_number):
                     # 2. for each sub train myDataSet, do self.granularity_data_base[i]= DataBase()
@@ -430,12 +431,14 @@ class Fuzzy_Chi:
     def prunerules_granularity_rules(self):
         for i in range(0, self.negative_rule_number):
             print("in prunerules_granularity_rules the i is: " + str(i))
+            negative_rule = self.ruleBase.negative_rule_base_array[i]
             for j in range(0, len(self.granularity_rule_Base_array[i].granularity_rule_Base)):
-                rule = self.granularity_rule_Base_array[i].granularity_rule_Base[j]
+                granularity_rule = self.granularity_rule_Base_array[i].granularity_rule_Base[j]
 
-                if rule.weight > 0:
-                    self.granularity_rule_Base_array[i].granularity_prune_rule_base.append(rule)
-                    print(" Added a new pruned granularity rule in  granularity_prune_rule_base, rule weight is :" + str(rule.weight))
+                if granularity_rule.weight > 0:
+                    #if negative_rule.class_value == granularity_rule.class_value:
+                    self.granularity_rule_Base_array[i].granularity_prune_rule_base.append(granularity_rule)
+                    print(" Added a new pruned granularity rule in  granularity_prune_rule_base, rule weight is :" + str(granularity_rule.weight))
         for i in range(0, self.negative_rule_number):
             print(" The loop i number is :" + str(i))
             self.granularity_rule_Base_array[i].write_File_for_pruned_granularity_rule(self.fileRB)

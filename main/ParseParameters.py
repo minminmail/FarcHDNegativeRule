@@ -72,8 +72,9 @@ class ParseParameters:
         logging.info("fileName in parseParameters = " + fileName)
         logging.info("before open file")
         print(fileName)
+        print("file in parseConfigurationFile is :" + str(fileName))
         file = open(fileName, "r")
-        print("file in parseConfigurationFile is :" + str(file))
+
         # file is an string containing the whole file
         fileString = file.read()
         line = fileString.splitlines()
