@@ -99,7 +99,8 @@ class InstanceSet:
     # /////////////////////////////////////////////////////////////////////////////
 
     # It instances a new instance of InstanceSet
-    data_folder = PureWindowsPath('C:/phd_experiments/threeAlgorithmsComparizasion/threeAlgorithmsComparizasion/ecoli')
+    # data_folder = PureWindowsPath('C:/phd_experiments/threeAlgorithmsComparizasion/threeAlgorithmsComparizasion/ecoli')
+    data_folder = None
     file_to_open = None
     data_lines = None
 
@@ -173,13 +174,14 @@ class InstanceSet:
     # * @throws HeaderFormatException if there is any lexical or sintactical error in the
     # * header of the input file
 
-    def readSet(self, fileName, isTrain):
+    def readSet(self, fileName, isTrain,file_path):
         print("Before try in readSet of InstanceSet, fileName is :" + str(fileName) + ".")
         print("Opening the file in readSet of InstanceSet: " + str(fileName) + ".")
         try:
             # Parsing the header of the DB.
             errorLogger = FormatErrorKeeper()
-            self.file_to_open = self.data_folder / fileName
+            self.data_folder = file_path
+            self.file_to_open = self.data_folder + "\\" + fileName
             # Declaring an instance parser
             print("In readSet,file_to_open is:" + str(self.file_to_open))
             # to do The exception in init InstanceParserof InstanceParse is: can only concatenate str (not "WindowsPath") to str

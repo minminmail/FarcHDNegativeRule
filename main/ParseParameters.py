@@ -49,6 +49,7 @@ class ParseParameters:
     __outputTrFile = ""
     __outputTstFile = ""
     __outputFiles = []
+    file_path = None
 
     __parameters = {}
 
@@ -58,6 +59,7 @@ class ParseParameters:
         self.__inputFiles = []
         self.__outputFiles = []
         self.__parameters = []
+        self.file_path = None
 
         # * It obtains all the necesary information from the configuration file.<br/>
         # * First of all it reads the name of the input data-sets, training, validation and test.<br/>
@@ -73,6 +75,8 @@ class ParseParameters:
         logging.info("before open file")
         print(fileName)
         print("file in parseConfigurationFile is :" + str(fileName))
+        self.file_path = '\\'.join(fileName.split('\\')[0:-1])
+        print("file_path in parseConfigurationFile is :" + self.file_path)
         file = open(fileName, "r")
 
         # file is an string containing the whole file

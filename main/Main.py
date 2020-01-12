@@ -50,10 +50,11 @@ class Main:
     # * It launches the algorithm
     # * @param confFile String it is the filename of the configuration file.
 
-    def execute(self):
+    def execute(file_setup):
+        print("file_setup is " + file_setup)
         print("Main execute begin...")
         parameters = ParseParameters()
-        parameters.parseConfigurationFile(self)
+        parameters.parseConfigurationFile(file_setup)
         fuzzy_chi = Fuzzy_Chi(parameters)
         fuzzy_chi.execute()
 

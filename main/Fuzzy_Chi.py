@@ -98,16 +98,16 @@ class Fuzzy_Chi:
             print("Reading the training set: ")
             inputTrainingFile = parameters.getInputTrainingFiles()
             print("In Fuzzy Chi init method the training file is :" + inputTrainingFile)
-            self.train_myDataSet.readClassificationSet(inputTrainingFile, True)
+            self.train_myDataSet.readClassificationSet(inputTrainingFile, True, parameters.file_path)
             print(" ********* train_myDataSet.myDataSet readClassificationSet finished !!!!!! *********")
 
             print("Reading the validation set: ")
             inputValidationFile = parameters.getValidationInputFile()
-            self.val_myDataSet.readClassificationSet(inputValidationFile, False)
+            self.val_myDataSet.readClassificationSet(inputValidationFile, False,parameters.file_path)
             print(" ********* val_myDataSet.myDataSet readClassificationSet finished !!!!!! *********")
 
             print("Reading the test set: ")
-            self.test_myDataSet.readClassificationSet(parameters.getInputTestFiles(), False)
+            self.test_myDataSet.readClassificationSet(parameters.getInputTestFiles(), False,parameters.file_path)
             print(" ********* test_myDataSet.myDataSet readClassificationSet finished !!!!!! *********")
 
         except IOError as ioError:
@@ -206,7 +206,7 @@ class Fuzzy_Chi:
             nVars = self.train_myDataSet.getnVars()
             nInputs = self.train_myDataSet.getnInputs()
 
-            while self.more_granularity and self.negative_rule_number >0:
+            while self.more_granularity and self.negative_rule_number > 0:
 
                 for i in range(0, self.negative_rule_number):
                     # 2. for each sub train myDataSet, do self.granularity_data_base[i]= DataBase()

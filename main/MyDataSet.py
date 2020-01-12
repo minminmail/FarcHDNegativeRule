@@ -221,7 +221,7 @@ class MyDataSet:
     #  * @param train boolean It must have the value "true" if we are reading the training data-set
     #  * @throws IOException If there ocurs any problem with the reading of the data-set
 
-    def readClassificationSet(self, datasetFile, train):
+    def readClassificationSet(self, datasetFile, train, file_path):
         try:
             # Load in memory a dataset that contains a classification problem
             print("Inside readClassificationSet, datasetFile :" + str(datasetFile))
@@ -231,7 +231,7 @@ class MyDataSet:
                 print("self.__instanceSet is Null")
             else:
                 print("self.__instanceSet is not None, train = " + str(train))
-                self.__instanceSet.readSet(datasetFile, train)
+                self.__instanceSet.readSet(datasetFile, train,file_path)
                 print("begin getNumInstances ...... in readClassificationSet ")
                 self.__nData = self.__instanceSet.getNumInstances()
                 print("In readClassificationSet , self.__nData is : " + str(self.__nData))
@@ -337,11 +337,11 @@ class MyDataSet:
         self.compute_statistics_data_row_array(data_row_array)
         self.compute_instances_perclass_data_row_array(data_row_array)
 
-    def readRegressionSet(self, datasetFile, train):
+    def readRegressionSet(self, datasetFile, train,file_path):
 
         try:
             # Load in memory a dataset that contains a regression problem
-            self.__instanceSet.readSet(datasetFile, train)
+            self.__instanceSet.readSet(datasetFile, train,file_path)
             self.__nData = self.__instanceSet.getNumInstances()
             self.__nInputs = Attributes.getInputNumAttributes(Attributes)
             self.__nVars = self.__nInputs + Attributes.getOutputNumAttributes(Attributes)
