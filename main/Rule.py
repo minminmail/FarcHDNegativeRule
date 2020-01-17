@@ -254,8 +254,8 @@ class Rule:
                 if len(self.antecedent) == meet_antecedent:
                     support_rule_number = support_rule_number + 1
         if all_number_of_the_class != 0:
-            print("support_rule_number :"+str(support_rule_number))
-            print("all_number_of_the_class :" + str(all_number_of_the_class))
+            # print("support_rule_number :"+str(support_rule_number))
+            # print("all_number_of_the_class :" + str(all_number_of_the_class))
             confident_value = support_rule_number / all_number_of_the_class
 
         return confident_value

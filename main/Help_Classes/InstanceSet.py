@@ -108,7 +108,7 @@ class InstanceSet:
     data_rows = None
 
     def __init__(self):
-        print("In __init__ method in InstanceSet.")
+        # print("In __init__ method in InstanceSet.")
         self.storeAttributesAsNonStatic = False
         self.attributes = None
 
@@ -210,7 +210,7 @@ class InstanceSet:
             # print("*********  There are : " + str(len(new_data_lines)) + " In new Data lines ********* ")
             for line in new_data_lines:
                 if new_data_lines is not None:
-                    # print("Data line: " + str(line))
+                    print("Data line: " + str(line))
                     newInstance = Instance()
                     # print("how many data already in the instanceSet: " + str(len(tempSet)))
                     newInstance.setThreeParameters(line, isTrain, len(tempSet))

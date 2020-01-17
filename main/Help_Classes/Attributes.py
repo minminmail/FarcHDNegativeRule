@@ -151,7 +151,7 @@ class Attributes:
                 print("hasInteger is true")
             elif (attType == Attribute.REAL):
                 self.hasReal = True
-                print("hasReal is true")
+                # print("hasReal is true")
 
         numberAttribute = len(self.attributes)
         # print("There are " + str(numberAttribute) + "attribute in Attribute class")
@@ -216,7 +216,7 @@ class Attributes:
     #      * @return the attribute requested.
     #  */
     def getAttributeByName(self, _name):
-        print("Begin getAttribute ......")
+        # print("Begin getAttribute ......")
         size = len(self.attributes)
         stopPos = 0
         for i in range(0, size):

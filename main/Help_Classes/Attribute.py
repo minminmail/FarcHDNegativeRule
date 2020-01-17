@@ -270,7 +270,7 @@ class Attribute:
 
     def getFixedBounds(self):
 
-        print("self.__fixedBounds: " + str(self.__fixedBounds))
+        # print("self.__fixedBounds: " + str(self.__fixedBounds))
         return self.__fixedBounds
 
     # end getFixedBounds
@@ -363,7 +363,7 @@ class Attribute:
     #  '''
 
     def getMinAttribute(self):
-        print(" attribute the min value is " + str(self.__min))
+        # print(" attribute the min value is " + str(self.__min))
         return self.__min
 
     def get_min_granularity_attribute(self, data_set_x_array, attribute_number):

@@ -1,5 +1,49 @@
-@Number of rules: 0
+@Number of rules: 44
 
+1: Sex IS L_2 AND Length IS L_0 AND Diameter IS L_0 AND Height IS L_0 AND Whole_weight IS L_0 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: positive with Rule Weight: 0.9609780176291892
+2: Sex IS L_0 AND Length IS L_0 AND Diameter IS L_0 AND Height IS L_0 AND Whole_weight IS L_0 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: positive with Rule Weight: 0.4812000792453793
+3: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_0 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 0.9700150538350166
+4: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+5: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+6: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 0.9999999306695438
+7: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 0.9999999994642567
+8: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+9: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_0 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 1.0
+10: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 0.9993030429020334
+11: Sex IS L_1 AND Length IS L_2 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+12: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 1.0
+13: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 0.9999999038019278
+14: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_0 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 0.7543939973291813
+15: Sex IS L_1 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+16: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 0.9999898059295855
+17: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 0.9999754366007148
+18: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 0.9999992157705757
+19: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 0.9994253614814997
+20: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 0.9999875892541873
+21: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 0.999999868715892
+22: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 1.0
+23: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+24: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+25: Sex IS L_0 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+26: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 1.0
+27: Sex IS L_0 AND Length IS L_2 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+28: Sex IS L_0 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_2 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+29: Sex IS L_1 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_2 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+30: Sex IS L_1 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_2 AND Shucked_weight IS L_2 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+31: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 0.999246269469172
+32: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 0.9999705874751342
+33: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 0.9999756574201822
+34: Sex IS L_2 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+35: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 0.9999913157545846
+36: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 0.9856703273262521
+37: Sex IS L_0 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_2 AND Shucked_weight IS L_2 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+38: Sex IS L_2 AND Length IS L_2 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+39: Sex IS L_0 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_2 AND Shucked_weight IS L_2 AND Viscera_weight IS L_2 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+40: Sex IS L_0 AND Length IS L_2 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 1.0
+41: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_0 AND Shucked_weight IS L_0 AND Viscera_weight IS L_0 AND Shell_weight IS L_1: negative with Rule Weight: 0.9990898898779135
+42: Sex IS L_0 AND Length IS L_1 AND Diameter IS L_2 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_1 AND Shell_weight IS L_1: negative with Rule Weight: 1.0
+43: Sex IS L_1 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_1 AND Viscera_weight IS L_0 AND Shell_weight IS L_0: negative with Rule Weight: 1.0
+44: Sex IS L_2 AND Length IS L_1 AND Diameter IS L_1 AND Height IS L_0 AND Whole_weight IS L_1 AND Shucked_weight IS L_0 AND Viscera_weight IS L_1 AND Shell_weight IS L_0: negative with Rule Weight: 0.9992759983884981
 
 
 @Number of negative rules: 0

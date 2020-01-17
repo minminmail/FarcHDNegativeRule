@@ -224,7 +224,7 @@ class MyDataSet:
     def readClassificationSet(self, datasetFile, train, file_path):
         try:
             # Load in memory a dataset that contains a classification problem
-            # print("Inside readClassificationSet, datasetFile :" + str(datasetFile))
+            print("Inside readClassificationSet, datasetFile :" + str(datasetFile))
             # print("train is :" + str(train))
             # print("object instanceSet is :" + str(self.__instanceSet))
             if self.__instanceSet is None:
@@ -265,7 +265,7 @@ class MyDataSet:
 
                 nDataLength = self.__nData
                 nInputLength = self.__nInputs
-                # print("nDataLength = " + str(nDataLength))
+                print("nDataLength = " + str(nDataLength))
                 # print("nInputLength = " + str(nInputLength))
                 # [[0 for j in range(m)] for i in range(n)] first column, then row
 
@@ -306,10 +306,12 @@ class MyDataSet:
                     if noOutputs:
                         # print("noOutputs==True")
                         self.__outputInteger[i] = 0
+                        self.__outputReal[i] = 0.0
                         self.__output[i] = ""
                     else:
                         # print("noOutputs==False")
                         self.__outputInteger[i] = self.__instanceSet.getOutputNumericValue(i, 0)
+                        self.__outputReal[i] = self.__instanceSet.getOutputNumericValue(i, 0)
                         # print("self.__outputInteger[" + str(i) + "] = " + str(self.__outputInteger[i]))
                         self.__output[i] = self.__instanceSet.getOutputNominalValue(i, 0)
 
@@ -317,7 +319,7 @@ class MyDataSet:
                         self.__nClasses = self.__outputInteger[i]
 
                 self.__nClasses = self.__nClasses + 1
-                # print('Number of classes=' + str(self.__nClasses))
+                print('Number of classes=' + str(self.__nClasses))
         except Exception as error:
             print("readClassificationSet: Exception in readSet, in readClassificationSet:" + str(error))
 
@@ -387,11 +389,16 @@ class MyDataSet:
                         self.__X[i][j] = self.__emin[j] - 1
 
                 if noOutputs:
+                    print("noOutputs self.__outputReal[i]" + str(i) + "is 0 ")
                     self.__outputReal[i] = 0
+
                     self.__outputInteger[i] = 0
 
                 else:
+                    print("noOutputs else part:")
+
                     self.__outputReal[i] = self.__instanceSet.getOutputNumericValue(i, 0)
+                    print("self.__outputReal[i]" + str(i) + str(self.__outputReal[i]))
                     self.__outputInteger[i] = int(self.__outputReal[i])
         except OSError as error:
             print("OS error: {0}".format(error))
@@ -484,15 +491,15 @@ class MyDataSet:
 
     def computeStatistics(self):
         try:
-            # print("Begin computeStatistics......")
+            print("Begin computeStatistics......")
             varNum = self.getnVars()
-            # print("varNum = " + str(varNum))
+            print("varNum = " + str(varNum))
             self.__stdev = [0.0 for x in range(varNum)]  # original was double ,changed into float in python
             self.__average = [0.0 for x in range(varNum)]
 
             inputNum = self.getnInputs()
             dataNum = self.getnData()
-            # print("inputNum = " + str(inputNum) + ",dataNum = " + str(dataNum))
+            print("inputNum = " + str(inputNum) + ",dataNum = " + str(dataNum))
             for i in range(0, inputNum):
                 self.__average[i] = 0
                 for j in range(0, dataNum):
@@ -501,33 +508,40 @@ class MyDataSet:
                 if dataNum != 0:
                     self.__average[i] = self.__average[i] / dataNum
             average_length = len(self.__average)
+            print(" average_length is " + str(average_length))
             self.__average[average_length - 1] = 0
-            for j in range(0, len(self.__outputReal)):
-                self.__average[average_length - 1] = self.__average[average_length - 1] + self.__outputReal[j]
+            if len(self.__outputReal)==0:
+                print("len(self.__outputReal) is  0")
+
+            else:
+                print("len(self.__outputReal) is " + str(len(self.__outputReal)))
+                for j in range(0, len(self.__outputReal)):
+                    print("self.__outputReal[j] is : "+str(self.__outputReal[j]) + " ,j is :"+str(j))
+                    self.__average[average_length - 1] = self.__average[average_length - 1] + self.__outputReal[j]
             if len(self.__outputReal) != 0:
                 self.__average[average_length - 1] = self.__average[average_length - 1] / len(self.__outputReal)
+                print("before the loop for inputNum")
+                for i in range(0, inputNum):
+                    sum_value = 0.0
+                    for j in range(0, dataNum):
+                        if not self.isMissing(j, i):
+                            # print("self.isMissing(j, i)==False")
+                            sum_value = sum_value + (self.__X[j][i] - self.__average[i]) * (
+                                    self.__X[j][i] - self.__average[i])
 
-            for i in range(0, inputNum):
+                    if dataNum != 0:
+                        print("dataNum != 0" + " , dataNum=" + str(dataNum))
+                        sum_value = sum_value / dataNum
+                    self.__stdev[i] = math.sqrt(sum_value)
+
                 sum_value = 0.0
-                for j in range(0, dataNum):
-                    if not self.isMissing(j, i):
-                        # print("self.isMissing(j, i)==False")
-                        sum_value = sum_value + (self.__X[j][i] - self.__average[i]) * (
-                                self.__X[j][i] - self.__average[i])
-
-                if dataNum != 0:
-                    # print("dataNum != 0" + " , dataNum=" + str(dataNum))
-                    sum_value = sum_value / dataNum
-                self.__stdev[i] = math.sqrt(sum_value)
-
-            sum_value = 0.0
-            for j in range(0, len(self.__outputReal)):
-                sum_value += (self.__outputReal[j] - self.__average[average_length - 1]) * (
-                        self.__outputReal[j] - self.__average[average_length - 1])
-            if len(self.__outputReal) != 0:
-                sum_value /= len(self.__outputReal)
-            self.__stdev[len(self.__stdev) - 1] = math.sqrt(sum_value)
-            # print("sum is :" + str(sum_value) + "  self.__stdev :" + str(self.__stdev))
+                for j in range(0, len(self.__outputReal)):
+                    sum_value += (self.__outputReal[j] - self.__average[average_length - 1]) * (
+                            self.__outputReal[j] - self.__average[average_length - 1])
+                if len(self.__outputReal) != 0:
+                    sum_value /= len(self.__outputReal)
+                self.__stdev[len(self.__stdev) - 1] = math.sqrt(sum_value)
+                print("sum is :" + str(sum_value) + "  self.__stdev :" + str(self.__stdev))
         except Exception as error:
             print("Exception in computeStatistics : " + str(error))
 

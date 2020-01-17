@@ -111,7 +111,7 @@ class Instance:
     #  * write error message with the maximum amount of information.
     #  */
     def __init__(self):
-        print("__init__ of Instance begin......")
+        # print("__init__ of Instance begin......")
         self.__nominalValues = []
 
     def setThreeParameters(self, defStr, _isTrain, instanceNum):
@@ -188,7 +188,7 @@ class Instance:
             length = int(len(atts))
             for i in range(0, length):
                 if not self.__missingValues[Instance.ATT_INPUT][i]:
-                    if (atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes() == 1):
+                    if (atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes(Attributes) == 1):
                         atts[i].increaseClassFrequency(currentClass, self.__nominalValues[Instance.ATT_INPUT][i])
                     elif ((atts[i].getType() == Attribute.INTEGER or atts[i].getType() == Attribute.REAL) and
                           not self.__missingValues[Instance.ATT_INPUT][i]):
@@ -270,7 +270,7 @@ class Instance:
             length = int(len(atts))
             for i in range(0, length):
                 if not self.__missingValues[Instance.ATT_INPUT][i]:
-                    if (atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes() == 1):
+                    if (atts[i].getType() == Attribute.NOMINAL) and (Attributes.getOutputNumAttributes(Attributes) == 1):
                         atts[i].increaseClassFrequency(currentClass, self.__nominalValues[Instance.ATT_INPUT][i])
                     elif ((atts[i].getType() == Attribute.INTEGER or atts[i].getType() == Attribute.REAL) and
                           not self.__missingValues[Instance.ATT_INPUT][i]):
@@ -335,12 +335,12 @@ class Instance:
         self.anyMissingValue[2] = False
         if instanceAttrs is None:
             self.__numInputAttributes = Attributes.getInputNumAttributes()
-            self.__numOutputAttributes = Attributes.getOutputNumAttributes()
+            self.__numOutputAttributes = Attributes.getOutputNumAttributes(Attributes)
             self.__numUndefinedAttributes = Attributes.getNumAttributes() - (
                     self.__numInputAttributes + self.__numOutputAttributes)
         else:
             self.__numInputAttributes = instanceAttrs.getInputNumAttributes()
-            self.__numOutputAttributes = instanceAttrs.getOutputNumAttributes()
+            self.__numOutputAttributes = instanceAttrs.getOutputNumAttributes(Attributes)
             self.__numUndefinedAttributes = instanceAttrs.getNumAttributes() - (
                     self.__numInputAttributes + self.__numOutputAttributes)
 
@@ -484,7 +484,7 @@ class Instance:
             # Checking if the new train value exceedes the bounds definition in train. The condition
             # also checks if the attribute is defined (is an input or an output).
             if self.isTrain and inOut != 2:
-                print("self.isTrain and inOut != 2......")
+                # print("self.isTrain and inOut != 2......")
                 if curAtt.getFixedBounds() and (not curAtt.isInBounds(self.__realValues[inOut][curCount])):
                     error_info_3 = ErrorInfo(ErrorInfo.TrainNumberOutOfRange, instanceNum, InstanceParser.lineCounter,
                                              curCount, Attribute.INPUT + inOut, self.isTrain,
@@ -496,7 +496,7 @@ class Instance:
                 curAtt.enlargeBounds(self.__realValues[inOut][curCount])
 
             elif inOut != 2:  # In test mode
-                print("self.isTrain and inOut != 2......")
+                # print("self.isTrain and inOut != 2......")
                 self.__realValues[inOut][curCount] = curAtt.rectifyValueInBounds(self.__realValues[inOut][curCount]);
 
         elif Attributes.getAttributeByPos(Attributes, count).getType() == Attribute.NOMINAL:
@@ -526,9 +526,9 @@ class Instance:
                     print(" !!!!!!!!! InstanceSet.errorLogger.setError: " + str(error_info_4))
 
                 curAtt.addNominalValue(self.__nominalValues[inOut][curCount])
-                print("self.isTrain and inOut!=2 finished......")
+                # print("self.isTrain and inOut!=2 finished......")
             elif inOut != 2:
-                print(" inOut!=2......")
+                # print(" inOut!=2......")
                 if curAtt.addTestNominalValue(self.__nominalValues[inOut][curCount]):
                     error_info_5 = ErrorInfo(ErrorInfo.TestNominalOutOfRange, instanceNum, InstanceParser.lineCounter,
                                              curCount, Attribute.INPUT + inOut, self.isTrain,
@@ -540,13 +540,13 @@ class Instance:
                     print(" !!!!!!!!! InstanceSet.errorLogger.setError: " + str(error_info_5))
 
             if inOut != -2:
-                print(" inOut != -2......")
+                # print(" inOut != -2......")
                 self.__intNominalValues[inOut][curCount] = curAtt.convertNominalValue(
                     self.__nominalValues[inOut][curCount])
                 self.__realValues[inOut][curCount] = self.__intNominalValues[inOut][curCount]
 
                 # end processReadValue
-        print("processReadValue finished......")
+        # print("processReadValue finished......")
 
     # It reserves all the memory necessary for this instance
 
@@ -597,7 +597,7 @@ class Instance:
         for i in range(0, self.__numUndefinedAttributes):
             self.__missingValues[2][i] = False
 
-        print("initClassAttributes finished......")
+        # print("initClassAttributes finished......")
 
     # end initClassAttributes
 
@@ -850,7 +850,7 @@ class Instance:
     #  */
 
     def getInputRealValues(self, pos):
-        print("getInputRealValues, [0][" + str(pos) + "]")
+        # print("getInputRealValues, [0][" + str(pos) + "]")
         return self.__realValues[0][pos]
 
     # end getInputRealAttributes
