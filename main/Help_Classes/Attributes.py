@@ -34,7 +34,6 @@
 #  */
 from Help_Classes.Attribute import Attribute
 
-
 # /**
 # * <p>
 # * <b> Attributes </b>
@@ -155,10 +154,10 @@ class Attributes:
                 print("hasReal is true")
 
         numberAttribute = len(self.attributes)
-        print("There are " + str(numberAttribute) + "attribute in Attribute class")
+        # print("There are " + str(numberAttribute) + "attribute in Attribute class")
         for attr in self.attributes:
             attr_name = attr.getName()
-            print("attr name is :" + str(attr_name))
+            # print("attr name is :" + str(attr_name))
 
     # end addAttribute
 
@@ -221,7 +220,7 @@ class Attributes:
         size = len(self.attributes)
         stopPos = 0
         for i in range(0, size):
-            print("size of attributes = " + str(size))
+            # print("size of attributes = " + str(size))
             attribute = self.attributes[i]
             if attribute.getName() == _name:
                 stopPos = i
@@ -255,9 +254,9 @@ class Attributes:
     #      * @return the input attribute being int the position passed as an argument.
     #  */
     def getInputAttribute(self, pos):
-        print("pos is :" + str(pos) + ",self.inputAttr" + str(self.inputAttr))
+        # print("pos is :" + str(pos) + ",self.inputAttr" + str(self.inputAttr))
         if pos < 0 or pos >= len(self.inputAttr):
-            print("Return None for getInputAttribute !!!")
+            # print("Return None for getInputAttribute !!!")
             return None
         return self.inputAttr[pos]
 
@@ -318,7 +317,7 @@ class Attributes:
     def getOutputAttributes(self):
         print("get Output Attributes in Attributes begin.......")
         if len(self.outputAttr) == 0:
-            print("The output attributes are 0:")
+            # print("The output attributes are 0:")
             return None
         else:
             attr = [Attribute() for x in range(0, len(self.outputAttr))]
@@ -410,7 +409,7 @@ class Attributes:
         for i in range(0, len(self.undefinedAttr)):
             # Writting the name and type of the attribute
             aux += self.undefinedAttr[i].toString() + "\n"
-        print("getUndefinedAttributesHeader, aux = " + aux)
+        # print("getUndefinedAttributesHeader, aux = " + aux)
         return aux
 
     # end getUndefinedAttributesHeader
@@ -430,7 +429,7 @@ class Attributes:
             # print("Return :" + str(attStr))
             return attStr
         else:
-            print(" Return None !!! pos is bigger than array length, will cause out of index error .")
+            # print(" Return None !!! pos is bigger than array length, will cause out of index error .")
             return None
 
     # end getAttribute
@@ -458,10 +457,10 @@ class Attributes:
     #  * @return an int with the number of attributes
     #  */
     def getOutputNumAttributes(self):
-        print("begin getOutputNumAttributes ......")
+        # print("begin getOutputNumAttributes ......")
 
         number_of_outputAttr = len(self.outputAttr)
-        print("number_of_outputAttr : " + str(number_of_outputAttr))
+        # print("number_of_outputAttr : " + str(number_of_outputAttr))
         return number_of_outputAttr
 
     # end getOutputNumAttributes
@@ -502,31 +501,31 @@ class Attributes:
 
         attName = ""
         att = None
-        for inAtt in inAttNames:
-            print("inAtt name inside inAttNames is:" + inAtt)
-        for outAtt in outAttNames:
-            print("outAtt name inside outAttNames is:" + outAtt)
+        # for inAtt in inAttNames:
+            # print("inAtt name inside inAttNames is:" + inAtt)
+        # for outAtt in outAttNames:
+            # print("outAtt name inside outAttNames is:" + outAtt)
 
         for i in range(0, len(self.attributes)):
             att = self.attributes[i]
 
             attName = att.getName()
             attName = attName.strip()
-            print("attName is:" + str(attName))
+            # print("attName is:" + str(attName))
 
             if attName in inAttNames:
-                print("attName in inAttNames")
+                # print("attName in inAttNames")
                 if not self.hasSameAttributeName(attName, self.inputAttr):
-                    print("add in input attribute list, attName is:" + attName)
+                    # print("add in input attribute list, attName is:" + attName)
                     att.setDirectionAttribute(Attribute.INPUT)
                     self.inputAttr.append(self.attributes[i])
             elif attName in outAttNames:
                 if not self.hasSameAttributeName(attName, self.outputAttr):
-                    print("add in out attribute list, attName is:" + attName)
+                    # print("add in out attribute list, attName is:" + attName)
                     att.setDirectionAttribute(Attribute.OUTPUT)
                     self.outputAttr.append(self.attributes[i])
             elif not self.hasSameAttributeName(attName, self.undefinedAttr):
-                print("add in undefinedAttr attribute list, attName is:" + attName)
+                # print("add in undefinedAttr attribute list, attName is:" + attName)
                 self.undefinedAttr.append(self.attributes[i])
 
         # Finally, making some statistics
@@ -565,16 +564,16 @@ class Attributes:
     #  */
     def hasSameAttributeName(attrName, attr_list):
         hasSame = False
-        print("attrName ==" + attrName)
+        # print("attrName ==" + attrName)
         for item_in_list in attr_list:
             name = item_in_list.getName()
-            print("item_in_list.getName() ==" + name)
+            # print("item_in_list.getName() ==" + name)
 
             if item_in_list.getName() == attrName:
                 hasSame = True
                 break
 
-        print(" return hasSame ==" + str(hasSame))
+        # print(" return hasSame ==" + str(hasSame))
         return hasSame
 
     def areAllDefinedAsInputs(self, inputNames):
@@ -722,28 +721,27 @@ class Attributes:
     #  */
 
     def initStatistics(self):
-        print("In Attributes initStatistics begin.....")
+        # print("In Attributes initStatistics begin.....")
         outputAttNumber = len(self.outputAttr)
-        print("In initStatistics of Attributes, the outputAttNumber is " + str(outputAttNumber))
+        # print("In initStatistics of Attributes, the outputAttNumber is " + str(outputAttNumber))
         if outputAttNumber != 1:
             return
         for out_put_att in self.outputAttr:
             name = out_put_att.getName()
-            print("out_put_att is :" + name)
-        print("outputAttr[0]" + str(self.outputAttr[0]))
+            # print("out_put_att is :" + name)
+        # print("outputAttr[0]" + str(self.outputAttr[0]))
         classNumber = self.outputAttr[0].getNumNominalValues()
-        print("inside initStatistics the classNumber is:" + str(classNumber))
+        # print("inside initStatistics the classNumber is:" + str(classNumber))
         # If the outpout_put_att isut attribute has not been defined as a nominal or it has not
         # any value in the nominal list, the initalization is aborted.
         if classNumber <= 0:
-            print("class Number is smaller than 0, return")
+            # print("class Number is smaller than 0, return")
             return
         else:
             input_attr_length = len(self.inputAttr)
-            print("class Number is bigger than 0, input_attr_length = " + str(input_attr_length))
+            # print("class Number is bigger than 0, input_attr_length = " + str(input_attr_length))
             for i in range(0, input_attr_length):
-                print("Call Attribute.initStatisticsTwo in Attributes initStatistics......classNumber = " + str(
-                    classNumber))
+                # print("Call Attribute.initStatisticsTwo in Attributes initStatistics......classNumber = " + str(classNumber))
                 (self.inputAttr[i]).initStatisticsTwo(classNumber)
 
         # end initStatistics
@@ -761,10 +759,10 @@ class Attributes:
     # end finishStatistics
 
     # /**
-    #  * It does print the attributes information
+    #  * It does # print the attributes information
     #  */
     def printAttributes(self):
-        print("@relation = " + self.relationName)
+        # print("@relation = " + self.relationName)
         for i in range(0, len(self.attributes)):
             att = self.attributes[i]
             if att.getDirectionAttribute() == Attribute.INPUT:

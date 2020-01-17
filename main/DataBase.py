@@ -52,10 +52,10 @@ class DataBase:
         # @param names String[] Labels for the input attributes
 
     def setMultipleParameters(self, n_variables, n_labels, rangos, names):
-        print("setMultipleParameters begin...")
+        # print("setMultipleParameters begin...")
         self.n_variables = int(n_variables)
         self.n_labels = int(n_labels)
-        print("self.n_variables: " + str(self.n_variables) + " self.n_labels : " + str(self.n_labels))
+        # print("self.n_variables: " + str(self.n_variables) + " self.n_labels : " + str(self.n_labels))
         # First columns , Second rows
         self.dataBase = [[Fuzzy() for y in range(self.n_labels)] for x in range(self.n_variables)]
         self.dataBase = array(self.dataBase)
@@ -65,13 +65,13 @@ class DataBase:
         marca = 0.0
 
         for i in range(0, self.n_variables):
-            print("i= " + str(i))
+            # print("i= " + str(i))
             marca = (float(rangos[i][1]) - float(rangos[i][0])) / (int(n_labels)- 1)
             if marca == 0:  # there are no ranges (an unique valor)
                 print("Marca =0 in DataBase init method...")
 
                 for etq in range(0, self.n_labels):
-                    print("etq= " + str(etq))
+                    # print("etq= " + str(etq))
                     self.dataBase[i][etq] = Fuzzy()
                     self.dataBase[i][etq].x0 = rangos[i][1] - 0.00000000000001
                     self.dataBase[i][etq].x1 = rangos[i][1]
@@ -81,10 +81,10 @@ class DataBase:
                     self.dataBase[i][etq].label = etq
 
             else:
-                print("Marca !=0 in DataBase init method...")
-                print("n_labels = " + str(n_labels))
+                # print("Marca !=0 in DataBase init method...")
+                # print("n_labels = " + str(n_labels))
                 for etq in range(0, int(n_labels)):
-                    print(" i = " + str(i) + ",etq = " + str(etq))
+                    # print(" i = " + str(i) + ",etq = " + str(etq))
                     self.dataBase[i][etq].x0 = rangos[i][0] + marca * (etq - 1)
                     self.dataBase[i][etq].x1 = rangos[i][0] + marca * etq
                     self.dataBase[i][etq].x3 = rangos[i][0] + marca * (etq + 1)
@@ -136,18 +136,18 @@ class DataBase:
         self.cadena = "@Using Triangular Membership Functions as antecedent fuzzy sets\n"
         self.cadena += "@Number of Labels per variable: " + str(self.n_labels) + "\n"
         numrows = len(self.dataBase)
-        print("numrows: " + str(numrows))
+        # print("numrows: " + str(numrows))
         numcols = len(self.dataBase[0])
 
-        print("numrows: " + str(numrows) + "numcols:" + str(numcols))
+        # print("numrows: " + str(numrows) + "numcols:" + str(numcols))
         if self.dataBase.size != 0:
-            print("cadena: " + self.cadena)
+            # print("cadena: " + self.cadena)
             for i in range(0, self.n_variables):
-                print("i = " + str(i))
-                print("cadena: " + self.cadena)
+                # print("i = " + str(i))
+                # print("cadena: " + self.cadena)
                 self.cadena += "\n" + " " + self.names[i] + ":\n"
                 for j in range(0, self.n_labels):
-                    print("i = " + str(i))
+                    # print("i = " + str(i))
                     self.cadena += "      " + " L_" + str(int(j + 1)) + ": (" + str(self.dataBase[i][j].x0) + "," + str(
                         self.dataBase[i][j].x1) + "," + str(self.dataBase[i][j].x3) + ")\n"
         else:

@@ -1,36 +1,5 @@
-@Number of rules: 31
+@Number of rules: 0
 
-1: Mcg IS L_1 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_0 AND Alm2 IS L_1: positive with Rule Weight: 0.9952968520611516
-2: Mcg IS L_0 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_1: positive with Rule Weight: 0.6198008626639735
-3: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_1: positive with Rule Weight: 0.5909152472994887
-4: Mcg IS L_0 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_1: positive with Rule Weight: 0.8366663349418808
-5: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_0 AND Alm2 IS L_1: positive with Rule Weight: 0.9808152610032905
-6: Mcg IS L_0 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_0 AND Alm2 IS L_1: positive with Rule Weight: 0.9522390954393473
-7: Mcg IS L_1 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_1: positive with Rule Weight: 0.7982031829282752
-8: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_0 AND Alm2 IS L_0: positive with Rule Weight: 0.9993008245258074
-9: Mcg IS L_1 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_2 AND Alm1 IS L_0 AND Alm2 IS L_0: positive with Rule Weight: 1.0
-10: Mcg IS L_1 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_0 AND Alm2 IS L_0: positive with Rule Weight: 0.999832426483486
-11: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_0 AND Alm1 IS L_0 AND Alm2 IS L_1: positive with Rule Weight: 0.9669283334241103
-12: Mcg IS L_0 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_0 AND Alm2 IS L_1: positive with Rule Weight: 0.9884052900577885
-13: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_0 AND Alm1 IS L_1 AND Alm2 IS L_1: positive with Rule Weight: 0.713049539979342
-14: Mcg IS L_1 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_2 AND Alm1 IS L_1 AND Alm2 IS L_1: positive with Rule Weight: 0.45234895515556056
-15: Mcg IS L_0 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_1: negative with Rule Weight: 0.9820528978074826
-16: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_2: negative with Rule Weight: 0.9974720058699641
-17: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_2: negative with Rule Weight: 0.7913739978590731
-18: Mcg IS L_1 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_2: negative with Rule Weight: 0.9929642380167021
-19: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_2 AND Alm1 IS L_1 AND Alm2 IS L_1: negative with Rule Weight: 0.0066383374742854185
-20: Mcg IS L_2 AND Gvh IS L_0 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_2: negative with Rule Weight: 1.0
-21: Mcg IS L_2 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_1: negative with Rule Weight: 0.08034717021023713
-22: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_1: negative with Rule Weight: 0.9851413903364388
-23: Mcg IS L_2 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_2: negative with Rule Weight: 1.0
-24: Mcg IS L_2 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_2 AND Alm1 IS L_1 AND Alm2 IS L_1: negative with Rule Weight: 0.7036620372232807
-25: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_2 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_2: negative with Rule Weight: 1.0
-26: Mcg IS L_0 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_2: negative with Rule Weight: 0.9944439578823886
-27: Mcg IS L_2 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_1 AND Alm2 IS L_2: negative with Rule Weight: 0.9801951596858229
-28: Mcg IS L_2 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_1: negative with Rule Weight: 1.0
-29: Mcg IS L_2 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_2 AND Alm1 IS L_1 AND Alm2 IS L_2: negative with Rule Weight: 0.9981896238450485
-30: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_1 AND Alm1 IS L_2 AND Alm2 IS L_0: negative with Rule Weight: 1.0
-31: Mcg IS L_1 AND Gvh IS L_1 AND Lip IS L_0 AND Chg IS L_0 AND Aac IS L_0 AND Alm1 IS L_2 AND Alm2 IS L_1: negative with Rule Weight: 0.9865474612311937
 
 
 @Number of negative rules: 0

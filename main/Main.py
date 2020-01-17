@@ -42,8 +42,8 @@ from pathlib import Path
 # * @since JDK1.5
 
 class Main:
-    config_files_folder = Path("C:\phd_algorithms\chi-scikit-granularity-rules-experiments\few_disjuncts_1")
-    file_to_open = None
+    # config_files_folder = Path("C:\phd_algorithms\chi-scikit-granularity-rules-experiments\few_disjuncts_1")
+    # file_to_open = None
 
     # Default Constructor
 
@@ -51,17 +51,17 @@ class Main:
     # * @param confFile String it is the filename of the configuration file.
 
     def execute(file_setup):
-        print("file_setup is " + file_setup)
-        print("Main execute begin...")
+        # print("file_setup is " + file_setup)
+        # print("Main execute begin...")
         parameters = ParseParameters()
         parameters.parseConfigurationFile(file_setup)
         fuzzy_chi = Fuzzy_Chi(parameters)
         fuzzy_chi.execute()
 
-    def executeMultiFiles(self, config_file):
-        print("MaultiMain execute begin...")
+    def executeMultiFiles(self,file_setup):
+        # print("MaultiMain execute begin...")
         parameters = ParseParameters()
-        parameters.parseConfigurationFile(config_file)
+        parameters.parseConfigurationFile(file_setup)
         fuzzy_chi = Fuzzy_Chi(parameters)
         fuzzy_chi.execute()
 
@@ -77,7 +77,7 @@ class Main:
     # Parameter2&gt; value2
 
     if __name__ == '__main__':
-        print("Executing Algorithm.")
+        # print("Executing Algorithm.")
 
-        print("sys.argv: " + sys.argv[1])
+        # print("sys.argv: " + sys.argv[1])
         execute(sys.argv[1])

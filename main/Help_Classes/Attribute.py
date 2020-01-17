@@ -392,11 +392,11 @@ class Attribute:
     #  * @param value is the new value to be added.
     #  '''
     def addNominalValue(self, value):
-        print("addNominalValue begin......")
+        # print("addNominalValue begin......")
         if self.__type != self.NOMINAL:
             return
         if value not in self.__nominalValues:
-            print("self.__nominalValues ,add value:" + str(value) + ",to __nominalValues")
+            # print("self.__nominalValues ,add value:" + str(value) + ",to __nominalValues")
             self.__nominalValues.append(str(value))
 
     # end addNominalValue
@@ -440,13 +440,13 @@ class Attribute:
     def initStatisticsTwo(self, classNumber):
         self.__makeStatistics = True
         if self.__type == self.NOMINAL:
-            print("In initStatisticsTwo type is Nominal")
+            # print("In initStatisticsTwo type is Nominal")
             # w, h = 8, 5;
             # Matrix = [[0 for x in range(w)] for y in range(h)]
             self.w = int(classNumber)
-            print("self.w = " + str(self.w))
+            # print("self.w = " + str(self.w))
             self.h = len(self.__nominalValues)
-            print("self.h = " + str(self.h))
+            # print("self.h = " + str(self.h))
             self.__classFrequencies = [[0 for y in range(self.h)] for x in range(classNumber)]
             self.__numStatUpdates = [0 for x in range(classNumber)]
             for i in range(0, classNumber):
@@ -454,18 +454,18 @@ class Attribute:
                 nominalValueLen = len(self.__nominalValues)
                 for j in range(0, nominalValueLen):
                     self.__classFrequencies[i][j] = 0
-                    print("classFrequencies[i][j] " + "i" + str(i) + "j" + str(j))
+                    # print("classFrequencies[i][j] " + "i" + str(i) + "j" + str(j))
 
         else:
-            print("In initStatisticsTwo type is not Nominal")
-            print("classNumber is :" + str(classNumber))
+            # print("In initStatisticsTwo type is not Nominal")
+            # print("classNumber is :" + str(classNumber))
             self.__meanValue = [0.0 for x in range(classNumber)]
             self.__numStatUpdates = [0 for x in range(classNumber)]
-            print("before the loop in not nominal block")
+            # print("before the loop in not nominal block")
             for i in range(0, classNumber):
                 self.__meanValue[i] = 0.0
                 self.__numStatUpdates[i] = 0
-            print("finished type is not Nominal.")
+            # print("finished type is not Nominal.")
 
     # end initStatistics
 
@@ -476,7 +476,7 @@ class Attribute:
         if not self.__makeStatistics:
             return
         if self.__type == self.NOMINAL:
-            print("In Attribute class the type is nominal, in finishStatistics method")
+            # print("In Attribute class the type is nominal, in finishStatistics method")
             mostUsedValue = ["" for x in range(len(self.__classFrequencies))]
 
             for i in range(0, len(mostUsedValue)):
@@ -490,10 +490,10 @@ class Attribute:
                 mostUsedValue[i] = str(self.__nominalValues[pos])
 
         else:
-            print("In Attribute class the type is not nominal, in finishStatistics method")
+            # print("In Attribute class the type is not nominal, in finishStatistics method")
             for i in range(0, len(self.__meanValue)):
-                print("self.__meanValue[i]  is :" + str(self.__meanValue[i]))
-                print("float(self.__numStatUpdates[i])" + str(float(self.__numStatUpdates[i])))
+                # print("self.__meanValue[i]  is :" + str(self.__meanValue[i]))
+                # print("float(self.__numStatUpdates[i])" + str(float(self.__numStatUpdates[i])))
                 if self.__numStatUpdates[i] != 0:
                     self.__meanValue[i] = self.__meanValue[i] / float(self.__numStatUpdates[i])
 
@@ -506,11 +506,11 @@ class Attribute:
     #  * @param value is the nominal value which frequency has to be increased.
     #  '''
     def increaseClassFrequency(self, whichClass, value):
-        print("increaseClassFrequency begin......")
+        # print("increaseClassFrequency begin......")
         if self.__makeStatistics and self.__classFrequencies is not None and \
                 self.__classFrequencies[whichClass] is not None:
             column_here = self.convertNominalValue(value)
-            print("self.__classFrequencies, row here is :" + whichClass + ",column_here is :" + str(column_here))
+            # print("self.__classFrequencies, row here is :" + whichClass + ",column_here is :" + str(column_here))
             self.__classFrequencies[whichClass][column_here] = self.__classFrequencies[whichClass][column_here] + 1
             self.__numStatUpdates[whichClass] = self.__numStatUpdates[whichClass] + 1
 
@@ -535,13 +535,13 @@ class Attribute:
     #  * @return a boolean indicating if value didn't exist in the list.
     #  '''
     def addTestNominalValue(self, value):
-        print("addTestNominalValue begin......")
+        # print("addTestNominalValue begin......")
         if self.__type != self.NOMINAL:
-            print("The type is not NOMINAL, cannot add nominal value ")
+            # print("The type is not NOMINAL, cannot add nominal value ")
             return False
 
         if value not in self.__nominalValues:
-            print("The type is not NOMINAL, cannot add nominal value ")
+            # print("The type is not NOMINAL, cannot add nominal value ")
             self.__nominalValues.append(str(value))
             self.__newValuesList.append(str(value))
             self.__newValuesInTest = True
@@ -598,7 +598,7 @@ class Attribute:
     #  * @return a string with the value.
     #  '''
     def getNominalValue(self, pos):
-        # print("length of self.__nominalValues is: " + str(len(self.__nominalValues)))
+        # # print("length of self.__nominalValues is: " + str(len(self.__nominalValues)))
         if self.__type != self.NOMINAL:
             return None
         # print("pos is in getNominalValue" + str(pos))

@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="December 25, no negative rule generated">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="January 12, removed the duplicated path from code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/DataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceAttributes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MultiMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MultiMain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ParseParameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ParseParameters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,8 +101,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Main.py" />
-      <option name="PARAMETERS" value="C:\phd_experiments\threeAlgorithmsComparizasion\threeAlgorithmsComparizasion\ecoli\config0.txt" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/MultiMain.py" />
+      <option name="PARAMETERS" value="C:\phd_experiments\20200116results\20200116results\scripts\Chi-RW-C\abalone-3_vs_11" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -122,13 +130,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00021" summary="no error ,but result is wrong">
-      <created>1539379208223</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1539379208223</updated>
     </task>
     <task id="LOCAL-00022" summary="read parameters are all correct">
       <created>1539449886685</created>
@@ -466,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577313269194</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="January 12, removed the duplicated path from code">
+      <created>1578826798005</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1578826798007</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -483,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="oct 16 morning" />
     <MESSAGE value="oct 17 morning" />
     <MESSAGE value="oct 21 morning" />
     <MESSAGE value="oct 23 night before sleep" />
@@ -508,7 +515,8 @@
     <MESSAGE value="December 17, accuracy is 0.9628" />
     <MESSAGE value="December 18, accuracy of train data is 0.96289, test data is 0.952125" />
     <MESSAGE value="December 25, no negative rule generated" />
-    <option name="LAST_COMMIT_MESSAGE" value="December 25, no negative rule generated" />
+    <MESSAGE value="January 12, removed the duplicated path from code" />
+    <option name="LAST_COMMIT_MESSAGE" value="January 12, removed the duplicated path from code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

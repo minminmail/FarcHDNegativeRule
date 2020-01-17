@@ -54,7 +54,7 @@ class Fuzzy_Chi:
     granularity_data_base_array = []
     ruleBase = None
     granularity_rule_Base_array = []
-    negative_confident_value = 0.5
+    negative_confident_value = 0.05
     # added by rui
     negative_rule_number = None
     granularity_data_row_array = []

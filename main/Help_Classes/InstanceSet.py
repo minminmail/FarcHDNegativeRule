@@ -181,7 +181,7 @@ class InstanceSet:
             # Parsing the header of the DB.
             errorLogger = FormatErrorKeeper()
             self.data_folder = file_path
-            self.file_to_open = self.data_folder + "\\" + fileName
+            self.file_to_open = self.data_folder + "\\dataset\\" + fileName
             # Declaring an instance parser
             print("In readSet,file_to_open is:" + str(self.file_to_open))
             # to do The exception in init InstanceParserof InstanceParse is: can only concatenate str (not "WindowsPath") to str
@@ -207,40 +207,39 @@ class InstanceSet:
                 if ("@relation" not in line) and ("@attribute" not in line) and ("@inputs" not in line) and (
                         "@outputs" not in line) and ("@data" not in line):
                     new_data_lines.append(line)
-            print("*********  There are : " + str(len(new_data_lines)) + " In new Data lines ********* ")
+            # print("*********  There are : " + str(len(new_data_lines)) + " In new Data lines ********* ")
             for line in new_data_lines:
                 if new_data_lines is not None:
-                    print("Data line: " + str(line))
+                    # print("Data line: " + str(line))
                     newInstance = Instance()
-                    print("how many data already in the instanceSet: " + str(len(tempSet)))
+                    # print("how many data already in the instanceSet: " + str(len(tempSet)))
                     newInstance.setThreeParameters(line, isTrain, len(tempSet))
                     tempSet.append(newInstance)
 
                 # The vector of instances is converted to an array of instances.
             sizeInstance = len(tempSet)
-            print(" Number of instances read: " + str(sizeInstance))
+            # print(" Number of instances read: " + str(sizeInstance))
             self.instanceSet = []
 
             for i in range(0, sizeInstance):
                 self.instanceSet.append(tempSet[i])
-            print("After converting all instances")
+            # print("After converting all instances")
             # System.out.println("The error logger has any error: "+errorLogger.getNumErrors());
             if self.errorLogger.getNumErrors() > 0:
                 errorNumber = len(errorLogger.getAllErrors())
-                print("There has been " + str(errorNumber) + "errors in the Dataset format.")
+                # print("There has been " + str(errorNumber) + "errors in the Dataset format.")
                 for k in range(0, errorLogger.getNumErrors()):
                     errorLogger.getError(k).printErrorInfo()
 
             # print("There has been " + errorLogger.getAllErrors().size() + " errors in the Dataset format",
             #           errorLogger.getAllErrors());
-            print("Finishing the statistics: (isTrain)" + str(isTrain) + ", (# out attributes)" + str(
-                Attributes.getOutputNumAttributes(Attributes)))
+            # print("Finishing the statistics: (isTrain)" + str(isTrain) + ", (# out attributes)" + str(Attributes.getOutputNumAttributes(Attributes)))
             # # If being on a train dataset, the statistics are finished
             if isTrain and Attributes.getOutputNumAttributes(Attributes) == 1:
                 Attributes.finishStatistics(Attributes)
             # # close the stream
             instance_parser.close()
-            print("File LOADED CORRECTLY!!")
+            # print("File LOADED CORRECTLY!!")
         except Exception as e:
             print("Unexpected error in readSet of InstanceSet class :" + str(e))
         # end of InstanceSet constructor.
@@ -255,7 +254,7 @@ class InstanceSet:
 
         # read set from data row array for granularity
     def read_set_from_data_row_array(self, data_raw_array, isTrain):
-        print("Before try in read_set_from_data_row_array of InstanceSet")
+        # print("Before try in read_set_from_data_row_array of InstanceSet")
         try:
             # Parsing the header of the DB.
             errorLogger = FormatErrorKeeper()
@@ -264,58 +263,57 @@ class InstanceSet:
             # to do The exception in init InstanceParserof InstanceParse is: can only concatenate str (not "WindowsPath") to str
             instance_parser = InstanceParser.init_for_granularity_parser(data_raw_array, isTrain)
             # Reading information in the header, i.e., @relation, @attribute, @inputs and @outputs
-            print("data_raw_array size" + str(len(data_raw_array)))
+            # print("data_raw_array size" + str(len(data_raw_array)))
             self.parse_header_from_data_row_array(instance_parser, isTrain)
-            print(" The number of output attributes is: " + str(Attributes.getOutputNumAttributes(Attributes)))
+            # print(" The number of output attributes is: " + str(Attributes.getOutputNumAttributes(Attributes)))
             # The attributes statistics are init if we are in train mode.
-            print("In readSet, isTrain is " + str(isTrain))
+            # print("In readSet, isTrain is " + str(isTrain))
             if isTrain and Attributes.getOutputNumAttributes(Attributes) == 1:
-                print("Begin Attributes.initStatistics......")
+                # print("Begin Attributes.initStatistics......")
                 Attributes.initStatistics(Attributes)
             # A temporal vector is used to store the instances read.
 
-            print("Reading the data in read_set_from_data_row_array")
+            # print("Reading the data in read_set_from_data_row_array")
             tempSet = []
-            print("begin instance_parser.getLines()...... ")
+            # print("begin instance_parser.getLines()...... ")
             data_raw_array = self.data_rows
             new_data_rows = []
             number_of_rows= len(data_raw_array)
-            print("*********  There are : " + str(number_of_rows) + "In original Data rows ********* ")
+            # print("*********  There are : " + str(number_of_rows) + "In original Data rows ********* ")
 
-            print("*********  There are : " + str(len(new_data_rows)) + " In new Data rows ********* ")
+            # print("*********  There are : " + str(len(new_data_rows)) + " In new Data rows ********* ")
             for i in range(0, number_of_rows):
                 if len(new_data_rows) != 0:
-                    print("Data row: " + str(data_raw_array[i]))
+                    # print("Data row: " + str(data_raw_array[i]))
                     newInstance = Instance()
-                    print("how many data already in the instanceSet: " + str(len(tempSet)))
+                    # print("how many data already in the instanceSet: " + str(len(tempSet)))
                     newInstance.set_three_parameters_for_granularity_rules(data_raw_array[i], isTrain, len(tempSet))
                     tempSet.append(newInstance)
 
                 # The vector of instances is converted to an array of instances.
             sizeInstance = len(tempSet)
-            print(" Number of instances read: " + str(sizeInstance))
+            # print(" Number of instances read: " + str(sizeInstance))
             self.instanceSet = []
 
             for i in range(0, sizeInstance):
                 self.instanceSet.append(tempSet[i])
-            print("After converting all instances")
+            # print("After converting all instances")
             # System.out.println("The error logger has any error: "+errorLogger.getNumErrors());
             if self.errorLogger.getNumErrors() > 0:
                 errorNumber = len(errorLogger.getAllErrors())
-                print("There has been " + str(errorNumber) + "errors in the Dataset format.")
+                # print("There has been " + str(errorNumber) + "errors in the Dataset format.")
                 for k in range(0, errorLogger.getNumErrors()):
                     errorLogger.getError(k).printErrorInfo()
 
             # print("There has been " + errorLogger.getAllErrors().size() + " errors in the Dataset format",
             #           errorLogger.getAllErrors());
-            print("Finishing the statistics: (isTrain)" + str(isTrain) + ", (# out attributes)" + str(
-                Attributes.getOutputNumAttributes(Attributes)))
+            # print("Finishing the statistics: (isTrain)" + str(isTrain) + ", (# out attributes)" + str(Attributes.getOutputNumAttributes(Attributes)))
             # # If being on a train dataset, the statistics are finished
             if isTrain and Attributes.getOutputNumAttributes(Attributes) == 1:
                 Attributes.finishStatistics(Attributes)
             # # close the stream
             instance_parser.close()
-            print("File LOADED CORRECTLY!!")
+            # print("File LOADED CORRECTLY!!")
         except Exception as e:
             print("Unexpected error in readSet of InstanceSet class :" + str(e))
         # end of InstanceSet constructor.
@@ -332,56 +330,56 @@ class InstanceSet:
         lineCount = 0
         self.attHeader = None
 
-        print("Begin to call the InstanceParser.getLines(),parser.getLines(), in InstanceSet.")
+        # print("Begin to call the InstanceParser.getLines(),parser.getLines(), in InstanceSet.")
         lines = parser.getLines()
         self.data_lines = lines
 
         for line in lines:
             line = str(line).strip()
-            print("In parseHeader method of InstanceSet, the line is:" + line)
+            # print("In parseHeader method of InstanceSet, the line is:" + line)
             if line == "@data".lower():
 
                 break
             else:
-                print("  Line read: " + line + ".")
+                # print("  Line read: " + line + ".")
                 lineCount = lineCount + 1
                 if "@relation" in line:
 
                     if isTrain:
                         relationName = str(line.replace("@relation", "")).strip()
-                        print("set Relation name :" + str(relationName))
+                        # print("set Relation name :" + str(relationName))
                         Attributes.setRelationName(self, relationName)
                 elif "@attribute" in line:
 
                     if isTrain:
-                        print("Begin insertAttribute ......")
+                        # print("Begin insertAttribute ......")
                         self.insertAttribute(line)
                         attCount = attCount + 1
 
                 elif "@inputs" in line:
 
-                    print("@inputs in " + str(line))
+                    # print("@inputs in " + str(line))
                     self.attHeader = self.header
                     inputsDef = True
 
                     aux = line[8:]
 
                     if isTrain:
-                        print("Has @inputs, aux is :" + aux)
+                        # print("Has @inputs, aux is :" + aux)
                         self.insertInputOutput(aux, lineCount, inputAttrNames, "inputs", isTrain)
                 elif "@outputs" in line:
 
                     if self.attHeader is None:
                         self.attHeader = self.header
                     outputsDef = True
-                    print("Defining the output in line :" + line)
+                    # print("Defining the output in line :" + line)
                     sub_line = line.split()  # To get the output attribute name
                     aux = sub_line[1]
                     if isTrain:
-                        print("Has @outputs, aux is :" + aux)
+                        # print("Has @outputs, aux is :" + aux)
                         self.insertInputOutput(aux, lineCount, outputAttrNames, "outputs", isTrain)
 
-                        print("Size of the output is: " + str(len(outputAttrNames)))
+                        # print("Size of the output is: " + str(len(outputAttrNames)))
 
                 self.header += line + "\n"
         if self.attHeader is None:
@@ -402,13 +400,13 @@ class InstanceSet:
         lineCount = 0
         self.attHeader = None
 
-        print("Begin to call the InstanceParser.getLines(),parser.getLines(), in InstanceSet.")
+        # print("Begin to call the InstanceParser.getLines(),parser.getLines(), in InstanceSet.")
         self.data_rows = parser.get_rows()
 
     # end parse_header_from_data_row_array
 
     def insertAttribute(self, line):
-        print("Insert attribute begin :")
+        # print("Insert attribute begin :")
         indexL = 0
         indexR = 0
         type = ""
@@ -423,7 +421,7 @@ class InstanceSet:
         token_withT = "\t" + token_str
 
         line = line.replace(token_str, token_withT)
-        print("token_double is:" + token_withT + ", line is :" + line)
+        # print("token_double is:" + token_withT + ", line is :" + line)
         # System.out.println ("  > Processing line: "+  line );
         # st = line.split(" [{\t");
 
@@ -432,7 +430,7 @@ class InstanceSet:
 
         # Disregarding the first token. It is @attribute
         st[0] = st[0].replace("@attribute", "").strip()  # delete @attribute
-        print("st[0] is:" + st[0])
+        # print("st[0] is:" + st[0])
 
         first_part = st[0].split()
 
@@ -441,22 +439,22 @@ class InstanceSet:
         # print("Get type once get instance object, at.getType() = " + str(type_string))
         at.setName(first_part[0])
         print("att set name as first_part[0] is:" + first_part[0])
-        # print( "Attribute name: "+ at.getName() )
+        # # print( "Attribute name: "+ at.getName() )
 
         # to get the class name values we need to split the second part of the attribute line, to get values of attribute
 
         # Next action depends on the type of attribute: continuous or nominal
         if len(st) == 1:  # Parsing a nominal attribute with no definition of values
-            print("Parsing nominal attribute without values: setType=0")
+            # print("Parsing nominal attribute without values: setType=0")
             # print("Get type =" + at.getType())
             at.setType(Attribute.NOMINAL)
 
         elif "{" in line:  # this because  it is the class values line
-            print("Parsing nominal attribute with values: " + line)
+            # print("Parsing nominal attribute with values: " + line)
             # print("Get type =" + at.getType())
-            print("Before setType = 0")
+            # print("Before setType = 0")
             at.setType(Attribute.NOMINAL)
-            print("after setType= 0")
+            # print("after setType= 0")
             at.setFixedBounds(True)
 
             indexL = line.index("{") + 1
@@ -466,7 +464,7 @@ class InstanceSet:
             print("indexL : " + str(indexL) + "indexR : " + str(indexR))
             # print( "The Nominal values are: " + line[indexL: indexR]);
             lineSub = line[indexL: indexR]
-            print("The lineSub : " + lineSub)
+            # print("The lineSub : " + lineSub)
             st2 = lineSub.split(",")
 
             for nominalStr in st2:
@@ -475,57 +473,57 @@ class InstanceSet:
         else:  # Parsing an integer or real
 
             attType = first_part[1].lower()
-            print("attribute Name : " + str(first_part[0]) + ", attribute type = " + str(attType))
+            # print("attribute Name : " + str(first_part[0]) + ", attribute type = " + str(attType))
 
             # System.out.println ("    > Parsing "+ type + " attributes");
 
             if attType == "integer":
                 at.setType(Attribute.INTEGER)
-                print("set integer type")
+                # print("set integer type")
             if attType == "real":
                 at.setType(Attribute.REAL)
-                print("set real type")
+                # print("set real type")
             indexL = line.index("[")
             indexR = line.index("]")
 
-            print("indexL is: " + str(indexL) + " indexR: " + str(indexR))
+            # print("indexL is: " + str(indexL) + " indexR: " + str(indexR))
 
             if indexL != -1 and indexR != - 1:
                 # System.out.println ( "      > The real values are: " + line.substring( indexL+1, indexR) );
                 lineSub = line[indexL + 1: indexR]
-                print("lineSub: " + lineSub)
+                # print("lineSub: " + lineSub)
                 st2 = lineSub.split(",")
 
-                print("st2[0].strip() :" + st2[0])
-                print("st2[1].strip() :" + st2[1])
+                # print("st2[0].strip() :" + st2[0])
+                # print("st2[1].strip() :" + st2[1])
                 minBound = float(st2[0].strip())
                 maxBound = float(st2[1].strip())
-                print("Before at.setBounds(minBound, maxBound): ( " + str(minBound) + " , " + str(maxBound) + " )")
+                # print("Before at.setBounds(minBound, maxBound): ( " + str(minBound) + " , " + str(maxBound) + " )")
                 at.setBounds(minBound, maxBound)
 
-        print("Before add attribute :::: ")
+        # print("Before add attribute :::: ")
         Attributes.addAttribute(Attributes, at)
-        print("insertAttribute is finished :::: ")
+        # print("insertAttribute is finished :::: ")
 
     # end insertAttribute
 
     def insertInputOutput(self, line, lineCount, collection, type, isTrain):
 
-        print(" processing insertInputOutput: " + line)
+        # print(" processing insertInputOutput: " + line)
 
         # Declaring StringTokenizer
         st = line.split(",")
 
         for attName in st:
             attName = str(attName.strip())
-            print("attrName: " + attName)
+            # print("attrName: " + attName)
             attrItem = Attributes.getAttributeByName(Attributes, attName)
             attributes = Attributes.getAttributes(Attributes)
-            for att in attributes:
-                print("att name is :" + str(att.getName()))
+            # for att in attributes:
+                # print("att name is :" + str(att.getName()))
             # print("numbers of items that attributes:"+str(len(attributes)))
             if attrItem is None:
-                print("Attributes.getAttribute == None")
+                # print("Attributes.getAttribute == None")
                 # If this attribute has not been declared, generate error
                 er = ErrorInfo(ErrorInfo.InputTestAttributeNotDefined, 0, lineCount, 0, 0, isTrain,
                                ("The attribute " + attName + " defined in @" + type +
@@ -533,37 +531,37 @@ class InstanceSet:
                 InstanceSet.errorLogger.setError(er)
 
             else:
-                for itemCollection in collection:
-                    print("Item in collection is " + itemCollection)
-                print("Attributes.getAttribute != None")
-                print("   > " + str(type) + " attribute considered: " + attName)
+                # for itemCollection in collection:
+                    # print("Item in collection is " + itemCollection)
+                # print("Attributes.getAttribute != None")
+                # print("   > " + str(type) + " attribute considered: " + attName)
                 if attName not in collection:
-                    print("attName:" + attName + " is not in collection")
+                    # print("attName:" + attName + " is not in collection")
                     collection.append(attName)
 
     # end insertInputOutput
 
     def processInputsAndOutputs(self, isTrain, inputsDef, outputsDef, outputAttrNames, inputAttrNames):
         # After parsing the header, the inputs and the outputs are prepared.
-        print("Processing inputs and outputs")
+        # print("Processing inputs and outputs")
         self.outputInfered = False  # set default value
         if isTrain:
-            print("isTrain == True")
+            # print("isTrain == True")
             if not inputsDef and not outputsDef:
-                print("is neither inputAtt no outputAtt")
+                # print("is neither inputAtt no outputAtt")
                 posHere = Attributes.getNumAttributes(self) - 1
 
                 outputAttrNames.append(Attributes.getAttributeByPos(self, posHere).getName())
                 inputAttrNames = Attributes.getAttributesExcept(Attributes, outputAttrNames)
                 self.outputInfered = True
             elif not inputsDef and outputsDef:
-                print("inputsDef == False and outputsDef == True")
+                # print("inputsDef == False and outputsDef == True")
                 inputAttrNames = Attributes.getAttributesExcept(Attributes, outputAttrNames)
             elif inputsDef and not outputsDef:
-                print("inputsDef == True and outputsDef == False")
+                # print("inputsDef == True and outputsDef == False")
                 outputAttrNames = Attributes.getAttributesExcept(Attributes, inputAttrNames)
                 self.outputInfered = True
-            print("setOutputInputAttributes begin: ")
+            # print("setOutputInputAttributes begin: ")
             Attributes.setOutputInputAttributes(Attributes, inputAttrNames, outputAttrNames)
 
     # end of processInputsAndOutputs
@@ -584,10 +582,10 @@ class InstanceSet:
     def getNumInstances(self):
         if self.instanceSet is not None:
             instanceNumber = len(self.instanceSet)
-            print("instanceSet is not None, instanceNumber = " + str(instanceNumber))
+            # print("instanceSet is not None, instanceNumber = " + str(instanceNumber))
             return instanceNumber
         else:
-            print("instanceSet is  None !!!")
+            # print("instanceSet is  None !!!")
             return 0
         # end numInstances
 
@@ -622,10 +620,10 @@ class InstanceSet:
     # '''
 
     def getInputNumericValue(self, whichInst, whichAttr):
-        print("InstanceSet, getInputNumericValue begin...")
+        # print("InstanceSet, getInputNumericValue begin...")
         instance_number = len(self.instanceSet)
-        print("whichInst = " + str(whichInst) + ", whichAttr =" + str(whichAttr))
-        print("len(self.instanceSet) = " + str(instance_number))
+        # print("whichInst = " + str(whichInst) + ", whichAttr =" + str(whichAttr))
+        # print("len(self.instanceSet) = " + str(instance_number))
 
         if whichInst < 0 or whichInst >= instance_number:
             raise IndexError("You are trying to access to " + whichInst + " instance and there are only " + str(
@@ -671,8 +669,7 @@ class InstanceSet:
 
     def getInputNominalValue(self, whichInst, whichAttr):
         if whichInst < 0 or whichInst >= len(self.instanceSet):
-            print(self.ArrayIndexOutOfBoundsException(
-                "You are trying to access to " + whichInst + " instance and there are only " + str(
+            print(self.ArrayIndexOutOfBoundsException("You are trying to access to " + whichInst + " instance and there are only " + str(
                     len(self.instanceSet)) + "."))
         return self.instanceSet[whichInst].getOutputNominalValues(whichAttr)
         # end getInputNominalValue
@@ -889,7 +886,7 @@ class InstanceSet:
 
     def printAsOriginal(self, out, int):
         # Printing the header as the original one
-        print(self.header)
+        # print(self.header)
 
         if self.storeAttributesAsNonStatic and self.attributes is not None:
             if self.printInOut == 1 or self.printInOut == 3:

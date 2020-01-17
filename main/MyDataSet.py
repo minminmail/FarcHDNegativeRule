@@ -59,7 +59,7 @@ class MyDataSet:
     #    * @return double[] the attributes of the given example
     # '''
     def getExample(self, pos):
-        # print(" In getExample, len(self.__X) = " + str(len(self.__X)) + ", pos = " + str(
+        # # print(" In getExample, len(self.__X) = " + str(len(self.__X)) + ", pos = " + str(
         #   pos) + "  ," + "self.__X[pos] ==" + str(self.__X[pos]))
         return self.__X[pos]
 
@@ -100,7 +100,7 @@ class MyDataSet:
     #    * @return String a string containing the output value
 
     def getOutputAsStringWithPos(self, pos):
-        # print("pos is in getOutputAsStringWithPos "+str(pos))
+        # # print("pos is in getOutputAsStringWithPos "+str(pos))
         # maybe the exception is here.
         return self.__output[pos]
 
@@ -193,14 +193,14 @@ class MyDataSet:
         class_array = []
         has_class = False
         for i in range(0, len(output_integer_array)):
-            # print(" output_integer_array[i] " + str(output_integer_array[i]))
+            # # print(" output_integer_array[i] " + str(output_integer_array[i]))
             if len(class_array) == 0:
                 class_array.append(output_integer_array[i])
             else:
                 has_class = False
                 for j in range(0, len(class_array)):
                     if class_array[j] == output_integer_array[i]:
-                        # print(" class_array[j] " + str(class_array[j]))
+                        # # print(" class_array[j] " + str(class_array[j]))
                         has_class = True
                 if not has_class:
                     class_array.append(output_integer_array[i])
@@ -224,50 +224,49 @@ class MyDataSet:
     def readClassificationSet(self, datasetFile, train, file_path):
         try:
             # Load in memory a dataset that contains a classification problem
-            print("Inside readClassificationSet, datasetFile :" + str(datasetFile))
-            print("train is :" + str(train))
-            print("object instanceSet is :" + str(self.__instanceSet))
+            # print("Inside readClassificationSet, datasetFile :" + str(datasetFile))
+            # print("train is :" + str(train))
+            # print("object instanceSet is :" + str(self.__instanceSet))
             if self.__instanceSet is None:
                 print("self.__instanceSet is Null")
             else:
-                print("self.__instanceSet is not None, train = " + str(train))
+                # print("self.__instanceSet is not None, train = " + str(train))
                 self.__instanceSet.readSet(datasetFile, train,file_path)
-                print("begin getNumInstances ...... in readClassificationSet ")
+                # print("begin getNumInstances ...... in readClassificationSet ")
                 self.__nData = self.__instanceSet.getNumInstances()
-                print("In readClassificationSet , self.__nData is : " + str(self.__nData))
+                # print("In readClassificationSet , self.__nData is : " + str(self.__nData))
                 self.__nInputs = Attributes.getInputNumAttributes(Attributes)
-                print("In readClassificationSet , self.__nInputs is : " + str(self.__nInputs))
+                # print("In readClassificationSet , self.__nInputs is : " + str(self.__nInputs))
                 self.__nVars = self.__nInputs + Attributes.getOutputNumAttributes(Attributes)
-                print("In readClassificationSet , self.__nVars is : " + str(self.__nVars))
+                # print("In readClassificationSet , self.__nVars is : " + str(self.__nVars))
 
                 # outputInteger check that there is only one output variable
                 if Attributes.getOutputNumAttributes(Attributes) > 1:
                     outAttrs = Attributes.getOutputAttributes(Attributes)
-                    print("Output Attributes number is bigger than 1")
+                    # print("Output Attributes number is bigger than 1")
                     for outAtt in outAttrs:
                         i = 1
-                        print("Att" + str(i) + str(outAtt.getName()))
+                        # print("Att" + str(i) + str(outAtt.getName()))
                         i = i + 1
-                    print("" + Attributes.getOutputAttributesHeader(Attributes))
-                    print("This algorithm can not process MIMO datasets")
-                    print("All outputs but the first one will be removed")
+                    # print("" + Attributes.getOutputAttributesHeader(Attributes))
+                    # print("This algorithm can not process MIMO datasets")
+                    # print("All outputs but the first one will be removed")
                     exit(1)
                 noOutputs = False
                 if Attributes.getOutputNumAttributes(Attributes) < 1:
-                    print("This algorithm can not process datasets without outputs")
-                    print("Zero-valued output generated")
+                    # print("This algorithm can not process datasets without outputs")
+                    # print("Zero-valued output generated")
                     noOutputs = True
                     exit(1)
 
-                print("define all the array in MyDataSet class......")
+                # print("define all the array in MyDataSet class......")
                 # Initialice and fill our own tables
-                print("The two dimension array X, dimension 1 is :" + str(self.__nData) + " ,Dimension 2 is :" + str(
-                    self.__nInputs))
+                # print("The two dimension array X, dimension 1 is :" + str(self.__nData) + " ,Dimension 2 is :" + str(self.__nInputs))
 
                 nDataLength = self.__nData
                 nInputLength = self.__nInputs
-                print("nDataLength = " + str(nDataLength))
-                print("nInputLength = " + str(nInputLength))
+                # print("nDataLength = " + str(nDataLength))
+                # print("nInputLength = " + str(nInputLength))
                 # [[0 for j in range(m)] for i in range(n)] first column, then row
 
                 self.__X = [[None for y in range(nInputLength)] for x in range(nDataLength)]
@@ -286,39 +285,39 @@ class MyDataSet:
                 for n in range(0, nInputLength):
                     self.emax[n] = Attributes.getAttributeByPos(Attributes, n).getMaxAttribute()
                     self.emin[n] = Attributes.getAttributeByPos(Attributes, n).getMinAttribute()
-                    print("self.emax[n]:" + str(self.emax[n]))
-                    print("self.emin[n]:" + str(self.emin[n]))
+                    # print("self.emax[n]:" + str(self.emax[n]))
+                    # print("self.emin[n]:" + str(self.emin[n]))
                 # All values are casted into double/integer
                 self.__nClasses = 0
                 for i in range(0, nDataLength):
                     inst = self.__instanceSet.getInstance(i)
                     for j in range(0, nInputLength):
                         input_Numeric_Value = self.__instanceSet.getInputNumericValue(i, j)
-                        # print("self.__X [i] = " + str(i) + ",[j] = " + str(j) + ",input_Numeric_Value:" + str(
+                        # # print("self.__X [i] = " + str(i) + ",[j] = " + str(j) + ",input_Numeric_Value:" + str(
                         #  input_Numeric_Value))
 
                         self.__X[i][j] = input_Numeric_Value  # inst.getInputRealValues(j);
-                        # print("after get self.__X[i][j]")
+                        # # print("after get self.__X[i][j]")
                         self.__missing[i][j] = inst.getInputMissingValuesWithPos(j)
-                        # print("after self.__missing[i][j]")
+                        # # print("after self.__missing[i][j]")
                         if self.__missing[i][j]:
                             self.__X[i][j] = self.emin[j] - 1
 
                     if noOutputs:
-                        print("noOutputs==True")
+                        # print("noOutputs==True")
                         self.__outputInteger[i] = 0
                         self.__output[i] = ""
                     else:
-                        print("noOutputs==False")
+                        # print("noOutputs==False")
                         self.__outputInteger[i] = self.__instanceSet.getOutputNumericValue(i, 0)
-                        print("self.__outputInteger[" + str(i) + "] = " + str(self.__outputInteger[i]))
+                        # print("self.__outputInteger[" + str(i) + "] = " + str(self.__outputInteger[i]))
                         self.__output[i] = self.__instanceSet.getOutputNominalValue(i, 0)
 
                     if self.__outputInteger[i] > self.__nClasses:
                         self.__nClasses = self.__outputInteger[i]
 
                 self.__nClasses = self.__nClasses + 1
-                print('Number of classes=' + str(self.__nClasses))
+                # print('Number of classes=' + str(self.__nClasses))
         except Exception as error:
             print("readClassificationSet: Exception in readSet, in readClassificationSet:" + str(error))
 
@@ -345,23 +344,23 @@ class MyDataSet:
             self.__nData = self.__instanceSet.getNumInstances()
             self.__nInputs = Attributes.getInputNumAttributes(Attributes)
             self.__nVars = self.__nInputs + Attributes.getOutputNumAttributes(Attributes)
-            print("In readRegressionSet , self.__nData is : " + str(self.__nData))
-            print("In readRegressionSet , self.__nInputs is : " + str(self.__nInputs))
-            print("In readRegressionSet , self.__nVars is : " + str(self.__nVars))
+            # print("In readRegressionSet , self.__nData is : " + str(self.__nData))
+            # print("In readRegressionSet , self.__nInputs is : " + str(self.__nInputs))
+            # print("In readRegressionSet , self.__nVars is : " + str(self.__nVars))
 
             # outputIntegerheck that there is only one output variable
             if Attributes.getOutputNumAttributes(Attributes) > 1:
-                print("Out put attribute: ")
+                # print("Out put attribute: ")
                 outPutAttHeader = Attributes.getOutputAttributesHeader(Attributes)
-                print(outPutAttHeader)
-                print("This algorithm can not process MIMO datasets")
-                print("All outputs but the first one will be removed")
+                # print(outPutAttHeader)
+                # print("This algorithm can not process MIMO datasets")
+                # print("All outputs but the first one will be removed")
                 exit(1)
 
             noOutputs = False
             if Attributes.getOutputNumAttributes(Attributes) < 1:
-                print("This algorithm can not process datasets without outputs")
-                print("Zero-valued output generated")
+                # print("This algorithm can not process datasets without outputs")
+                # print("Zero-valued output generated")
                 noOutputs = True
                 exit(1)
             # Initialice and fill our own tables
@@ -397,7 +396,7 @@ class MyDataSet:
         except OSError as error:
             print("OS error: {0}".format(error))
         except Exception as otherException:
-            print("DBG: Exception in readSet:", sys.exc_info()[0])
+            # print("DBG: Exception in readSet:", sys.exc_info()[0])
             print(" In readRegressionSet other Exception  is :" + str(otherException))
 
         self.computeStatistics()
@@ -408,20 +407,20 @@ class MyDataSet:
     def copyHeader(self):
 
         p = ""
-        # print("copyHeader begin...., P is :" + p)
+        # # print("copyHeader begin...., P is :" + p)
         p = "@relation " + Attributes.getRelationName(Attributes) + "\n"
-        # print(" after relation P is :" + p)
+        # # print(" after relation P is :" + p)
         p += Attributes.getInputAttributesHeader(Attributes)
-        # print(" after getInputAttributesHeader P is :" + p)
+        # # print(" after getInputAttributesHeader P is :" + p)
         p += Attributes.getOutputAttributesHeader(Attributes)
-        # print(" after getOutputAttributesHeader P is :" + p)
+        # # print(" after getOutputAttributesHeader P is :" + p)
         p += Attributes.getInputHeader(Attributes) + "\n"
-        # print(" after getInputHeader P is :" + p)
+        # # print(" after getInputHeader P is :" + p)
         p += Attributes.getOutputHeader(Attributes) + "\n"
-        # print(" after getOutputHeader P is :" + p)
+        # # print(" after getOutputHeader P is :" + p)
         p += "@data\n"
 
-        print("P is :" + p)
+        # print("P is :" + p)
         return p
 
     #    * It transform the input space into the [0,1] range
@@ -460,18 +459,18 @@ class MyDataSet:
 
     def sizeWithoutMissing(self):
         tam = 0
-        # print("self.__nData is :" + str(self.__nData) + ", self.__nInputs :" + str(self.__nInputs))
+        # # print("self.__nData is :" + str(self.__nData) + ", self.__nInputs :" + str(self.__nInputs))
         for i in range(0, self.__nData):
             for j in range(1, self.__nInputs):
                 # changed the isMissing condition inside if
                 if self.isMissing(i, j):
-                    print("It is missing value is i = " + str(i) + ",j==" + str(j))
+                    # print("It is missing value is i = " + str(i) + ",j==" + str(j))
                     break
             j = j + 1
-            # print("sizeWithoutMissing,  i = " + str(i) + ",j==" + str(j))
+            # # print("sizeWithoutMissing,  i = " + str(i) + ",j==" + str(j))
             if j == self.__nInputs:
                 tam = tam + 1
-        print("tam=" + str(tam))
+        # print("tam=" + str(tam))
         return tam
 
     #    * It returns the number of examples
@@ -485,15 +484,15 @@ class MyDataSet:
 
     def computeStatistics(self):
         try:
-            print("Begin computeStatistics......")
+            # print("Begin computeStatistics......")
             varNum = self.getnVars()
-            print("varNum = " + str(varNum))
+            # print("varNum = " + str(varNum))
             self.__stdev = [0.0 for x in range(varNum)]  # original was double ,changed into float in python
             self.__average = [0.0 for x in range(varNum)]
 
             inputNum = self.getnInputs()
             dataNum = self.getnData()
-            print("inputNum = " + str(inputNum) + ",dataNum = " + str(dataNum))
+            # print("inputNum = " + str(inputNum) + ",dataNum = " + str(dataNum))
             for i in range(0, inputNum):
                 self.__average[i] = 0
                 for j in range(0, dataNum):
@@ -512,12 +511,12 @@ class MyDataSet:
                 sum_value = 0.0
                 for j in range(0, dataNum):
                     if not self.isMissing(j, i):
-                        print("self.isMissing(j, i)==False")
+                        # print("self.isMissing(j, i)==False")
                         sum_value = sum_value + (self.__X[j][i] - self.__average[i]) * (
                                 self.__X[j][i] - self.__average[i])
 
                 if dataNum != 0:
-                    print("dataNum != 0" + " , dataNum=" + str(dataNum))
+                    # print("dataNum != 0" + " , dataNum=" + str(dataNum))
                     sum_value = sum_value / dataNum
                 self.__stdev[i] = math.sqrt(sum_value)
 
@@ -528,7 +527,7 @@ class MyDataSet:
             if len(self.__outputReal) != 0:
                 sum_value /= len(self.__outputReal)
             self.__stdev[len(self.__stdev) - 1] = math.sqrt(sum_value)
-            print("sum is :" + str(sum_value) + "  self.__stdev :" + str(self.__stdev))
+            # print("sum is :" + str(sum_value) + "  self.__stdev :" + str(self.__stdev))
         except Exception as error:
             print("Exception in computeStatistics : " + str(error))
 
@@ -549,14 +548,14 @@ class MyDataSet:
     #     *It computes the number of examples per class
 
     def computeInstancesPerClass(self):
-        print("computeInstancesPerClass begin..., self.__nClasses = " + str(self.__nClasses))
+        # print("computeInstancesPerClass begin..., self.__nClasses = " + str(self.__nClasses))
         self.__instancesCl = [0 for x in range(self.__nClasses)]
         dataNum = self.getnData()
-        print("dataNum = " + str(dataNum))
+        # print("dataNum = " + str(dataNum))
 
         for i in range(0, dataNum):
             integerInLoop = self.__outputInteger[i]
-            # print("outputInteger[" + str(i) + "]" + str(integerInLoop))
+            # # print("outputInteger[" + str(i) + "]" + str(integerInLoop))
             self.__instancesCl[integerInLoop] = self.__instancesCl[integerInLoop] + 1
 
     #     *It returns the number of examples for a given class
@@ -587,9 +586,9 @@ class MyDataSet:
     #    * @return String the corrresponding class label
 
     def getOutputValue(self, intValue):
-        # print("Before att get ")
+        # # print("Before att get ")
         att = Attributes.getOutputAttribute(Attributes, 0)
-        # print("After att get ")
+        # # print("After att get ")
         return att.getNominalValue(intValue)
 
     #  * It returns the type of the variable
@@ -615,25 +614,23 @@ class MyDataSet:
 
     def getRanges(self):
 
-        print("self.getnVars()" + str(self.getnVars()))
+        # print("self.getnVars()" + str(self.getnVars()))
         rangos = [[0.0 for y in range(2)] for x in range(self.getnInputs())]
-        print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnInputs()) + ",second is 2")
+        # print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnInputs()) + ",second is 2")
         nInputs = self.getnInputs()
         for i in range(0, nInputs):
-            print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
+            # print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
             attHere = Attributes.getInputAttribute(Attributes, i)
-            print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
+            # print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
             if attHere.getNumNominalValues() > 0:
                 rangos[i][0] = 0.0
                 rangos[i][1] = attHere.getNumNominalValues() - 1
-                print(" attHere.getNumNominalValues() > 0,rangos[" + str(i) + "][0]==" + str(
-                    rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
+                # print(" attHere.getNumNominalValues() > 0,rangos[" + str(i) + "][0]==" + str(rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
 
             else:
                 rangos[i][0] = attHere.getMinAttribute()
                 rangos[i][1] = attHere.getMaxAttribute()
-                print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(
-                    rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
+                # print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
 
         # rangos[self.getnVars() - 1][0] = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
         # rangos[self.getnVars() - 1][1] = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
@@ -642,28 +639,26 @@ class MyDataSet:
 
     def get_granularity_zone_ranges(self, data_set_x_array):
 
-        print("self.getnVars()" + str(self.getnVars()))
+        # print("self.getnVars()" + str(self.getnVars()))
         rangos = [[0.0 for y in range(2)] for x in range(self.getnVars())]
-        print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnVars()) + ",second is 2")
+        # print("rangos has two dimensions, first is self.getnVars()==" + str(self.getnVars()) + ",second is 2")
         nInputs = self.getnInputs()
         for i in range(0, nInputs):
-            print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
+            # print("self.getnInputs() is :" + str(nInputs) + " i = " + str(i))
             attHere = Attributes.getInputAttribute(Attributes, i)
-            print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
+            # print("attHere.getNumNominalValues()== " + str(attHere.getNumNominalValues()))
             if attHere.getNumNominalValues() > 0:
                 rangos[i][0] = 0.0
                 rangos[i][1] = attHere.getNumNominalValues() - 1
-                print(" attHere.getNumNominalValues() > 0,rangos[" + str(i) + "][0]==" + str(
-                    rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
+                # print(" attHere.getNumNominalValues() > 0,rangos[" + str(i) + "][0]==" + str(rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
 
             else:
                 rangos[i][0] = attHere.get_min_granularity_attribute(data_set_x_array, i)
                 rangos[i][1] = attHere.get_max_granularity_attribute(data_set_x_array, i)
-                print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(
-                    rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
+                # print(" attHere.getNumNominalValues() <= 0, rangos[" + str(i) + "][0]==" + str(rangos[i][0]) + ",rangos[i][1]== " + str(rangos[i][1]))
         last_min_value = Attributes.getOutputAttribute(Attributes, 0).getMinAttribute()
         last_max_value = Attributes.getOutputAttribute(Attributes, 0).getMaxAttribute()
-        print("The last_min_value is " + str(last_min_value)+" The last_max_value is " + str(last_max_value))
+        # print("The last_min_value is " + str(last_min_value)+" The last_max_value is " + str(last_max_value))
         rangos[self.getnVars() - 1][0] = last_min_value
         rangos[self.getnVars() - 1][1] = last_max_value
         return rangos
@@ -681,8 +676,8 @@ class MyDataSet:
 
     def getClasses(self):
         clases = ["" for x in range(self.__nClasses)]
-        print(" getClasses,self.__nClasses: " + str(self.__nClasses))
+        # print(" getClasses,self.__nClasses: " + str(self.__nClasses))
         for i in range(0, self.__nClasses):
-            print(" getClasses method i is "+str(i))
+            # print(" getClasses method i is "+str(i))
             clases[i] = Attributes.getOutputAttribute(Attributes, 0).getNominalValue(i)
         return clases

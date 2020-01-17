@@ -692,8 +692,8 @@ class InstanceAttributes:
     #  */
 
     def printInsAttr(self):
-        print("@relation = " + self.__relationName)
-        print("Number of attributes: " + str(len(self.__attributes)))
+        # print("@relation = " + self.__relationName)
+        # print("Number of attributes: " + str(len(self.__attributes)))
 
         for i in range(0, len(self.__attributes)):
             att = Attribute(self.__attributes[i])

@@ -140,18 +140,18 @@ class Instance:
             directionAttr = curAt.getDirectionAttribute()
             # print("inside setThreeParameters directionAttr :" + str(directionAttr))
             if directionAttr == Attribute.INPUT:
-                print("directionAttr==Attribute.INPUT")
+                # print("directionAttr==Attribute.INPUT")
                 inputOutput = Instance.ATT_INPUT
                 curCount = inAttCount
-                print("curCount is : " + str(curCount))
+                # print("curCount is : " + str(curCount))
                 inAttCount = inAttCount + 1
-                print("inAttCount is : " + str(inAttCount))
+                # print("inAttCount is : " + str(inAttCount))
 
             elif directionAttr == Attribute.OUTPUT:
-                print("directionAttr==Attribute.OUTPUT")
+                # print("directionAttr==Attribute.OUTPUT")
                 inputOutput = Instance.ATT_OUTPUT
                 if curAt.getType() == Attribute.NOMINAL:
-                    print("curAt.getType() == Attribute.NOMINAL")
+                    # print("curAt.getType() == Attribute.NOMINAL")
                     currentClass = curAt.convertNominalValue(att)
 
                     # System.out.println ( " The position of the current class "+ att +" is: "+ currentClass );
@@ -159,7 +159,7 @@ class Instance:
                 outAttCount = outAttCount + 1
 
             else:
-                print("Attribute not defined neither as input or output")
+                # print("Attribute not defined neither as input or output")
                 # Attribute not defined neither as input or output. So, it is not read.
                 inputOutput = Instance.ATT_NONDEF
                 curCount = indefCount
@@ -176,14 +176,14 @@ class Instance:
 
         # Checking if the instance doesn't have the same number of attributes than defined.
         if count != Attributes.getNumAttributes(Attributes):
-            print("count != Attributes.getNumAttributes(Attributes)......")
+            # print("count != Attributes.getNumAttributes(Attributes)......")
             er = ErrorInfo(ErrorInfo.BadNumberOfValues, instanceNum, InstanceParser.lineCounter, 0, 0, self.isTrain, (
                     "Instance " + defStr + " has a different number of attributes than defined\n   > Number of attributes defined: " + Attributes.getNumAttributes() + "   > Number of attributes read:    " + count))
             # InstanceSet.errorLogger.setError(er)
 
         # Compute the statistics
         if self.isTrain:
-            print("self.isTrain==True......")
+            # print("self.isTrain==True......")
             atts = Attributes.getInputAttributes(Attributes)
             length = int(len(atts))
             for i in range(0, length):
@@ -222,15 +222,15 @@ class Instance:
             directionAttr = curAt.getDirectionAttribute()
             # print("inside setThreeParameters directionAttr :" + str(directionAttr))
             if directionAttr == Attribute.INPUT:
-                print("directionAttr==Attribute.INPUT")
+                # print("directionAttr==Attribute.INPUT")
                 inputOutput = Instance.ATT_INPUT
                 curCount = inAttCount
-                print("curCount is : " + str(curCount))
+                # print("curCount is : " + str(curCount))
                 inAttCount = inAttCount + 1
-                print("inAttCount is : " + str(inAttCount))
+                # print("inAttCount is : " + str(inAttCount))
 
             elif directionAttr == Attribute.OUTPUT:
-                print("directionAttr==Attribute.OUTPUT")
+                # print("directionAttr==Attribute.OUTPUT")
                 inputOutput = Instance.ATT_OUTPUT
                 if curAt.getType() == Attribute.NOMINAL:
                     print("curAt.getType() == Attribute.NOMINAL")
@@ -241,7 +241,7 @@ class Instance:
                 outAttCount = outAttCount + 1
 
             else:
-                print("Attribute not defined neither as input or output")
+                # print("Attribute not defined neither as input or output")
                 # Attribute not defined neither as input or output. So, it is not read.
                 inputOutput = Instance.ATT_NONDEF
                 curCount = indefCount
@@ -265,7 +265,7 @@ class Instance:
 
         # Compute the statistics
         if self.isTrain:
-            print("self.isTrain==True......")
+            # print("self.isTrain==True......")
             atts = Attributes.getInputAttributes(Attributes)
             length = int(len(atts))
             for i in range(0, length):
