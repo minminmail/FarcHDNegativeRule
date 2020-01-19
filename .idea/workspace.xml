@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="January 18, multifle configuration files">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="January 18, fixed one outputReal None error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attribute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Attributes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Fuzzy_Chi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Fuzzy_Chi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Help_Classes/Instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/Instance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Help_Classes/InstanceSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MyDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MyDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Rule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/RuleBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/result0e0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e0.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/result0e1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/result0e1.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +96,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Main.py" />
-      <option name="PARAMETERS" value="C:\phd_experiments\20200116results\20200116results\scripts\Chi-RW-C\abalone-3_vs_11\config0.txt" />
+      <option name="PARAMETERS" value="C:\phd_experiments\20200116results\20200116results\scripts\Chi-RW-C\car-good\config0.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -124,13 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529468596060</updated>
-    </task>
-    <task id="LOCAL-00023" summary="no error , but need to analysis the result.">
-      <created>1539550024729</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1539550024729</updated>
     </task>
     <task id="LOCAL-00024" summary="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range">
       <created>1539550939794</created>
@@ -468,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579295532594</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="January 18, fixed one outputReal None error">
+      <created>1579300443893</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1579300443893</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -495,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="oct 21 morning" />
     <MESSAGE value="oct 23 night before sleep" />
     <MESSAGE value="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class" />
     <MESSAGE value="Nov 05 night for changed the get granularity zone ranges ,in fuzzy_chi, myDataSet , attribute classes." />
@@ -520,7 +519,8 @@
     <MESSAGE value="December 25, no negative rule generated" />
     <MESSAGE value="January 12, removed the duplicated path from code" />
     <MESSAGE value="January 18, multifle configuration files" />
-    <option name="LAST_COMMIT_MESSAGE" value="January 18, multifle configuration files" />
+    <MESSAGE value="January 18, fixed one outputReal None error" />
+    <option name="LAST_COMMIT_MESSAGE" value="January 18, fixed one outputReal None error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -534,6 +534,26 @@
           <url>file://$PROJECT_DIR$/main/Main.py</url>
           <line>54</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>204</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

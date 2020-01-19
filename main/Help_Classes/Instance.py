@@ -505,15 +505,14 @@ class Instance:
             self.__nominalValues[inOut][curCount] = att
             # Testing special cases.
             if self.isTrain and inOut != 2:
-                print("self.isTrain and inOut!=2 begin......")
+                # print("self.isTrain and inOut!=2 begin......")
 
                 rowLength = len(self.__nominalValues)
-                print("rowLength = " + str(rowLength))
+                # print("rowLength = " + str(rowLength))
                 columnLength = len(self.__nominalValues[0])
-                print("inOut = " + str(inOut) + ",rowLength: " + str(rowLength) + "curCount:" + str(
-                    curCount) + ",columnLength: " + str(columnLength))
+                # print("inOut = " + str(inOut) + ",rowLength: " + str(rowLength) + "curCount:" + str(curCount) + ",columnLength: " + str(columnLength))
                 nominalValue = self.__nominalValues[inOut][curCount]
-                print("nominalValue: " + str(nominalValue))
+                # print("nominalValue: " + str(nominalValue))
                 if curAtt.getFixedBounds() and not curAtt.isNominalValue(nominalValue):
                     print("There are error_info_4!! ")
                     error_info_4 = ErrorInfo.set_Eight_Parameters(ErrorInfo, ErrorInfo.TrainNominalOutOfRange,

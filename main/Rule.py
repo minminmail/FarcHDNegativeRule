@@ -148,8 +148,9 @@ class Rule:
 
     def consequent_CF(self, train):
         train_Class_Number = train.getnClasses()
-        classes_sum = [0.0 for x in range(train_Class_Number)]
-        for i in range(0, train.getnClasses()):
+        # to have enough class_sum space
+        classes_sum = [0.0 for x in range(train_Class_Number+1)]
+        for i in range(0, train.getnClasses()+1):
             classes_sum[i] = 0.0
 
         total = 0.0
@@ -188,9 +189,11 @@ class Rule:
     def consequent_PCF4(self, train):
         class_number = train.getnClasses()
         # print("train data set get the class_number: " + str(class_number))
-        classes_sum = [0.0 for x in range(class_number)]
+        classes_sum_number = class_number + 1
+        classes_sum = [0.0 for x in range(classes_sum_number)]
         # print("classes_sum length is : " + str(len(classes_sum)))
-        for i in range(0, train.getnClasses()):
+        # for have enough classes_sum for class value
+        for i in range(0, train.getnClasses()+1):
             classes_sum[i] = 0.0
 
         total = 0.0
@@ -199,7 +202,14 @@ class Rule:
         # Computation of the sum by classes */
         # print("Begin a new loop for calculating comp " + "/n/n")
         zeroCompNumber = 0
+
+        # for i in range(0, train_size):
+            # print("train.getExample(i) : " + str(train.getExample(i)))
+            # class_type = train.getOutputAsIntegerWithPos(i)
+            # print("test the class type print is : " + str(class_type))
+
         for i in range(0, train_size):
+            # print("train.getExample(i) : " + str(train.getExample(i)))
             comp = self.compatibility(train.getExample(i))
             if comp == 0:
                 zeroCompNumber = zeroCompNumber+1

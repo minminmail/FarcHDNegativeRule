@@ -84,6 +84,7 @@ class RuleBase:
         self.classes = classes
         self.data_row_array = []
         self.granularity_data_row_array = []
+        print("set_six_parameter_init the length of classes is" +str(len(self.classes)))
 
     # * It checks if a specific rule is already in the rule base
     # * @param r Rule the rule for comparison
@@ -123,6 +124,7 @@ class RuleBase:
             self.data_row_array.append(rule.data_row_here)
             rule.assingConsequent(train, self.ruleWeight)
             if not (self.duplicated(rule)) and (rule.weight > 0):
+                print("normal rule before append , the rule weight is " + str(rule.weight ) )
                 self.ruleBase.append(rule)
         print("The total data_row is " + str(len(self.data_row_array)))
 
@@ -220,6 +222,7 @@ class RuleBase:
             for j in range(0, self.n_variables - 1):
                 cadena_string += self.names[j] + " IS " + granularity_rule.antecedent[j].name + " AND "
             j = j + 1
+            print("granularity_rule.class_value is : "+str(granularity_rule.class_value))
             cadena_string += self.names[j] + " IS " + granularity_rule.antecedent[j].name + ": " + str(
                 self.classes[granularity_rule.class_value]) + " with Rule Weight: " + str(
                 granularity_rule.weight) + "\n"
@@ -384,6 +387,7 @@ class RuleBase:
             rule_negative = Rule()
             rule_negative.antecedent = self.ruleBase[i].antecedent
             positive_rule_class_value = self.ruleBase[i].get_class()
+            print("the positive rule class value is " +str(positive_rule_class_value)+" ,the i is :" + str(i))
             rule_negative.setClass(positive_rule_class_value)
 
             for j in range(0, len(class_value_arr)):
@@ -392,6 +396,7 @@ class RuleBase:
 
                     rule_negative.setClass(class_type)  # change the class type in the rule
                     confident_value = rule_negative.calculate_confident(self.data_row_array)
+                    print("The calculation confident value is :"+ str(confident_value))
 
                     if confident_value >= confident_value_pass:
                         rule_negative.weight = confident_value

@@ -249,12 +249,12 @@ class MyDataSet:
                         # print("Att" + str(i) + str(outAtt.getName()))
                         i = i + 1
                     # print("" + Attributes.getOutputAttributesHeader(Attributes))
-                    # print("This algorithm can not process MIMO datasets")
+                    print("This algorithm can not process MIMO datasets !!! exit 1")
                     # print("All outputs but the first one will be removed")
                     exit(1)
                 noOutputs = False
                 if Attributes.getOutputNumAttributes(Attributes) < 1:
-                    # print("This algorithm can not process datasets without outputs")
+                    print("This algorithm can not process datasets without outputs !!!!!!")
                     # print("Zero-valued output generated")
                     noOutputs = True
                     exit(1)
@@ -311,10 +311,11 @@ class MyDataSet:
                     else:
                         # print("noOutputs==False")
                         self.__outputInteger[i] = self.__instanceSet.getOutputNumericValue(i, 0)
+                        print(" 202001-1 self.__outputInteger[ "+str(i)+"]"+ str( self.__outputInteger[i]))
                         self.__outputReal[i] = self.__instanceSet.getOutputNumericValue(i, 0)
                         # print("self.__outputInteger[" + str(i) + "] = " + str(self.__outputInteger[i]))
                         self.__output[i] = self.__instanceSet.getOutputNominalValue(i, 0)
-
+                    print(" 202001-1 self.__outputInteger[ " + str(i) + "]" + str(self.__outputInteger[i]))
                     if self.__outputInteger[i] > self.__nClasses:
                         self.__nClasses = self.__outputInteger[i]
 
@@ -364,6 +365,7 @@ class MyDataSet:
                 # print("This algorithm can not process datasets without outputs")
                 # print("Zero-valued output generated")
                 noOutputs = True
+                print("noOutputs = True, exit 1 !!!!!")
                 exit(1)
             # Initialice and fill our own tables
             self.__X = [[0.0 for y in range(self.__nInputs)] for x in range(self.__nData)]
@@ -514,9 +516,9 @@ class MyDataSet:
                 print("len(self.__outputReal) is  0")
 
             else:
-                print("len(self.__outputReal) is " + str(len(self.__outputReal)))
+                # print("len(self.__outputReal) is " + str(len(self.__outputReal)))
                 for j in range(0, len(self.__outputReal)):
-                    print("self.__outputReal[j] is : "+str(self.__outputReal[j]) + " ,j is :"+str(j))
+                    # print("self.__outputReal[j] is : "+str(self.__outputReal[j]) + " ,j is :"+str(j))
                     self.__average[average_length - 1] = self.__average[average_length - 1] + self.__outputReal[j]
             if len(self.__outputReal) != 0:
                 self.__average[average_length - 1] = self.__average[average_length - 1] / len(self.__outputReal)

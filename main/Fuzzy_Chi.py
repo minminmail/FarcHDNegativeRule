@@ -54,11 +54,12 @@ class Fuzzy_Chi:
     granularity_data_base_array = []
     ruleBase = None
     granularity_rule_Base_array = []
-    negative_confident_value = 0.05
+    negative_confident_value = 0
     # added by rui
     negative_rule_number = None
     granularity_data_row_array = []
     my_dataset_train_sub_zone = []
+    fileToSavePath = None
 
     # Configuration flags.
     MINIMUM = 0
@@ -96,6 +97,7 @@ class Fuzzy_Chi:
         self.test_myDataSet = MyDataSet()
         try:
             print("Reading the training set: ")
+            self.fileToSavePath = parameters.file_path
             inputTrainingFile = parameters.getInputTrainingFiles()
             print("In Fuzzy Chi init method the training file is :" + inputTrainingFile)
             self.train_myDataSet.readClassificationSet(inputTrainingFile, True, parameters.file_path)
@@ -187,6 +189,9 @@ class Fuzzy_Chi:
             self.ruleBase.writeFile(self.fileRB)
 
             # Finally we should fill the training and test output files
+            self.outputTr = self.fileToSavePath + "\\"+ self.outputTr
+            self.outputTst = self.fileToSavePath + "\\"+ self.outputTst
+
             accTra = self.doOutput(self.val_myDataSet, self.outputTr, False)
             accTst = self.doOutput(self.test_myDataSet, self.outputTst, False)
 
@@ -226,13 +231,21 @@ class Fuzzy_Chi:
                                                                              self.my_dataset_train_sub_zone[i].getNames())
                     #  added by rui for granularity rules
                     self.granularity_rule_Base_array[i] = RuleBase()
+
+                    #self.granularity_rule_Base_array[i].set_six_parameter_init(self.granularity_database_array[i],
+                    #
+                    #                                                            self.inferenceType, self.combinationType,
+                    #                                                            self.ruleWeight,
+                    #                                                            self.my_dataset_train_sub_zone[i].getNames(),
+                    #                                                            self.my_dataset_train_sub_zone[
+                    #                                                                i].getClasses())
                     self.granularity_rule_Base_array[i].set_six_parameter_init(self.granularity_database_array[i],
                                                                                self.inferenceType, self.combinationType,
                                                                                self.ruleWeight,
-                                                                               self.my_dataset_train_sub_zone[i].getNames(),
+                                                                               self.my_dataset_train_sub_zone[
+                                                                                   i].getNames(),
                                                                                self.my_dataset_train_sub_zone[
                                                                                    i].getClasses())
-
                 self.generate_granularity_rules()
                 self.prunerules_granularity_rules()
 
@@ -404,8 +417,8 @@ class Fuzzy_Chi:
             self.my_dataset_train_sub_zone[k].set_ndata(num_sub_zone)
             print("num_sub_zone " + str(k) + " is  :" + str(num_sub_zone))
             # set the rule base nClasses value
-            nclasses_number = self.my_dataset_train_sub_zone[k].calculate_nclasses_for_small_granularity_zone(
-                output_integer[k])
+            #nclasses_number = self.my_dataset_train_sub_zone[k].calculate_nclasses_for_small_granularity_zone(output_integer[k])
+            nclasses_number = self.nClasses
             print("nclasses_number of " + str(k) + " is  :" + str(nclasses_number))
             self.my_dataset_train_sub_zone[k].set_nClasses(nclasses_number)
             number_of_data = self.my_dataset_train_sub_zone[k].size()
