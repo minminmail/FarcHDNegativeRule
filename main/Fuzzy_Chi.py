@@ -55,6 +55,7 @@ class Fuzzy_Chi:
     ruleBase = None
     granularity_rule_Base_array = []
     negative_confident_value = 0
+    granularity_confident_value = 0.2
     # added by rui
     negative_rule_number = None
     granularity_data_row_array = []
@@ -433,7 +434,7 @@ class Fuzzy_Chi:
             self.granularity_data_row_array.append(granularity_rule.data_row_here)
             granularity_rule.assingConsequent(sub_train, self.ruleWeight)
             if not (self.granularity_rule_Base_array[area_number].duplicated_granularity_rule(granularity_rule)) and (
-                    granularity_rule.weight > 0.2):
+                    granularity_rule.weight > self.granularity_confident_value):
                 granularity_rule.granularity_sub_zone = sub_zone_number
                 self.granularity_rule_Base_array[area_number].granularity_rule_Base.append(granularity_rule)
 
