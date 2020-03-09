@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="January 19, fixed one classes statistics out of index error in granularity rule generation">
+      <change afterPath="$PROJECT_DIR$/main/Farchd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Chi_RW" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1PEvQ1AXXX4CjikTqPgFp7oFjZ2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\phd_algorithms\FarcHD_py\main" />
+      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\phd_algorithms\Chi_negative_rules_python\main" />
+      <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\Help_Classes" />
+      <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\simpleTest" />
+      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="DataBase" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chi_RW" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
+      <module name="Chi_RW" />
+      <option name="INTERPRETER_OPTIONS" value="-s" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Main.py" />
+      <option name="PARAMETERS" value="C:\phd_experiments\2020012003results\2020012003results\scripts\Chi-RW-C\haberman\config0.txt" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.DataBase" />
+      <item itemvalue="Python.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.DataBase" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="" />
+      <created>1529468596060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529468596060</updated>
+    </task>
+    <task id="LOCAL-00025" summary="getType()==Attribute.INTEGER......&#10;Unexpected error in readSet of InstanceSet class :list assignment index out of range">
+      <created>1539642702251</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1539642702251</updated>
+    </task>
+    <task id="LOCAL-00026" summary="format files">
+      <created>1565459696153</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1565459696153</updated>
+    </task>
+    <task id="LOCAL-00027" summary="format all the files">
+      <created>1565464014753</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1565464014753</updated>
+    </task>
+    <task id="LOCAL-00028" summary="changed some format and commend">
+      <created>1566854900702</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1566854900702</updated>
+    </task>
+    <task id="LOCAL-00029" summary="small changes for formatting">
+      <created>1568096447916</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1568096447916</updated>
+    </task>
+    <task id="LOCAL-00030" summary="generated negative rules">
+      <created>1568675115761</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1568675115761</updated>
+    </task>
+    <task id="LOCAL-00031" summary="data_row">
+      <created>1568755133502</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1568755133502</updated>
+    </task>
+    <task id="LOCAL-00032" summary="generated negative rules">
+      <created>1568755189468</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1568755189468</updated>
+    </task>
+    <task id="LOCAL-00033" summary="generated negative rules">
+      <created>1568755215105</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1568755215105</updated>
+    </task>
+    <task id="LOCAL-00034" summary="generated negative rules">
+      <created>1568756740499</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1568756740499</updated>
+    </task>
+    <task id="LOCAL-00035" summary="no error for negative rule logic, but no rule in file">
+      <created>1568786535574</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1568786535574</updated>
+    </task>
+    <task id="LOCAL-00036" summary="no error for negative rule logic, but no rule in file">
+      <created>1568850716824</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1568850716824</updated>
+    </task>
+    <task id="LOCAL-00037" summary="no error for negative rule logic, but no rule in file">
+      <created>1568854773228</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1568854773228</updated>
+    </task>
+    <task id="LOCAL-00038" summary="get correct negative rule">
+      <created>1569149304958</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1569149304958</updated>
+    </task>
+    <task id="LOCAL-00039" summary="granularity rule generation">
+      <created>1570287469271</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1570287469272</updated>
+    </task>
+    <task id="LOCAL-00040" summary="granularity rule generation has result">
+      <created>1570393521326</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1570393521327</updated>
+    </task>
+    <task id="LOCAL-00041" summary="oct 06 before sleep">
+      <created>1570395505582</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1570395505582</updated>
+    </task>
+    <task id="LOCAL-00042" summary="oct 15 before sleep">
+      <created>1571089742204</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1571089742204</updated>
+    </task>
+    <task id="LOCAL-00043" summary="oct 16 morning">
+      <created>1571200178162</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1571200178162</updated>
+    </task>
+    <task id="LOCAL-00044" summary="oct 17 morning">
+      <created>1571286508544</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1571286508544</updated>
+    </task>
+    <task id="LOCAL-00045" summary="oct 21 morning">
+      <created>1571608758506</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1571608758506</updated>
+    </task>
+    <task id="LOCAL-00046" summary="oct 23 night before sleep">
+      <created>1571780350496</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1571780350496</updated>
+    </task>
+    <task id="LOCAL-00047" summary="oct 23 night before sleep">
+      <created>1572386543639</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1572386543641</updated>
+    </task>
+    <task id="LOCAL-00048" summary="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class">
+      <created>1572473301994</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1572473301994</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Nov 05 night for changed the get granularity zone ranges ,in fuzzy_chi, myDataSet , attribute classes.">
+      <created>1572994637808</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1572994637808</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Nov 05 night for changed the get granularity zone ranges ,in fuzzy_chi, myDataSet , attribute classes.">
+      <created>1573166884732</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1573166884733</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Nov 8th for deleted one duplicated database write file. still has another one">
+      <created>1573168158371</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1573168158371</updated>
+    </task>
+    <task id="LOCAL-00052" summary="got granularity features DB correctly">
+      <created>1573392143660</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1573392143660</updated>
+    </task>
+    <task id="LOCAL-00053" summary="list out of index error">
+      <created>1573425143562</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1573425143563</updated>
+    </task>
+    <task id="LOCAL-00054" summary="nov 12 night">
+      <created>1573515963687</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1573515963688</updated>
+    </task>
+    <task id="LOCAL-00055" summary="nov 13 night">
+      <created>1573599892268</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1573599892268</updated>
+    </task>
+    <task id="LOCAL-00056" summary="nov 15 night, get granularity rules and deleted the duplicated print in result file.">
+      <created>1573772516733</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1573772516737</updated>
+    </task>
+    <task id="LOCAL-00057" summary="nov 15 night, accurate for granularity rule">
+      <created>1573853407654</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1573853407657</updated>
+    </task>
+    <task id="LOCAL-00058" summary="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range">
+      <created>1573941597173</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1573941597174</updated>
+    </task>
+    <task id="LOCAL-00059" summary="nov 16 night,last push">
+      <created>1573942875086</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1573942875086</updated>
+    </task>
+    <task id="LOCAL-00060" summary="nov 17 night,last push">
+      <created>1574029792040</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1574029792040</updated>
+    </task>
+    <task id="LOCAL-00061" summary="nov 20 night,granularity rule accurate is 0.68">
+      <created>1574289590130</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1574289590130</updated>
+    </task>
+    <task id="LOCAL-00062" summary="nov 21 night,granularity rule accurate is 0.46">
+      <created>1574377057253</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1574377057254</updated>
+    </task>
+    <task id="LOCAL-00063" summary="nov 22 night,granularity rule accurate is 0.5833333333333334">
+      <created>1574449145329</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1574449145330</updated>
+    </task>
+    <task id="LOCAL-00064" summary="fixed one bug of produc is not defined before use,dicember one">
+      <created>1575235814071</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1575235814075</updated>
+    </task>
+    <task id="LOCAL-00065" summary="fixed one bug of rule information for pruned and granularity">
+      <created>1576393033984</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1576393033984</updated>
+    </task>
+    <task id="LOCAL-00066" summary="December 17, the loop is not stop">
+      <created>1576619133853</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1576619133853</updated>
+    </task>
+    <task id="LOCAL-00067" summary="December 17, accuracy is 0.9628">
+      <created>1576620271922</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1576620271922</updated>
+    </task>
+    <task id="LOCAL-00068" summary="December 18, accuracy of train data is 0.96289, test data is 0.952125">
+      <created>1576708427093</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1576708427096</updated>
+    </task>
+    <task id="LOCAL-00069" summary="December 25, no negative rule generated">
+      <created>1577313269193</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1577313269194</updated>
+    </task>
+    <task id="LOCAL-00070" summary="January 12, removed the duplicated path from code">
+      <created>1578826798005</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1578826798007</updated>
+    </task>
+    <task id="LOCAL-00071" summary="January 18, multifle configuration files">
+      <created>1579295532593</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1579295532594</updated>
+    </task>
+    <task id="LOCAL-00072" summary="January 18, fixed one outputReal None error">
+      <created>1579300443893</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1579300443893</updated>
+    </task>
+    <task id="LOCAL-00073" summary="January 19, fixed one classes statistics out of index error in granularity rule generation">
+      <created>1579472308560</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1579472308561</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="oct 31 night before sleep, added get_granularity_zone_ranges in MyDataSet class" />
+    <MESSAGE value="Nov 05 night for changed the get granularity zone ranges ,in fuzzy_chi, myDataSet , attribute classes." />
+    <MESSAGE value="Nov 8th for deleted one duplicated database write file. still has another one" />
+    <MESSAGE value="got granularity features DB correctly" />
+    <MESSAGE value="list out of index error" />
+    <MESSAGE value="nov 12 night" />
+    <MESSAGE value="nov 13 night" />
+    <MESSAGE value="nov 15 night, get granularity rules and deleted the duplicated print in result file." />
+    <MESSAGE value="nov 15 night, accurate for granularity rule" />
+    <MESSAGE value="nov 16 night, There is exception in doOutput in Fuzzy chi class !!! The exception is :list index out of range" />
+    <MESSAGE value="nov 16 night,last push" />
+    <MESSAGE value="nov 17 night,last push" />
+    <MESSAGE value="nov 20 night,granularity rule accurate is 0.68" />
+    <MESSAGE value="nov 21 night,granularity rule accurate is 0.46" />
+    <MESSAGE value="nov 22 night,granularity rule accurate is 0.5833333333333334" />
+    <MESSAGE value="fixed one bug of produc is not defined before use,dicember one" />
+    <MESSAGE value="fixed one bug of rule information for pruned and granularity" />
+    <MESSAGE value="December 17, the loop is not stop" />
+    <MESSAGE value="December 17, accuracy is 0.9628" />
+    <MESSAGE value="December 18, accuracy of train data is 0.96289, test data is 0.952125" />
+    <MESSAGE value="December 25, no negative rule generated" />
+    <MESSAGE value="January 12, removed the duplicated path from code" />
+    <MESSAGE value="January 18, multifle configuration files" />
+    <MESSAGE value="January 18, fixed one outputReal None error" />
+    <MESSAGE value="January 19, fixed one classes statistics out of index error in granularity rule generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="January 19, fixed one classes statistics out of index error in granularity rule generation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Main.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/Main.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
+          <line>204</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
