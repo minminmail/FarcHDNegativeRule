@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="January 19, fixed one classes statistics out of index error in granularity rule generation">
+      <change beforePath="$PROJECT_DIR$/.idea/FarchdPython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FarchdPython.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/FarcHD_py/Main.py" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
   </component>
   <component name="RecentsManager">
@@ -91,7 +92,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FarcHD_py/Main.py" />
-      <option name="PARAMETERS" value="C:\phd_experiments\2020012003results\2020012003results\scripts\Chi-RW-C\haberman\config0.txt" />
+      <option name="PARAMETERS" value="C:\phd_experiments\20200803\20200803\scripts\Fuzzy-FARCHD-C\ecoli-0_vs_1\config0s0.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -549,6 +550,21 @@
           <url>file://$PROJECT_DIR$/main/RuleBase.py</url>
           <line>204</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/Main.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/DataBase.py</url>
+          <line>121</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/DataBase.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
