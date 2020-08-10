@@ -28,19 +28,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/FarcHD_py/Main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FarcHD_py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/main/Fuzzy_Chi.py" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\phd_algorithms\FarcHD_py\main" />
-      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\phd_algorithms\Chi_negative_rules_python\main" />
       <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\Help_Classes" />
       <recent name="D:\pythonAlgorithms\PythonChi\Chi_RW\main\simpleTest" />
+      <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\phd_algorithms\FarcHD_py\FarcHD_py" />
+      <recent name="C:\phd_algorithms\FarcHD_py\main" />
       <recent name="G:\scikitlearn and python\python study\Chi_RW\main" />
     </key>
   </component>
