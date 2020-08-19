@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="910f8b0d-c71b-4094-acec-84c9d0076830" name="Default" comment="January 19, fixed one classes statistics out of index error in granularity rule generation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py/Apriori.py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py/Apriori.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py/Farchd.py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py/Farchd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py/Itemset.py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py/Itemset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py/Populate.py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py/Populate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py/Rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py/Rule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarcHD_py/RuleBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/FarcHD_py/RuleBase.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FarcHD_py" />
   </component>
   <component name="ProjectId" id="1PEvQ1AXXX4CjikTqPgFp7oFjZ2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -557,39 +564,39 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FarcHD_py/Individual.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FarcHD_py/Populate.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FarcHD_py/Farchd.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FarcHD_py/Farchd.py</url>
-          <line>145</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FarcHD_py/Farchd.py</url>
-          <line>152</line>
+          <line>155</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FarcHD_py/Farchd.py</url>
-          <line>154</line>
+          <line>157</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FarcHD_py/RuleBase.py</url>
           <line>368</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/Individual.py</url>
+          <line>362</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/Populate.py</url>
+          <line>269</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/Populate.py</url>
+          <line>254</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FarcHD_py/Populate.py</url>
+          <line>253</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
